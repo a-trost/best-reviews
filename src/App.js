@@ -13,8 +13,11 @@ class App extends Component {
           I'M ONLY GIVING THE BEST, THE BEST, THE BEST, THE BEST REVIEWS.
         </p>
   <SimpleMap />
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+  <p>
+          What people are saying:
+        </p>
+        <p>
+          "Why did you make this?"
         </p>
       </div>
     );
