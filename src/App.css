@@ -15,3 +15,15 @@ body {
   font-family: 'Rock Salt', cursive;
   letter-spacing: 3px;
 }
+
+.map-marker {
+  height: 50px;
+  width:40px;
+  position:absolute;
+  cursor:pointer;
+  top: -60px;
+  left: -20px;
+  transform-origin: 20px 60px;
+  margin:0;
+  padding:0;
+}

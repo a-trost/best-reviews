@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import config from '../config'; // For Keeping API Keys private during development
+import MapMarker from "./MapMarker";
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 class SimpleMap extends Component {
   static defaultProps = {
@@ -22,10 +22,10 @@ class SimpleMap extends Component {
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
         >
-          <AnyReactComponent
+          <MapMarker
             lat={41.3088033}
             lng={-72.9184877}
-            text={'Test Place'}
+            location="Home"
           />
         </GoogleMapReact>
       </div>
