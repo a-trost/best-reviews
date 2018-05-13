@@ -6,7 +6,8 @@ function MapMarker(props) {
   return (
   <div>
         <div className="info-popup">
-        "This place has THE BEST, THE BEST, THE BEST, THE BEST REVIEWS."
+        Mystic Aquarium is THE BEST, THE BEST, THE BEST, THE BEST FISH ZOO.
+        - Dave Grohl
     </div>
     <img src={mapMarker} alt="Alt" className="map-marker"/>
         </div>

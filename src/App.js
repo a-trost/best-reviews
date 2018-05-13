@@ -9,16 +9,7 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">The Best Reviews</h1>
         </header>
-        <p>
-          I'M ONLY GIVING THE BEST, THE BEST, THE BEST, THE BEST REVIEWS.
-        </p>
   <SimpleMap />
-  <p>
-          What people are saying:
-        </p>
-        <p>
-          "Why did you make this?"
-        </p>
       </div>
     );
   }
