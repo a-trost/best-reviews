@@ -18,12 +18,12 @@ class SimpleMap extends Component {
       <div style={{ height: '80vh', width: '100%' }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: config.MAPS_API_KEY, region:'US', libraries: 'places' }}
-          defaultCenter={this.props.center}
+          defaultCenter={this.props.centerLatLng}
           defaultZoom={this.props.zoom}
         >
           <MapMarker
-            lat={41.373346}
-            lng={-71.9532523}
+            lat={this.props.centerLatLng.lat}
+            lng={this.props.centerLatLng.lng}
             text={''}
           />
         </GoogleMapReact>
