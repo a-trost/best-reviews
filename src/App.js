@@ -16,13 +16,11 @@ class App extends Component {
   }
 
   handleSubmit(event) {
-    this.getLatLng();
-    console.log(this.state.searchRequest)
     event.preventDefault();
+    this.getLatLng();
   }
 
   handleChange(event) {
-    console.log("Typing: ", event.target.value)
     this.setState({searchRequest: event.target.value});
   }
 
