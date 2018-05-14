@@ -6,7 +6,7 @@ class SearchBox extends React.Component {
    return(
     <form onSubmit={this.props.handleSubmit}>
         <label>
-          <input type="text" value={this.props.searchRequest}  onChange={this.props.handleChange} />
+          Enter Zipcode: <input type="text" value={this.props.searchRequest}  onChange={this.props.handleChange} />
         </label>
       </form>
 
