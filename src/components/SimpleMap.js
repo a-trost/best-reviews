@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import MapMarker from './MapMarker';
-import config from '../config';
 
 class SimpleMap extends Component {
   static defaultProps = {
@@ -17,7 +16,7 @@ class SimpleMap extends Component {
       // Important! Always set the container height explicitly
       <div style={{ height: '80vh', width: '100%' }}>
         <GoogleMapReact
-          bootstrapURLKeys={{ key: config.MAPS_API_KEY, region:'US', libraries: 'places' }}
+          bootstrapURLKeys={{ key: "AIzaSyAAsyfic2Tbd2rLhlvIFR0DrUT1MTzzW9M", region:'US', libraries: 'places' }}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
           center={this.props.centerLatLng}
