@@ -6,14 +6,27 @@ import SearchBox from './components/SearchBox';
 class App extends Component {
   constructor(props) {
     super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.state = {
-      centerLatLng: {lat: 43.373346,
+      centerLatLng: {lat: 41.373346,
         lng: -71.9532523},
-        searchRequest:"18940"
+        searchRequest:""
       };
   }
 
-  getLatLng(address=this.state.searchRequest) {
+  handleSubmit(event) {
+    this.getLatLng();
+    console.log(this.state.searchRequest)
+    event.preventDefault();
+  }
+
+  handleChange(event) {
+    console.log("Typing: ", event.target.value)
+    this.setState({searchRequest: event.target.value});
+  }
+
+  getLatLng() {
     fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${this.state.searchRequest}&key=AIzaSyAAsyfic2Tbd2rLhlvIFR0DrUT1MTzzW9M`)
   .then(function(response) {
     return response.json();
@@ -22,10 +35,6 @@ class App extends Component {
     return myJson.results[0].geometry.location;}).then((centerLatLng) => this.setState({centerLatLng}));
   }
 
-  
-  componentDidMount() {
-    this.getLatLng();
-  }
 
   render() {
     return (
@@ -33,6 +42,7 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">The Best Reviews</h1>
         </header>
+  <SearchBox handleSubmit={this.handleSubmit} handleChange={this.handleChange} searchRequest={this.state.searchRequest} />
   <SimpleMap centerLatLng={this.state.centerLatLng} />
       </div>
     );
