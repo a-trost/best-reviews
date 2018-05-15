@@ -16,6 +16,10 @@ body {
   letter-spacing: 3px;
 }
 
+.button-container {
+  text-align: center;
+}
+
 .map-marker {
   height: 50px;
   width:40px;

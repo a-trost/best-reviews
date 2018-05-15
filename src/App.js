@@ -2,16 +2,19 @@ import React, { Component } from 'react';
 import './App.css';
 import SimpleMap from './components/SimpleMap';
 import SearchBox from './components/SearchBox';
+import CategoryButtons from './components/CategoryButtons';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleCategoryButtonClick = this.handleCategoryButtonClick.bind(this);
     this.state = {
       centerLatLng: {lat: 41.373346,
         lng: -71.9532523},
-        searchRequest:""
+        searchRequest:"",
+        searchCategory:""
       };
   }
 
@@ -22,6 +25,10 @@ class App extends Component {
 
   handleChange(event) {
     this.setState({searchRequest: event.target.value});
+  }
+
+  handleCategoryButtonClick(searchCategory) {
+    this.setState({searchCategory});
   }
 
   getLatLng() {
@@ -41,6 +48,7 @@ class App extends Component {
           <h1 className="App-title">The Best Reviews</h1>
         </header>
   <SearchBox handleSubmit={this.handleSubmit} handleChange={this.handleChange} searchRequest={this.state.searchRequest} />
+  <CategoryButtons clickHandler={this.handleCategoryButtonClick} />
   <SimpleMap centerLatLng={this.state.centerLatLng} />
       </div>
     );
