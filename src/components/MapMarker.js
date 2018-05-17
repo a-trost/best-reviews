@@ -23,8 +23,7 @@ class MapMarker extends Component {
   infoWindow() {
       return(
         <div className="info-popup">
-        Mystic Aquarium is THE BEST, THE BEST, THE BEST, THE BEST FISH ZOO.
-        - Dave Grohl
+        {this.props.placeName} is THE BEST, THE BEST, THE BEST, THE BEST {this.props.endingPhrase}
         <p onClick={this.handleClose}>X</p>
     </div>
       )
@@ -36,7 +35,7 @@ class MapMarker extends Component {
   return (
   <div>
         {this.state.isSelected && this.infoWindow()}
-    <img src={mapMarker} alt="Alt" className="map-marker" onClick={this.handleClick}/>
+    <img src={mapMarker} alt={this.props.placeName} className="map-marker" onClick={this.handleClick}/>
         </div>
     )
   }

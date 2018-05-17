@@ -21,11 +21,9 @@ class SimpleMap extends Component {
           defaultZoom={this.props.zoom}
           center={this.props.centerLatLng}
         >
-          <MapMarker
-            lat={this.props.centerLatLng.lat}
-            lng={this.props.centerLatLng.lng}
-            text={''}
-          />
+      {this.props.placeResults &&
+        this.props.placeResults.map((place)=> 
+        <MapMarker key={place.name} lat={place.geometry.location.lat()} lng={place.geometry.location.lng()} placeName={place.name} endingPhrase={place.endingPhrase}/> )}
         </GoogleMapReact>
       </div>
     );

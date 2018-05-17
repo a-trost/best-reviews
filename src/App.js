@@ -49,7 +49,7 @@ class App extends Component {
         </header>
   <SearchBox handleSubmit={this.handleSubmit} handleChange={this.handleChange} searchRequest={this.state.searchRequest} />
   <CategoryButtons clickHandler={this.handleCategoryButtonClick} />
-  <SimpleMap centerLatLng={this.state.centerLatLng} />
+  <SimpleMap centerLatLng={this.state.centerLatLng} onGoogleApiLoaded={this.onGoogleApiLoaded} placeResults={this.state.placeResults}/>
       </div>
     );
   }
