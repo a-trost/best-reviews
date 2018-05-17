@@ -26,8 +26,6 @@ class App extends Component {
   handleSubmit(event) {
     event.preventDefault();
     this.getLatLng();
-    this.clearPlaces();
-    this.getPlaces();
   }
 
   handleChange(event) {
@@ -83,7 +81,8 @@ class App extends Component {
     return response.json();
   })
   .then((myJson) => {
-    return myJson.results[0].geometry.location;}).then((centerLatLng) => this.setState({centerLatLng}));
+    return myJson.results[0].geometry.location;}).then((centerLatLng) => this.setState({centerLatLng}))
+    .then(this.clearPlaces).then(this.getPlaces);
   }
 
 
