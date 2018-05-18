@@ -23,12 +23,18 @@ class MapMarker extends Component {
   infoWindow() {
       return(
         <div className="info-popup">
-        {this.props.placeName} is THE BEST, THE BEST, THE BEST, THE BEST {this.props.endingPhrase}
+      {this.props.bestReview.precedingPhrase}  {this.props.placeName} {this.props.bestReview.connectingPhrase} THE BEST, THE BEST, THE BEST, THE BEST {this.props.bestReview.endingPhrase}
         <p onClick={this.handleClose}>X</p>
     </div>
       )
   }
-
+  // desiredResult:"DSW sells THE BEST, THE BEST, THE BEST, THE BEST BLUE SHOES",
+  // searchTerms:["shoe store"],
+  // precedingPhrase: "",
+  // connectingPhrase:"sells",
+  // bestRepetitions:4,
+  // endingPhrase:"BLUE SHOES.",
+  // category:"shopping"
 
 
   render() {

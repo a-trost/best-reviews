@@ -25,7 +25,7 @@ class SimpleMap extends Component {
         >
       {this.props.placeResults &&
         this.props.placeResults.map((place)=> 
-        <MapMarker key={place.name} lat={place.geometry.location.lat()} lng={place.geometry.location.lng()} placeName={place.name} endingPhrase={place.endingPhrase}/> )}
+        <MapMarker key={place.name} lat={place.geometry.location.lat()} lng={place.geometry.location.lng()} placeName={place.name} bestReview={place.bestReview}/> )}
         </GoogleMapReact>
       </div>
     );

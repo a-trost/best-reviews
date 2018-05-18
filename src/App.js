@@ -3,6 +3,7 @@ import './App.css';
 import SimpleMap from './components/SimpleMap';
 import SearchBox from './components/SearchBox';
 import CategoryButtons from './components/CategoryButtons';
+import reviewlist from './reviewList';
 
 class App extends Component {
   constructor(props) {
@@ -42,30 +43,23 @@ class App extends Component {
     this.setState({placeResults})
   }
 
-  parseSearchResults(results, status, line) {
+  parseSearchResults(results, status, bestReview) {
     if (status === window.google.maps.places.PlacesServiceStatus.OK) {
         let prevPlaceResults = this.state.placeResults;
-        let place = results[0]
-        place.endingPhrase= line;
+        let place = results[0];
+        place.bestReview= bestReview;
         prevPlaceResults.push(place);
         this.setState({placeResults:prevPlaceResults})
     }
   }
 
   getPlaces() {
-    // This is a temporary array just for early development. Soon we'll get this from the list in reviewList.js
-    let placesArray = [
-      ['private investigator', 'GUMSHOE.'],
-      ['aquarium', 'FISH ZOO.'],
-      ['thai food', 'THAI FOOD.'],
-      ['train station', 'CHOO CHOOS.'],
-      ['laser tag', 'PEW PEW.'],
-    ];
-    placesArray.map((place) => this.state.service.textSearch({
+    let currentReviewList = reviewlist.filter((item) => item.category === this.state.searchCategory)
+    currentReviewList.map((place) => this.state.service.textSearch({
       location: this.state.centerLatLng,
-      radius: 50,
-      query: place[0]
-    }, (results, status) => this.parseSearchResults(results, status, place[1])))
+      radius: 500,
+      query: place.searchTerms[0]
+    }, (results, status) => this.parseSearchResults(results, status, place)))
   }
 
   onGoogleApiLoaded(map) {
