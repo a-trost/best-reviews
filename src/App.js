@@ -17,8 +17,8 @@ class App extends Component {
     this.state = {
       centerLatLng: {lat: 41.373346,
         lng: -71.9532523},
-        searchRequest:"",
-        searchCategory:"",
+        searchRequest:"06355",
+        searchCategory:"shopping",
         placeResults:[],
       };
   }
