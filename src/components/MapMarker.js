@@ -28,15 +28,7 @@ class MapMarker extends Component {
     </div>
       )
   }
-  // desiredResult:"DSW sells THE BEST, THE BEST, THE BEST, THE BEST BLUE SHOES",
-  // searchTerms:["shoe store"],
-  // precedingPhrase: "",
-  // connectingPhrase:"sells",
-  // bestRepetitions:4,
-  // endingPhrase:"BLUE SHOES.",
-  // category:"shopping"
-
-
+  
   render() {
   return (
   <div>
