@@ -7,7 +7,10 @@ class MapMarker extends Component {
   infoWindow() {
       return(
         <div className="info-popup">
-      {this.props.bestReview.precedingPhrase}  {this.props.placeName} {this.props.bestReview.connectingPhrase} THE BEST, THE BEST, THE BEST, THE BEST {this.props.bestReview.endingPhrase}
+      {this.props.bestReview.precedingPhrase}  {this.props.placeName} {this.props.bestReview.connectingPhrase} 
+      {" THE BEST,".repeat(this.props.bestReview.bestRepetitions).slice(0, -1)} 
+      {" "} 
+      {this.props.bestReview.endingPhrase}
       {this.starRating(5)}
         <p onClick={this.props.handleCloseFunction}>X</p>
     </div>
