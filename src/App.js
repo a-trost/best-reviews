@@ -87,7 +87,7 @@ class App extends Component {
           <h1 className="App-title">The Best Reviews</h1>
         </header>
         <SearchBox handleSubmit={this.handleSubmit} handleChange={this.handleChange} searchRequest={this.state.searchRequest} />
-        <CategoryButtons clickHandler={this.handleCategoryButtonClick} />
+        <CategoryButtons clickHandler={this.handleCategoryButtonClick} searchCategory={this.state.searchCategory}/>
         <Map centerLatLng={this.state.centerLatLng} onGoogleApiLoaded={this.onGoogleApiLoaded} placeResults={this.state.placeResults}/>
       </div>
     );

@@ -16,22 +16,22 @@ function RaisedButtons(props) {
   const { classes } = props;
   return (
     <div className="button-container">
-      <Button variant="raised" size="large" color="primary" className={classes.button} 
+      <Button variant="raised" size="large" color={props.searchCategory==="shopping"?"secondary":"primary"} className={classes.button} 
        onClick={() => props.clickHandler("shopping")}
        >
         Shopping
       </Button>
-      <Button variant="raised" size="large" color="primary" className={classes.button}
+      <Button variant="raised" size="large" color={props.searchCategory==="food"?"secondary":"primary"}  className={classes.button}
        onClick={() => props.clickHandler("food")}
        >
         Food
       </Button>
-      <Button variant="raised" size="large" color="primary" className={classes.button} 
+      <Button variant="raised" size="large" color={props.searchCategory==="funPlaces"?"secondary":"primary"}  className={classes.button} 
        onClick={() => props.clickHandler("funPlaces")}
        >
         Fun Places
       </Button>
-      <Button variant="raised" size="large" color="primary" className={classes.button} 
+      <Button variant="raised" size="large" color={props.searchCategory==="services"?"secondary":"primary"}  className={classes.button} 
        onClick={() => props.clickHandler("services")}
        >
         Services
