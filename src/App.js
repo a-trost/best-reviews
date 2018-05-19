@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import SimpleMap from './components/SimpleMap';
+import Map from './components/Map';
 import SearchBox from './components/SearchBox';
 import CategoryButtons from './components/CategoryButtons';
 import reviewlist from './reviewList';
@@ -89,7 +89,7 @@ class App extends Component {
         </header>
         <SearchBox handleSubmit={this.handleSubmit} handleChange={this.handleChange} searchRequest={this.state.searchRequest} />
         <CategoryButtons clickHandler={this.handleCategoryButtonClick} />
-        <SimpleMap centerLatLng={this.state.centerLatLng} onGoogleApiLoaded={this.onGoogleApiLoaded} placeResults={this.state.placeResults}/>
+        <Map centerLatLng={this.state.centerLatLng} onGoogleApiLoaded={this.onGoogleApiLoaded} placeResults={this.state.placeResults}/>
       </div>
     );
   }
