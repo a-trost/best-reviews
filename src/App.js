@@ -27,6 +27,7 @@ class App extends Component {
   handleSubmit(event) {
     event.preventDefault();
     this.getLatLng();
+
   }
 
   handleChange(event) {
@@ -34,7 +35,7 @@ class App extends Component {
   }
 
   handleCategoryButtonClick(searchCategory) {
-    this.setState({searchCategory});
+    this.setState({searchCategory}, this.getLatLng);
   }
 
   // Trying to use this to wipe the places clean when we change map locations
@@ -58,7 +59,7 @@ class App extends Component {
     currentReviewList.map((place) => this.state.service.textSearch({
       location: this.state.centerLatLng,
       radius: 500,
-      query: place.searchTerms[0]
+      query: place.searchTerms
     }, (results, status) => this.parseSearchResults(results, status, place)))
   }
 
@@ -76,7 +77,7 @@ class App extends Component {
   })
   .then((myJson) => {
     return myJson.results[0].geometry.location;}).then((centerLatLng) => this.setState({centerLatLng}))
-    .then(this.clearPlaces).then(this.getPlaces);
+    .then(this.clearPlaces).then(this.getPlaces).catch((err)=>console.error(err));
   }
 
 
@@ -86,9 +87,9 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">The Best Reviews</h1>
         </header>
-  <SearchBox handleSubmit={this.handleSubmit} handleChange={this.handleChange} searchRequest={this.state.searchRequest} />
-  <CategoryButtons clickHandler={this.handleCategoryButtonClick} />
-  <SimpleMap centerLatLng={this.state.centerLatLng} onGoogleApiLoaded={this.onGoogleApiLoaded} placeResults={this.state.placeResults}/>
+        <SearchBox handleSubmit={this.handleSubmit} handleChange={this.handleChange} searchRequest={this.state.searchRequest} />
+        <CategoryButtons clickHandler={this.handleCategoryButtonClick} />
+        <SimpleMap centerLatLng={this.state.centerLatLng} onGoogleApiLoaded={this.onGoogleApiLoaded} placeResults={this.state.placeResults}/>
       </div>
     );
   }
