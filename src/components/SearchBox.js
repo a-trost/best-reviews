@@ -17,8 +17,6 @@ class SearchBox extends React.Component {
           onChange={this.props.handleChange}
         />
       </form>
-
-
    )
   }
 }

@@ -38,7 +38,6 @@ class App extends Component {
     this.setState({searchCategory}, this.getLatLng);
   }
 
-  // Trying to use this to wipe the places clean when we change map locations
   clearPlaces() {
     let placeResults = []
     this.setState({placeResults})
