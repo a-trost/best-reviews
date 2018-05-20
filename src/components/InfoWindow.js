@@ -12,6 +12,7 @@ import dave2 from "../img/d-2.png";
 import dave3 from "../img/d-3.png";
 import dave4 from "../img/d-4.png";
 import dave5 from "../img/d-5.png";
+import closeImage from "../img/close.png";
 
 class InfoWindow extends Component {
   constructor(props) {
@@ -77,7 +78,7 @@ What people on yelp think.
   render() {
   return(
     <div className="info-popup">
-    <p onClick={this.props.handleCloseFunction}>X</p>
+    <img alt="Close Window" src={closeImage} onClick={this.props.handleCloseFunction} className="close" />
     {this.state.viewDavesReview ? this.davesReview() : this.yelpsReview()}
     
 </div>

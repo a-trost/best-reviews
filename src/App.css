@@ -31,7 +31,7 @@ body {
   margin:0;
   padding:0;
 }
-
+/* Info Popup */
 .info-popup {
   cursor: default;
   background-color: white;
@@ -47,6 +47,17 @@ body {
   font-size: 1.3em;
   z-index: 6;
 }
+
+.close {
+  width:15px;
+  padding:10px;  
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: all .2s ease-in-out;
+}
+
+.close:hover { transform: scale(1.3); }
 
 /* Arrow box generator: http://www.cssarrowplease.com/ */
 .info-popup:after, .info-popup:before {
