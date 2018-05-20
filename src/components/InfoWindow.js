@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import yelp from 'yelp-fusion';
 import yelp0 from "../img/y-0.png";
 import yelp1 from "../img/y-1.png";
 import yelp2 from "../img/y-2.png";
@@ -21,8 +22,17 @@ class InfoWindow extends Component {
   }
 
   componentDidMount(){
+    const client = yelp.client('Bearer N67xVI60a0S3LWk6TN5mZkBnaASjfwqPB-LGlfFChrOLt3p24Hs-Xj99IHDkT7dlxQzj8KscfFoMbx99GCiTr02dTahQp0UyOYhwsVOm7sUSjbhS7y8vjvM2C2KoWnYx');
     // Make Yelp API call
-    return
+    // https://api.yelp.com/v3/businesses/search
+    client.search({
+      term:'Four Barrel Coffee',
+      location: 'san francisco, ca'
+    }).then(response => {
+      console.log(response.jsonBody.businesses[0].name);
+    }).catch(e => {
+      console.log(e);
+    });
   }
 
   davesReview() {
