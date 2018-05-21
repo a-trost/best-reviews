@@ -14,7 +14,6 @@ import dave4 from "../img/d-4.png";
 import dave5 from "../img/d-5.png";
 import closeImage from "../img/close.png";
 
-
 class InfoWindow extends Component {
   constructor(props) {
     super(props);
@@ -25,10 +24,6 @@ class InfoWindow extends Component {
 
   componentDidMount(){
     // this.yelpAPIFetch();
-    const spans = document.getElementsByClassName("best");
-    for (let i=0; i < spans.length; i++) {
-      spans[i].className += " animate";
-    }
   }
 
   yelpAPIFetch() {
@@ -56,14 +51,11 @@ class InfoWindow extends Component {
 
   davesReview() {
     return(
-      <div className="review-container">
+      <div>
       <h3>Dave's Review</h3>
   {this.props.bestReview.precedingPhrase}  {this.props.placeName} 
   <span className="connecting-phrase"> {this.props.bestReview.connectingPhrase}</span> 
-  <span className="the-best">
   {this.createTheBestSpans()}
-  </span>
-  {console.log("this ran")}
   {this.props.bestReview.endingPhrase}
   {this.starRating(5, "dave")}
   <h3 onClick={()=>this.setState({viewDavesReview:false})}>What other people are saying</h3>
