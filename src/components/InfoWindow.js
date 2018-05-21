@@ -14,6 +14,7 @@ import dave4 from "../img/d-4.png";
 import dave5 from "../img/d-5.png";
 import closeImage from "../img/close.png";
 
+
 class InfoWindow extends Component {
   constructor(props) {
     super(props);
@@ -24,6 +25,10 @@ class InfoWindow extends Component {
 
   componentDidMount(){
     // this.yelpAPIFetch();
+    const spans = document.getElementsByClassName("best");
+    for (let i=0; i < spans.length; i++) {
+      spans[i].className += " animate";
+    }
   }
 
   yelpAPIFetch() {
@@ -38,13 +43,27 @@ class InfoWindow extends Component {
     });
   }
 
+  createTheBestSpans = (repetitions=4) =>{
+    let spans = []
+    for (let i = 1; i < repetitions; i++) {
+        spans.push(<span className="the"> THE </span>)
+        spans.push(<span className="best">BEST,</span>)
+    };
+    spans.push(<span className="the"> THE </span>)
+    spans.push(<span className="best">BEST </span>)    
+    return spans
+  }
+
   davesReview() {
     return(
-      <div>
+      <div className="review-container">
       <h3>Dave's Review</h3>
-  {this.props.bestReview.precedingPhrase}  {this.props.placeName} {this.props.bestReview.connectingPhrase} 
-  {" THE BEST,".repeat(this.props.bestReview.bestRepetitions).slice(0, -1)} 
-  {" "} 
+  {this.props.bestReview.precedingPhrase}  {this.props.placeName} 
+  <span className="connecting-phrase"> {this.props.bestReview.connectingPhrase}</span> 
+  <span className="the-best">
+  {this.createTheBestSpans()}
+  </span>
+  {console.log("this ran")}
   {this.props.bestReview.endingPhrase}
   {this.starRating(5, "dave")}
   <h3 onClick={()=>this.setState({viewDavesReview:false})}>What other people are saying</h3>
