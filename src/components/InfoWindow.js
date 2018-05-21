@@ -23,9 +23,11 @@ class InfoWindow extends Component {
   }
 
   componentDidMount(){
+    // this.yelpAPIFetch();
+  }
+
+  yelpAPIFetch() {
     const client = yelp.client('Bearer N67xVI60a0S3LWk6TN5mZkBnaASjfwqPB-LGlfFChrOLt3p24Hs-Xj99IHDkT7dlxQzj8KscfFoMbx99GCiTr02dTahQp0UyOYhwsVOm7sUSjbhS7y8vjvM2C2KoWnYx');
-    // Make Yelp API call
-    // https://api.yelp.com/v3/businesses/search
     client.search({
       term:'Four Barrel Coffee',
       location: 'san francisco, ca'
