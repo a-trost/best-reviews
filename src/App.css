@@ -2,12 +2,22 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, “Fira Sans”, “Droid Sans”, “Helvetica Neue”, Arial, sans-serif;
 }
 
+.App {
+  display:grid;
+  grid-template-columns: 25% 50% 25%;
+  grid-template-rows: 136px 80px 70px 80vh 60px;
+}
+
 .App-header {
   background-color: #fed330;
   height: 100px;
   padding: 18px;
   text-align: center;
   color: #111;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 1;
 }
 
 .App-title {
@@ -18,6 +28,17 @@ body {
 
 .button-container {
   text-align: center;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 3;
+}
+
+.map {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 4;
+  grid-row-end: 4;
 }
 
 .map-marker {
@@ -31,9 +52,16 @@ body {
   margin: 0;
   padding: 0;
 }
+/* Place List */
+.place-list {
+  background-color: lightgrey;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 4;
+  grid-row-end: 4;
+}
 
 /* Info Popup */
-
 .info-popup {
   cursor: default;
   background-color: white;
@@ -91,6 +119,24 @@ body {
   margin-left: -23px;
 }
 
+.search-box {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+
 .search-box-form {
   text-align: center;
+}
+
+.footer {
+  text-align: center;
+  color:#fed330;
+  background-color: rgb(41, 41, 41);
+  padding: 20px;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 5;
+  grid-row-end: 5;
 }

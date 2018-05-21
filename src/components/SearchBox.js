@@ -5,6 +5,7 @@ class SearchBox extends React.Component {
  
   render() {
    return(
+     <div className="search-box">
     <form noValidate onSubmit={this.props.handleSubmit} className="search-box-form">
     <TextField
           autoFocus
@@ -17,6 +18,7 @@ class SearchBox extends React.Component {
           onChange={this.props.handleChange}
         />
       </form>
+      </div>
    )
   }
 }

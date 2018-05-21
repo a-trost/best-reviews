@@ -31,7 +31,9 @@ class Map extends Component {
   render() {
     return (
       // Important! Always set the container height explicitly
-      <div style={{ height: '80vh', width: '100%' }}>
+      <div className="map" 
+      style={{ height: '80vh', width: '100%' }}
+      >
         <GoogleMapReact
           yesIWantToUseGoogleMapApiInternals={true}
           bootstrapURLKeys={{ key: "AIzaSyAAsyfic2Tbd2rLhlvIFR0DrUT1MTzzW9M&v=3.32", region:'US', libraries: ['places'] }}

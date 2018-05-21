@@ -88,7 +88,11 @@ class App extends Component {
         </header>
         <SearchBox handleSubmit={this.handleSubmit} handleChange={this.handleChange} searchRequest={this.state.searchRequest} />
         <CategoryButtons clickHandler={this.handleCategoryButtonClick} searchCategory={this.state.searchCategory}/>
+        <div className="place-list">
+        
+        </div>
         <Map centerLatLng={this.state.centerLatLng} onGoogleApiLoaded={this.onGoogleApiLoaded} placeResults={this.state.placeResults}/>
+      <footer className="footer">Copyright Alex Trost 2018</footer>
       </div>
     );
   }
