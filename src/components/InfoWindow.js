@@ -13,6 +13,7 @@ import dave3 from "../img/d-3.png";
 import dave4 from "../img/d-4.png";
 import dave5 from "../img/d-5.png";
 import closeImage from "../img/close.png";
+import Button from '@material-ui/core/Button';
 
 class InfoWindow extends Component {
   constructor(props) {
@@ -43,7 +44,7 @@ class InfoWindow extends Component {
     for (let i = 1; i < repetitions; i++) {
         spans.push(<span className="the"> THE </span>)
         spans.push(<span className="best">BEST,</span>)
-    };
+        };
     spans.push(<span className="the"> THE </span>)
     spans.push(<span className="best">BEST </span>)    
     return spans
@@ -52,13 +53,17 @@ class InfoWindow extends Component {
   davesReview() {
     return(
       <div>
-      <h3>Dave's Review</h3>
+      <h3>{this.props.placeName}</h3>
   {this.props.bestReview.precedingPhrase}  {this.props.placeName} 
   <span className="connecting-phrase"> {this.props.bestReview.connectingPhrase}</span> 
   {this.createTheBestSpans()}
   {this.props.bestReview.endingPhrase}
+  <br/>
   {this.starRating(5, "dave")}
-  <h3 onClick={()=>this.setState({viewDavesReview:false})}>What other people are saying</h3>
+  <br/>
+  <Button color="primary" variant="outlined" onClick={()=>this.setState({viewDavesReview:false})}>
+       More Reviews
+      </Button>
   </div>
     )
   }
@@ -68,8 +73,12 @@ class InfoWindow extends Component {
     <div>
     <h3>A Yelp Review</h3>
 What people on yelp think.
+<br/>
 {this.starRating(3, "yelp")}
-<h3 onClick={()=>this.setState({viewDavesReview:true})}>The Best Review...</h3>
+  <br/>
+  <Button color="primary" variant="outlined" onClick={()=>this.setState({viewDavesReview:true})}>
+       Dave's Review
+      </Button>
 </div>
     )
   }
