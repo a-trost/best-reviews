@@ -9,7 +9,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
+    this.handleSearchBoxChange = this.handleSearchBoxChange.bind(this);
     this.onGoogleApiLoaded = this.onGoogleApiLoaded.bind(this);
     this.parseSearchResults = this.parseSearchResults.bind(this);
     this.clearPlaces = this.clearPlaces.bind(this);
@@ -31,6 +31,8 @@ class App extends Component {
     event.preventDefault();
     this.getLatLng();
 
+  handleSearchBoxChange(event) {
+    this.setState({searchRequest: event.target.value});
   }
 
   handleChange(event) {
@@ -91,11 +93,14 @@ class App extends Component {
         </header>
         <SearchBox handleSubmit={this.handleSubmit} handleChange={this.handleChange} searchRequest={this.state.searchRequest} />
         <CategoryButtons clickHandler={this.handleCategoryButtonClick} searchCategory={this.state.searchCategory}/>
-        <div className="place-list">
-        
-        </div>
-        <Map centerLatLng={this.state.centerLatLng} onGoogleApiLoaded={this.onGoogleApiLoaded} placeResults={this.state.placeResults}/>
-      <footer className="footer">Copyright Alex Trost 2018</footer>
+        <Map centerLatLng={this.state.centerLatLng} 
+        onGoogleApiLoaded={this.onGoogleApiLoaded} 
+        placeResults={this.state.placeResults} 
+        handleMapMarkerClose={this.handleMapMarkerClose}
+        handleMapMarkerClick={this.handleMapMarkerClick}
+        selectedMarker={this.state.selectedMarker}
+        />
+      <footer className="footer">Copyright © Alex Trost 2018</footer>
       </div>
     );
   }

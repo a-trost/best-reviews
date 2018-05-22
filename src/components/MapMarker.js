@@ -11,10 +11,10 @@ function MapMarker(props) {
           bestReview={props.bestReview} 
           placeName={props.placeName}
           index={props.index}
-          handleCloseFunction={props.handleCloseFunction}
+          handleCloseFunction={props.handleMapMarkerClose}
         />
         }
-    <img src={mapMarker} alt={props.placeName} id={props.index} className="map-marker" onClick={props.handleClickFunction}/>
+    <img src={mapMarker} alt={props.placeName} id={props.index} className="map-marker" onClick={props.handleMapMarkerClick}/>
         </div>
     )
   }

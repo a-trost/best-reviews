@@ -15,7 +15,7 @@ class SearchBox extends React.Component {
           placeholder="Placeholder"
           margin="normal"
           value={this.props.searchRequest}
-          onChange={this.props.handleChange}
+          onChange={this.props.handleSearchBoxChange}
         />
       </form>
       </div>
