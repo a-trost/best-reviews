@@ -104,7 +104,7 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">The Best Reviews</h1>
         </header>
-        <SearchBox handleSubmit={this.handleSubmit} handleChange={this.handleChange} searchRequest={this.state.searchRequest} />
+        <SearchBox handleSubmit={this.handleSubmit} handleSearchBoxChange={this.handleSearchBoxChange} searchRequest={this.state.searchRequest} />
         <CategoryButtons clickHandler={this.handleCategoryButtonClick} searchCategory={this.state.searchCategory}/>
         <PlaceList 
           placeResults={this.state.placeResults} 
