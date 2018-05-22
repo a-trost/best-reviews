@@ -56,6 +56,15 @@ class App extends Component {
     this.setState({searchCategory}, this.getLatLng);
   }
 
+  handleListItemClick(place, index) {
+    let lat=place.geometry.location.lat() 
+    let lng=place.geometry.location.lng()
+    // Open that specific item's popup window
+    this.setState({centerLatLng: {lat: lat+.01,
+      lng: lng}}) 
+    this.setState({selectedMarker:index})
+  }
+
   clearPlaces() {
     let placeResults = []
     this.setState({placeResults})
