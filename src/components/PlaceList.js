@@ -23,6 +23,7 @@ function PlaceList(props) {
   let filteredPlaceResults = props.placeResults.filter((place) => place.name.toLowerCase().includes(props.listFilter.toLowerCase()) )
   return(
   <div className="place-list">
+  <div className="place-list-search-box">
   <Input
         placeholder="Search Places"
         fullWidth
@@ -32,6 +33,7 @@ function PlaceList(props) {
         value={props.listFilter}
         onChange={props.handleListFilterChange}        
       />
+      </div>
   <Divider/>
   <List component="nav">
       {filteredPlaceResults.map((place, index) => {

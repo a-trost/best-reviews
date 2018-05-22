@@ -54,11 +54,16 @@ body {
 }
 /* Place List */
 .place-list {
-  background-color: lightgrey;
+  background-color: #eee;
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 4;
   grid-row-end: 4;
+}
+
+.place-list-search-box {
+  padding: 10px 20px;
+  /* margin-bottom:5px; */
 }
 
 /* Info Popup */
