@@ -4,7 +4,9 @@ import Map from './components/Map';
 import SearchBox from './components/SearchBox';
 import CategoryButtons from './components/CategoryButtons';
 import PlaceList from './components/PlaceList';
+import IntroBox from './components/IntroBox';
 import reviewlist from './reviewList';
+
 
 class App extends Component {
   constructor(props) {
@@ -27,7 +29,8 @@ class App extends Component {
         searchCategory:"shopping",
         placeResults:[],
         selectedMarker: null,
-        listFilter:""
+        listFilter:"",
+        seenIntro:false
       };
   }
   handleMapMarkerClick(e) {
@@ -108,6 +111,9 @@ class App extends Component {
 
 
   render() {
+if (!this.state.seenIntro) {
+  return (<IntroBox />)
+} 
     return (
       <div className="App">
         <header className="App-header">
