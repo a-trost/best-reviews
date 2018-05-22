@@ -15,6 +15,9 @@ class App extends Component {
     this.clearPlaces = this.clearPlaces.bind(this);
     this.getPlaces = this.getPlaces.bind(this);
     this.handleCategoryButtonClick = this.handleCategoryButtonClick.bind(this);
+    this.handleMapMarkerClose = this.handleMapMarkerClose.bind(this);
+    this.handleMapMarkerClick = this.handleMapMarkerClick.bind(this);
+    this.handleListFilterChange = this.handleListFilterChange.bind(this);
     this.state = {
       centerLatLng: {lat: 41.373346,
         lng: -71.9532523},

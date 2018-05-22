@@ -3,23 +3,6 @@ import GoogleMapReact from 'google-map-react';
 import MapMarker from './MapMarker';
 
 class Map extends Component {
-  constructor(props) {
-    super(props);
-    this.handleClose = this.handleClose.bind(this);
-    this.handleClick = this.handleClick.bind(this);
-    this.state = {
-      selectedMarker: null,
-      };
-  }
-
-  handleClick(e) {
-    this.setState({selectedMarker:e.target.id})
-  }
-
-  handleClose(e) {
-    this.setState({selectedMarker:null})
-  }
-
   static defaultProps = {
     center: {
       lat: 41.373346,
