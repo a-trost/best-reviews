@@ -23,7 +23,13 @@ function IntroBox(props) {
 <p className="intro-text-small">I’m only giving</p>
 <p className="intro-text-large">THE BEST, THE BEST, THE BEST, THE BEST REVIEWS.</p>
           </Typist>
-
+          <p>I want the best reviews for 
+          <select name="category">
+            <option value="shopping">Shopping</option>
+            <option value="food">Food</option>
+            <option value="funPlaces">Fun Places</option>
+            <option value="services">Services</option>
+          </select> in <input type="text" name="firstname" value="New Haven, CT"/>.</p>
           {/* Then fire a function that shows the input box and the 
           category buttons
           It also sets 'seenIntro' to True so that the animation
