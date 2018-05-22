@@ -30,10 +30,19 @@ class App extends Component {
         listFilter:""
       };
   }
+  handleMapMarkerClick(e) {
+    console.log(e.target.id)
+    this.setState({selectedMarker:e.target.id})
+  }
+
+  handleMapMarkerClose(e) {
+    this.setState({selectedMarker:null})
+  }
 
   handleSubmit(event) {
     event.preventDefault();
     this.getLatLng();
+  }
 
   handleSearchBoxChange(event) {
     this.setState({searchRequest: event.target.value});
