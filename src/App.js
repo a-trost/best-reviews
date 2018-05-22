@@ -3,6 +3,7 @@ import './App.css';
 import Map from './components/Map';
 import SearchBox from './components/SearchBox';
 import CategoryButtons from './components/CategoryButtons';
+import PlaceList from './components/PlaceList';
 import reviewlist from './reviewList';
 
 class App extends Component {
@@ -14,6 +15,7 @@ class App extends Component {
     this.parseSearchResults = this.parseSearchResults.bind(this);
     this.clearPlaces = this.clearPlaces.bind(this);
     this.getPlaces = this.getPlaces.bind(this);
+    this.handleListItemClick = this.handleListItemClick.bind(this);
     this.handleCategoryButtonClick = this.handleCategoryButtonClick.bind(this);
     this.handleMapMarkerClose = this.handleMapMarkerClose.bind(this);
     this.handleMapMarkerClick = this.handleMapMarkerClick.bind(this);
@@ -24,6 +26,8 @@ class App extends Component {
         searchRequest:"06355",
         searchCategory:"shopping",
         placeResults:[],
+        selectedMarker: null,
+        listFilter:""
       };
   }
 
@@ -35,8 +39,8 @@ class App extends Component {
     this.setState({searchRequest: event.target.value});
   }
 
-  handleChange(event) {
-    this.setState({searchRequest: event.target.value});
+  handleListFilterChange(event) {
+    this.setState({listFilter: event.target.value})
   }
 
   handleCategoryButtonClick(searchCategory) {
@@ -93,6 +97,12 @@ class App extends Component {
         </header>
         <SearchBox handleSubmit={this.handleSubmit} handleChange={this.handleChange} searchRequest={this.state.searchRequest} />
         <CategoryButtons clickHandler={this.handleCategoryButtonClick} searchCategory={this.state.searchCategory}/>
+        <PlaceList 
+          placeResults={this.state.placeResults} 
+          handleListItemClick={this.handleListItemClick} 
+          listFilter={this.state.listFilter}
+          handleListFilterChange={this.handleListFilterChange}
+          />
         <Map centerLatLng={this.state.centerLatLng} 
         onGoogleApiLoaded={this.onGoogleApiLoaded} 
         placeResults={this.state.placeResults} 
