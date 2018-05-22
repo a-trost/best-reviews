@@ -4,7 +4,6 @@ body {
 }
 
 .intro-box {
-  font-size: 1.3em;
   font-family: 'Rock Salt', cursive;
   letter-spacing: 3px;
   text-align: center;
@@ -13,6 +12,14 @@ body {
 }
 .intro-box p{
 margin:0;
+}
+
+.intro-text-small {
+  font-size: 1.1em;
+}
+
+.intro-text-large {
+  font-size: 1.3em;
 }
 
 .App {
