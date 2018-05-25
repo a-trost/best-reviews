@@ -1,4 +1,6 @@
 import React from 'react';
+import { withStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
 
 function IntroBox(props) {
   return(
@@ -17,7 +19,9 @@ function IntroBox(props) {
           value={props.searchRequest}
           onChange={props.handleSearchBoxChange}
 />.</p>
-<Button />
+<Button variant="raised" color="secondary" size="large">
+        Go!
+      </Button>
 </form>
 </div>
 </div>
