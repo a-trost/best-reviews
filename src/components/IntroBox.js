@@ -1,5 +1,4 @@
 import React from 'react';
-import Typist from 'react-typist';
 
 function IntroBox(props) {
   return(
@@ -24,21 +23,20 @@ function IntroBox(props) {
 <p className="intro-text-large">THE BEST, THE BEST, THE BEST, THE BEST REVIEWS.</p>
           </Typist>
           <p>I want the best reviews for 
-          <select name="category">
-            <option value="shopping">Shopping</option>
-            <option value="food">Food</option>
-            <option value="funPlaces">Fun Places</option>
-            <option value="services">Services</option>
-          </select> in <input type="text" name="firstname" value="New Haven, CT"/>.</p>
-          {/* Then fire a function that shows the input box and the 
-          category buttons
-          It also sets 'seenIntro' to True so that the animation
-          doesn't play again.
-          We'll have a "Watch Intro" link so they can repeat it.
-          It'll save "seenIntro" to localStorage
-     */}
-          {/* <a href="#">skip</a> */}
-          {/* Align this Skip text at the bottom right of the window */}
+<select className="intro-form intro-form-select" name="category">
+  <option value="shopping">&nbsp;Shopping</option>
+  <option value="food">&nbsp;Food</option>
+  <option value="funPlaces">&nbsp;Fun Places</option>
+  <option value="services">&nbsp;Services</option>
+</select> in <input className="intro-form intro-form-input" type="text" name="location" 
+          autoFocus
+          placeholder="New Haven, CT"
+          value={props.searchRequest}
+          onChange={props.handleSearchBoxChange}
+/>.</p>
+<Button />
+</form>
+</div>
 </div>
   )
 }
