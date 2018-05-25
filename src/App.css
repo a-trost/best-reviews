@@ -3,7 +3,7 @@ body {
 }
 .intro-container {
   height: 100vh;  
-  background-color: #fed330;
+  background-color: #fed330;    
   font-family: 'Rock Salt', cursive;
   letter-spacing: 4px;  
   margin: auto;
@@ -68,11 +68,12 @@ body {
   height: 100px;
   padding: 18px;
   text-align: center;
-  color: #111;
+  color: #333;
   grid-column-start: 1;
   grid-column-end: 4;
   grid-row-start: 1;
   grid-row-end: 1;
+  box-shadow: 0 3px 7px #bbbbbb 
 }
 
 .App-title {
