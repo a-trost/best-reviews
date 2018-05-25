@@ -12,7 +12,7 @@ const styles = theme => ({
   },
 });
 
-function RaisedButtons(props) {
+function CategoryButtons(props) {
   const { classes } = props;
   return (
     <div className="button-container">
@@ -40,8 +40,8 @@ function RaisedButtons(props) {
   );
 }
 
-RaisedButtons.propTypes = {
+CategoryButtons.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(RaisedButtons);
+export default withStyles(styles)(CategoryButtons);
