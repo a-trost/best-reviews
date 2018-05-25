@@ -30,7 +30,6 @@ class App extends Component {
         placeResults:[],
         selectedMarker: null,
         listFilter:"",
-        seenIntro:false
       };
   }
   handleMapMarkerClick(e) {
@@ -111,9 +110,13 @@ class App extends Component {
 
 
   render() {
-if (!this.state.seenIntro) {
-  return (<IntroBox />)
-} 
+
+  // return (<IntroBox 
+  //   handleSubmit={this.handleSubmit} 
+  //   handleSearchBoxChange={this.handleSearchBoxChange} 
+  //   searchRequest={this.state.searchRequest}
+  // />)
+
     return (
       <div className="App">
         <header className="App-header">
