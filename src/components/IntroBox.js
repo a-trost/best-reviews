@@ -9,7 +9,7 @@ function IntroBox(props) {
 <select className="intro-form intro-form-select" name="category">
   <option value="shopping">&nbsp;Shopping</option>
   <option value="food">&nbsp;Food</option>
-  <option value="funPlaces">&nbsp;Fun Places</option>
+  <option value="funPlaces">&nbsp;Fun</option>
   <option value="services">&nbsp;Services</option>
 </select> in <input className="intro-form intro-form-input" type="text" name="location" 
           autoFocus
