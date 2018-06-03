@@ -9,20 +9,12 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleVideoToggle = this.handleVideoToggle.bind(this);
     this.handleSearchBoxChange = this.handleSearchBoxChange.bind(this);
     this.handleCategoryChange = this.handleCategoryChange.bind(this);
     this.state = {
-        showVideo:false,
         searchRequest:"06355",
         searchCategory:"shopping",
       };
-  }
-
-  handleVideoToggle() {
-    this.setState((prevState) => ({
-      showVideo:! prevState.showVideo
-    }))
   }
 
   handleSubmit(event) {
