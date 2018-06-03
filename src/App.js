@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import {Route, Link, Switch, withRouter} from 'react-router-dom';
 import './App.css';
-import Map from './components/Map';
-import SearchBox from './components/SearchBox';
-import CategoryButtons from './components/CategoryButtons';
-import PlaceList from './components/PlaceList';
+import SearchResultsPage from './components/SearchResultsPage';
 import IntroBox from './components/IntroBox';
-import reviewlist from './reviewList';
 
 
 class App extends Component {
@@ -124,27 +120,31 @@ class App extends Component {
   // />)
 
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">The Best Reviews</h1>
-        </header>
-        <SearchBox handleSubmit={this.handleSubmit} handleSearchBoxChange={this.handleSearchBoxChange} searchRequest={this.state.searchRequest} />
-        <CategoryButtons clickHandler={this.handleCategoryButtonClick} searchCategory={this.state.searchCategory}/>
-        <PlaceList 
-          placeResults={this.state.placeResults} 
-          handleListItemClick={this.handleListItemClick} 
-          listFilter={this.state.listFilter}
-          handleListFilterChange={this.handleListFilterChange}
-          />
-        <Map centerLatLng={this.state.centerLatLng} 
-        onGoogleApiLoaded={this.onGoogleApiLoaded} 
-        placeResults={this.state.placeResults} 
-        handleMapMarkerClose={this.handleMapMarkerClose}
-        handleMapMarkerClick={this.handleMapMarkerClick}
-        selectedMarker={this.state.selectedMarker}
+      <Switch>
+      <Route exact path='/' render={(props) => <IntroBox 
+       {...props}
+        handleSubmit={this.handleSubmit} 
+        handleCategoryChange={this.handleCategoryChange}
+        handleSearchBoxChange={this.handleSearchBoxChange} 
+        searchRequest={this.state.searchRequest}
+        searchCategory={this.state.searchCategory}
+        showVideo={this.state.showVideo}
+        handleVideoToggle={this.handleVideoToggle}
+        />} />
+      <Route
+        path='/search'
+        render={(props) => <SearchResultsPage 
+        {...props}
+        handleSubmit={this.handleSubmit} 
+        handleSearchBoxChange={this.handleSearchBoxChange}
+        searchRequest={this.state.searchRequest}
+        handleCategoryChange={this.handleCategoryChange}
+        searchCategory={this.state.searchCategory}
+        showVideo={this.state.showVideo}
+        handleVideoToggle={this.handleVideoToggle}
+        />}
         />
-      <footer className="footer">Copyright © Alex Trost 2018</footer>
-      </div>
+    </Switch>
     );
   }
 }
