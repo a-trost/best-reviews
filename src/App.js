@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Route, Link} from 'react-router-dom';
+import {Route, Link, Switch, withRouter} from 'react-router-dom';
 import './App.css';
 import Map from './components/Map';
 import SearchBox from './components/SearchBox';
@@ -44,7 +44,12 @@ class App extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.getLatLng();
+    if (this.props.location.pathname === "/search") {
+      console.log("We're at the search page!")
+    } else if (this.props.location.pathname === "/") {
+      this.props.history.push('/search');
+    }
+    // this.getLatLng();
   }
 
   handleSearchBoxChange(event) {
@@ -144,4 +149,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);
