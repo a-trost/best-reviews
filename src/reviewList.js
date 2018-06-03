@@ -10,7 +10,7 @@ Review object properties and examples:
   category - For grouping reviews ("shopping", "food", "funPlaces")
 */
 
-const reviewlist = [
+export default [
   {
     desiredResult:"Mystic Aquarium is THE BEST, THE BEST, THE BEST, THE BEST FISH ZOO.",
     searchTerms:"Aquarium",
@@ -112,7 +112,7 @@ const reviewlist = [
   }
 ]
 
-export default reviewlist;
+
 
 /* Empty Object:
   {

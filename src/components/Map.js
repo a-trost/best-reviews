@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import MapMarker from './MapMarker';
 
-class Map extends Component {
+export default class Map extends Component {
+
+  // TODO move these default props out of here 
   static defaultProps = {
     center: {
       lat: 41.373346,
@@ -19,8 +21,8 @@ class Map extends Component {
       >
         <GoogleMapReact
           yesIWantToUseGoogleMapApiInternals={true}
-          bootstrapURLKeys={{ key: "AIzaSyAAsyfic2Tbd2rLhlvIFR0DrUT1MTzzW9M&v=3.32", region:'US', libraries: ['places'] }}
-          onGoogleApiLoaded={(map) => this.props.onGoogleApiLoaded(map)}
+          bootstrapURLKeys={{ key: "AIzaSyBmdPMZL4hLi5jC35sw6ziLe97HIt1vVvA&v=3.32", region:'US', libraries: ['places'] }}
+          onGoogleApiLoaded={(map) => {this.props.onGoogleApiLoaded(map)}}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
           center={this.props.centerLatLng}
@@ -44,5 +46,3 @@ class Map extends Component {
     );
   }
 }
-
-export default Map;
