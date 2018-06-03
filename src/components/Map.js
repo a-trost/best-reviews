@@ -19,8 +19,8 @@ class Map extends Component {
       >
         <GoogleMapReact
           yesIWantToUseGoogleMapApiInternals={true}
-          bootstrapURLKeys={{ key: "AIzaSyAAsyfic2Tbd2rLhlvIFR0DrUT1MTzzW9M&v=3.32", region:'US', libraries: ['places'] }}
-          onGoogleApiLoaded={(map) => this.props.onGoogleApiLoaded(map)}
+          bootstrapURLKeys={{ key: "AIzaSyBmdPMZL4hLi5jC35sw6ziLe97HIt1vVvA&v=3.32", region:'US', libraries: ['places'] }}
+          onGoogleApiLoaded={(map) => {this.props.onGoogleApiLoaded(map)}}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
           center={this.props.centerLatLng}
