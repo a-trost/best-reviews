@@ -1,6 +1,11 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, “Fira Sans”, “Droid Sans”, “Helvetica Neue”, Arial, sans-serif;
 }
+
+.body-the-best{
+  font-weight: bold;
+}
+
 .intro-container {
   height: 100vh;  
   background-color: #fed330;    
