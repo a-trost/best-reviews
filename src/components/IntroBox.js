@@ -1,30 +1,28 @@
-import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
+import React from "react";
+import SearchForm from "./SearchForm";
+import VideoPlayer from './VideoPlayer'
 
-function IntroBox(props) {
-  return(
-    <div className="intro-container">
-    <div className="intro-box">
-    <form noValidate onSubmit={props.handleSubmit} >
-<p>I want the best places for 
-<select className="intro-form intro-form-select" name="category">
-  <option value="shopping">&nbsp;Shopping</option>
-  <option value="food">&nbsp;Food</option>
-  <option value="funPlaces">&nbsp;Fun</option>
-  <option value="services">&nbsp;Services</option>
-</select> in <input className="intro-form intro-form-input" type="text" name="location" 
-          autoFocus
-          placeholder="New Haven, CT"
-          value={props.searchRequest}
-          onChange={props.handleSearchBoxChange}
-/>.</p>
-<Button variant="raised" color="secondary" size="large">
-        Go!
-      </Button>
-</form>
-</div>
-</div>
-  )
+export default (props) => {
+  return (
+    <div>
+      <h1>This is Dave Grohl.</h1>
+      <p>
+        He's been in some of <span className="body-the-best">the best</span>{" "}
+        bands like Nirvana and the Foo Fighters. He's been to all of{" "}
+        <span className="body-the-best">the best</span> places around the
+        country.
+      </p>
+      <p>
+        Dave Grohl only reviews <span className="body-the-best">the best</span>{" "}
+        places, and now <span className="body-the-best">the best</span> reviews
+        are available to you.
+      </p>
+      <SearchForm
+        {...props}
+        handleSearchBoxChange={props.handleSearchBoxChange}
+      />
+          <VideoPlayer handleVideoToggle={props.handleVideoToggle}
+          showVideo={props.showVideo}/>
+    </div>
+  );
 }
-export default IntroBox;
