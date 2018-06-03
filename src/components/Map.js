@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import MapMarker from './MapMarker';
 
-class Map extends Component {
+export default class Map extends Component {
+
+  // TODO move these default props out of here 
   static defaultProps = {
     center: {
       lat: 41.373346,
@@ -44,5 +46,3 @@ class Map extends Component {
     );
   }
 }
-
-export default Map;
