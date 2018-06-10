@@ -67,7 +67,15 @@ class SearchResultsPage extends Component {
     <div className="App">
       <Header />
       <SearchForm {...this.props} />
+				<PlaceList
+					{...this.props}
+					handleListFilterChange={this.handleListFilterChange}
+					handleListItemClick={this.handleListItemClick}
+				/>
+				<Map
+					{...this.props}
 					onGoogleApiLoaded={this.props.onGoogleApiLoaded}
+					handleMapMarkerClick={this.handleMapMarkerClick}
 					handleMapMarkerClose={this.handleMapMarkerClose}
 				/>
 				<footer className="footer">
