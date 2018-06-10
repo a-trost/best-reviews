@@ -58,7 +58,7 @@ function PlaceList(props) {
               onClick={() => props.handleListItemClick(place, index)}
               key={index}
             >
-              <img width="40px" src={daveCircles[index]} />
+							<img width="40px" src={daveCircles[index]} alt="" />
               <ListItemText primary={place.name} />
             </ListItem>
           );
