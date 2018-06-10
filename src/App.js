@@ -16,29 +16,29 @@ import {
 } from "./actions/actions";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
+	constructor(props) {
+		super(props);
 		this.getPlaces = this.getPlaces.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleSearchBoxChange = this.handleSearchBoxChange.bind(this);
-    this.handleCategoryChange = this.handleCategoryChange.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleSearchBoxChange = this.handleSearchBoxChange.bind(this);
+		this.handleCategoryChange = this.handleCategoryChange.bind(this);
 		this.getLatLng = this.getLatLng.bind(this);
 		this.onGoogleApiLoaded = this.onGoogleApiLoaded.bind(this);
-  }
+	}
 
-  handleSubmit(event) {
-    event.preventDefault();
+	handleSubmit(event) {
+		event.preventDefault();
 		if (this.props.location.pathname === "/") {
 			this.props.history.push("/search");
-    }
+		}
 		this.getLatLng();
-  }
+	}
 
-  handleSearchBoxChange(event) {
+	handleSearchBoxChange(event) {
 		this.props.dispatch(setSearchLocation(event.target.value));
-  }
+	}
 
-  handleCategoryChange(event) {
+	handleCategoryChange(event) {
 		this.props.dispatch(setCategory(event.target.value));
 		this.getLatLng();
 	}
@@ -83,7 +83,7 @@ class App extends Component {
 				(results, status) => this.parseSearchResults(results, status, place)
 			)
 		);
-  }
+	}
 
 	parseSearchResults(results, status, bestReview) {
 		if (status === window.google.maps.places.PlacesServiceStatus.OK) {
@@ -91,42 +91,45 @@ class App extends Component {
 		}
 	}
 
-  render() {
-    return (
-      <Switch>
+	render() {
+		return (
+			<Switch>
 				<Route
 					exact
 					path="/"
 					render={props => (
 						<IntroBox
-       {...props}
-        handleSubmit={this.handleSubmit} 
-        handleCategoryChange={this.handleCategoryChange}
-        handleSearchBoxChange={this.handleSearchBoxChange} 
+							{...props}
+							handleSubmit={this.handleSubmit}
+							handleCategoryChange={this.handleCategoryChange}
+							handleSearchBoxChange={this.handleSearchBoxChange}
 							searchRequest={this.props.searchRequest}
 							category={this.props.category}
 							showVideo={this.props.showVideo}
-        handleVideoToggle={this.handleVideoToggle}
+							handleVideoToggle={this.handleVideoToggle}
 						/>
 					)}
 				/>
-      <Route
+				<Route
 					path="/search"
 					render={props => (
 						<SearchResultsPage
-        {...props}
-        handleSubmit={this.handleSubmit} 
-        handleSearchBoxChange={this.handleSearchBoxChange}
+							{...props}
+							handleSubmit={this.handleSubmit}
+							handleSearchBoxChange={this.handleSearchBoxChange}
 							searchRequest={this.props.searchRequest}
-        handleCategoryChange={this.handleCategoryChange}
+							handleCategoryChange={this.handleCategoryChange}
 							category={this.props.category}
 							showVideo={this.props.showVideo}
-        handleVideoToggle={this.handleVideoToggle}
-        />}
-      />
-    </Switch>
-    );
-  }
+							handleVideoToggle={this.handleVideoToggle}
+							getPlaces={this.getPlaces}
+							onGoogleApiLoaded={this.onGoogleApiLoaded}
+						/>
+					)}
+				/>
+			</Switch>
+		);
+	}
 }
 
 const mapStateToProps = state => {
