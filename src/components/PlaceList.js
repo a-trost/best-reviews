@@ -4,7 +4,6 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import Input from "@material-ui/core/Input";
 import Divider from "@material-ui/core/Divider";
-import Typography from "@material-ui/core/Typography";
 import ListItemText from "@material-ui/core/ListItemText";
 import daveCircle1 from "../img/dave-circle-1.png";
 import daveCircle2 from "../img/dave-circle-2.png";
