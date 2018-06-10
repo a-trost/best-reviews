@@ -17,62 +17,59 @@ import daveCircle9 from "../img/dave-circle-9.png";
 import daveCircle10 from "../img/dave-circle-10.png";
 
 const daveCircles = [
-  daveCircle1,
-  daveCircle2,
-  daveCircle3,
-  daveCircle4,
-  daveCircle5,
-  daveCircle6,
-  daveCircle7,
-  daveCircle8,
-  daveCircle9,
-  daveCircle10
+	daveCircle1,
+	daveCircle2,
+	daveCircle3,
+	daveCircle4,
+	daveCircle5,
+	daveCircle6,
+	daveCircle7,
+	daveCircle8,
+	daveCircle9,
+	daveCircle10
 ];
 
 function PlaceList(props) {
-  let filteredPlaceResults = props.placeResults
-    ? props.placeResults.filter(place =>
-        place.name.toLowerCase().includes(props.listFilter.toLowerCase())
-      )
-    : [];
-  return (
-    <div className="place-list">
-      <div className="place-list-search-box">
-        <Input
-          placeholder="Search Places"
-          fullWidth
-          inputProps={{
-            "aria-label": "Description"
-          }}
-          value={props.listFilter}
-          onChange={props.handleListFilterChange}
-        />
-      </div>
-      <Divider />
-      <List component="nav">
-        {filteredPlaceResults.map((place, index) => {
-          return (
-            <ListItem
-              button
-              onClick={() => props.handleListItemClick(place, index)}
-              key={index}
-            >
+	let filteredPlaceResults = props.placeResults
+		? props.placeResults.filter(place =>
+			place.name.toLowerCase().includes(props.listFilter.toLowerCase())
+		)
+		: [];
+	return (
+		<div className="place-list">
+			<div className="place-list-search-box">
+				<Input
+					placeholder="Search Places"
+					fullWidth
+					inputProps={{
+						"aria-label": "Description"
+					}}
+					value={props.listFilter}
+					onChange={props.handleListFilterChange}
+				/>
+			</div>
+			<Divider />
+			<List component="nav">
+				{filteredPlaceResults.map((place, index) => {
+					return (
+						<ListItem
+							button
+							onClick={() => props.handleListItemClick(place, index)}
+							key={index}
+						>
 							<img width="40px" src={daveCircles[index]} alt="" />
-              <ListItemText primary={place.name} />
-            </ListItem>
-          );
-        })}
-      </List>
-    </div>
-  );
+							<ListItemText primary={place.name} />
+						</ListItem>
+					);
+				})}
+			</List>
+		</div>
+	);
 }
 
 const mapStateToProps = (state) => { 
 	return { 
 		placeResults: state.placeResults, 
-    // category: state.category,
-    // searchLocation: state.searchLocation,
-    // centerLatLng: state.centerLatLng,
 		selectedMarker: state.selectedMarker,
 		listFilter: state.listFilter,
 	};
