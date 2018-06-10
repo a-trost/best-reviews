@@ -99,7 +99,7 @@ What people on yelp think.
   }
   render() {
   return(
-    <div className="info-popup">
+    <div className="info-popup" key={this.props.key}>
     <img alt="Close Window" src={closeImage} onClick={this.props.handleCloseFunction} className="close" />
     {this.state.viewDavesReview ? this.davesReview() : this.yelpsReview()}
     
