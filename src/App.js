@@ -28,12 +28,10 @@ class App extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    if (this.props.location.pathname === "/search") {
-      console.log("We're at the search page!")
-    } else if (this.props.location.pathname === "/") {
-      this.props.history.push('/search');
+		if (this.props.location.pathname === "/") {
+			this.props.history.push("/search");
     }
-    // this.getLatLng();
+		this.getLatLng();
   }
 
   handleSearchBoxChange(event) {
