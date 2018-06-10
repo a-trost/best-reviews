@@ -1,5 +1,5 @@
 import React from "react";
-import { withStyles } from "@material-ui/core/styles";
+import { connect } from "react-redux";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import Input from "@material-ui/core/Input";
@@ -67,4 +67,18 @@ function PlaceList(props) {
     </div>
   );
 }
-export default PlaceList;
+
+const mapStateToProps = (state) => { 
+	return { 
+		placeResults: state.placeResults, 
+    // category: state.category,
+    // searchLocation: state.searchLocation,
+    // centerLatLng: state.centerLatLng,
+		selectedMarker: state.selectedMarker,
+		listFilter: state.listFilter,
+	};
+};
+
+
+export default connect(mapStateToProps)(PlaceList);
+

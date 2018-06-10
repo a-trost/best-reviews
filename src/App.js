@@ -1,9 +1,13 @@
 /* Contains the state for the App and routes to the pages */
-import React, { Component } from 'react';
-import {Route, Link, Switch, withRouter} from 'react-router-dom';
-import './App.css';
-import SearchResultsPage from './components/SearchResultsPage';
-import IntroBox from './components/IntroBox';
+import { connect } from "react-redux";
+
+import {
+	addSearchResult,
+	setSearchLocation,
+	setCategory,
+	setCenterLatLng,
+	clearSearchResults
+} from "./actions/actions";
 
 class App extends Component {
   constructor(props) {
@@ -27,10 +31,14 @@ class App extends Component {
   }
 
   handleSearchBoxChange(event) {
-    this.setState({searchRequest: event.target.value});
+		this.props.dispatch(setSearchLocation(event.target.value));
   }
 
   handleCategoryChange(event) {
+		this.props.dispatch(setCategory(event.target.value));
+		this.getLatLng();
+	}
+
 	getLatLng() {
 		fetch(
 			`https://maps.googleapis.com/maps/api/geocode/json?address=${
@@ -87,9 +95,9 @@ class App extends Component {
         handleSubmit={this.handleSubmit} 
         handleCategoryChange={this.handleCategoryChange}
         handleSearchBoxChange={this.handleSearchBoxChange} 
-        searchRequest={this.state.searchRequest}
-        searchCategory={this.state.searchCategory}
-        showVideo={this.state.showVideo}
+							searchRequest={this.props.searchRequest}
+							category={this.props.category}
+							showVideo={this.props.showVideo}
         handleVideoToggle={this.handleVideoToggle}
         />} />
       <Route
@@ -98,10 +106,10 @@ class App extends Component {
         {...props}
         handleSubmit={this.handleSubmit} 
         handleSearchBoxChange={this.handleSearchBoxChange}
-        searchRequest={this.state.searchRequest}
+							searchRequest={this.props.searchRequest}
         handleCategoryChange={this.handleCategoryChange}
-        searchCategory={this.state.searchCategory}
-        showVideo={this.state.showVideo}
+							category={this.props.category}
+							showVideo={this.props.showVideo}
         handleVideoToggle={this.handleVideoToggle}
         />}
       />
@@ -110,4 +118,12 @@ class App extends Component {
   }
 }
 
-export default withRouter(App);
+const mapStateToProps = state => {
+	return {
+		searchLocation: state.searchLocation,
+		category: state.category,
+		centerLatLng: state.centerLatLng
+	};
+};
+
+export default withRouter(connect(mapStateToProps)(App));

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import MapMarker from './MapMarker';
+import { connect } from "react-redux";
 
-export default class Map extends Component {
+ class Map extends Component {
 
   // TODO move these default props out of here 
   static defaultProps = {
@@ -46,3 +47,16 @@ export default class Map extends Component {
     );
   }
 }
+}
+
+const mapStateToProps = (state) => { 
+	return { 
+		placeResults: state.placeResults, 
+    category: state.category,
+    searchLocation: state.searchLocation,
+    centerLatLng: state.centerLatLng,
+    selectedMarker: state.selectedMarker,
+	};
+};
+
+export default connect(mapStateToProps)(Map)
