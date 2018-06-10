@@ -1,3 +1,5 @@
 # The Best Reviews
 
-This is a work in progress.
+A Review site in the style of Dave Grohl circa 2005.
+
+Made in React.
