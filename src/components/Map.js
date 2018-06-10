@@ -3,8 +3,7 @@ import GoogleMapReact from "google-map-react";
 import MapMarker from "./MapMarker";
 import { connect } from "react-redux";
 
- class Map extends Component {
-  // TODO move these default props out of here 
+class Map extends Component {
   static defaultProps = {
     center: {
       lat: 41.373346,
@@ -30,19 +29,19 @@ import { connect } from "react-redux";
           defaultZoom={this.props.zoom}
           center={this.props.centerLatLng}
         >
-      {this.props.placeResults &&
+          {this.props.placeResults &&
             this.props.placeResults.map((place, index) => (
-        <MapMarker 
-        handleMapMarkerClose={this.props.handleMapMarkerClose}
-        handleMapMarkerClick={this.props.handleMapMarkerClick}
-        selectedMarker={this.props.selectedMarker}
-            key={index} 
-            index={index}
-            lat={place.geometry.location.lat()} 
-            lng={place.geometry.location.lng()} 
-            placeName={place.name} 
-        bestReview={place.bestReview}
-            /> 
+              <MapMarker
+                handleMapMarkerClose={this.props.handleMapMarkerClose}
+                handleMapMarkerClick={this.props.handleMapMarkerClick}
+                selectedMarker={this.props.selectedMarker}
+                key={index}
+                index={index}
+                lat={place.geometry.location.lat()}
+                lng={place.geometry.location.lng()}
+                placeName={place.name}
+                bestReview={place.bestReview}
+              />
             ))}
         </GoogleMapReact>
       </div>
@@ -51,13 +50,13 @@ import { connect } from "react-redux";
 }
 
 const mapStateToProps = state => {
-	return { 
-		placeResults: state.placeResults, 
+  return {
+    placeResults: state.placeResults,
     category: state.category,
     searchLocation: state.searchLocation,
     centerLatLng: state.centerLatLng,
     selectedMarker: state.selectedMarker
-	};
+  };
 };
 
 export default connect(mapStateToProps)(Map);
