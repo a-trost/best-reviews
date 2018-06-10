@@ -56,7 +56,7 @@ class SearchResultsPage extends Component {
 			.then(myJson => {
 				return myJson.results[0].geometry.location;
 			})
-			.then(({lat, lng}) => this.props.dispatch(setCenterLatLng(lat, lng)))
+			.then(({ lat, lng }) => this.props.dispatch(setCenterLatLng(lat, lng)))
 			.then(this.clearPlaces)
 			.then(this.getPlaces)
 			.catch(err => console.error(err));

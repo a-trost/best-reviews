@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
-import GoogleMapReact from 'google-map-react';
-import MapMarker from './MapMarker';
+import React, { Component } from "react";
+import GoogleMapReact from "google-map-react";
+import MapMarker from "./MapMarker";
 import { connect } from "react-redux";
 
  class Map extends Component {
-
   // TODO move these default props out of here 
   static defaultProps = {
     center: {
@@ -16,20 +15,23 @@ import { connect } from "react-redux";
 
   render() {
     return (
-      // Important! Always set the container height explicitly
-      <div className="map" 
-      style={{ height: '80vh', width: '100%' }}
-      >
+      <div className="map" style={{ height: "80vh", width: "100%" }}>
         <GoogleMapReact
           yesIWantToUseGoogleMapApiInternals={true}
-          bootstrapURLKeys={{ key: "AIzaSyBmdPMZL4hLi5jC35sw6ziLe97HIt1vVvA&v=3.32", region:'US', libraries: ['places'] }}
-          onGoogleApiLoaded={(map) => {this.props.onGoogleApiLoaded(map)}}
+          bootstrapURLKeys={{
+            key: "AIzaSyCaeLhqay8EKp4I64XZcOrSqfVmv6VCZck",
+            region: "US",
+            libraries: ["places"]
+          }}
+          onGoogleApiLoaded={map => {
+            this.props.onGoogleApiLoaded(map);
+          }}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
           center={this.props.centerLatLng}
         >
       {this.props.placeResults &&
-        this.props.placeResults.map((place, index)=> 
+            this.props.placeResults.map((place, index) => (
         <MapMarker 
         handleMapMarkerClose={this.props.handleMapMarkerClose}
         handleMapMarkerClick={this.props.handleMapMarkerClick}
@@ -39,24 +41,23 @@ import { connect } from "react-redux";
             lat={place.geometry.location.lat()} 
             lng={place.geometry.location.lng()} 
             placeName={place.name} 
-            bestReview={place.bestReview}/> 
-          )
-      }
+        bestReview={place.bestReview}
+            /> 
+            ))}
         </GoogleMapReact>
       </div>
     );
   }
 }
-}
 
-const mapStateToProps = (state) => { 
+const mapStateToProps = state => {
 	return { 
 		placeResults: state.placeResults, 
     category: state.category,
     searchLocation: state.searchLocation,
     centerLatLng: state.centerLatLng,
-    selectedMarker: state.selectedMarker,
+    selectedMarker: state.selectedMarker
 	};
 };
 
-export default connect(mapStateToProps)(Map)
+export default connect(mapStateToProps)(Map);

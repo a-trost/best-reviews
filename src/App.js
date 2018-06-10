@@ -1,4 +1,10 @@
 /* Contains the state for the App and routes to the pages */
+import React, { Component } from "react";
+import { Route, Switch, withRouter } from "react-router-dom";
+import "./App.css";
+import SearchResultsPage from "./components/SearchResultsPage";
+import IntroBox from "./components/IntroBox";
+import reviewlist from "./reviewList";
 import { connect } from "react-redux";
 
 import {
@@ -90,7 +96,11 @@ class App extends Component {
   render() {
     return (
       <Switch>
-      <Route exact path='/' render={(props) => <IntroBox 
+				<Route
+					exact
+					path="/"
+					render={props => (
+						<IntroBox
        {...props}
         handleSubmit={this.handleSubmit} 
         handleCategoryChange={this.handleCategoryChange}
@@ -99,10 +109,13 @@ class App extends Component {
 							category={this.props.category}
 							showVideo={this.props.showVideo}
         handleVideoToggle={this.handleVideoToggle}
-        />} />
+						/>
+					)}
+				/>
       <Route
-        path='/search'
-        render={(props) => <SearchResultsPage 
+					path="/search"
+					render={props => (
+						<SearchResultsPage
         {...props}
         handleSubmit={this.handleSubmit} 
         handleSearchBoxChange={this.handleSearchBoxChange}
