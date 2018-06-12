@@ -25,6 +25,12 @@
     "build-storybook": "build-storybook -s public"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^3.4.7",
+    "@storybook/addon-links": "^3.4.7",
+    "@storybook/addons": "^3.4.7",
+    "@storybook/react": "^3.4.7",
+    "babel-core": "^6.26.3",
+    "babel-runtime": "^6.26.0",
     "eslint": "^4.19.1",
     "eslint-config-google": "^0.9.1",
     "eslint-config-standard": "^11.0.0",
@@ -32,12 +38,6 @@
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-react": "^7.9.1",
-    "eslint-plugin-standard": "^3.1.0",
-    "@storybook/react": "^3.4.7",
-    "@storybook/addon-actions": "^3.4.7",
-    "@storybook/addon-links": "^3.4.7",
-    "@storybook/addons": "^3.4.7",
-    "babel-core": "^6.26.3",
-    "babel-runtime": "^6.26.0"
+    "eslint-plugin-standard": "^3.1.0"
   }
 }
