@@ -1,10 +1,4 @@
 import React, { Component } from "react";
-import yelp0 from "../img/y-0.png";
-import yelp1 from "../img/y-1.png";
-import yelp2 from "../img/y-2.png";
-import yelp3 from "../img/y-3.png";
-import yelp4 from "../img/y-4.png";
-import yelp5 from "../img/y-5.png";
 import dave0 from "../img/d-0.png";
 import dave1 from "../img/d-1.png";
 import dave2 from "../img/d-2.png";
