@@ -5,7 +5,7 @@ import InfoWindow from "./InfoWindow";
 function MapMarker(props) {
 	return (
 		<div>
-			{props.selectedMarker == props.index && (
+			{props.selectedMarker === props.index && (
 				<InfoWindow
 					bestReview={props.bestReview}
 					placeName={props.placeName}
