@@ -6,7 +6,7 @@ import {connect} from "react-redux";
 class SearchForm extends Component {
 	render() {
 		return (
-			<div>
+			<div className="search-container">
 				<form
 					noValidate
 					onSubmit={this.props.handleSubmit}
