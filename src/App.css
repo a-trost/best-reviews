@@ -157,6 +157,9 @@ body {
   transform: scale(1.3);
 }
 
+.info-window-icon {
+  width: 28px;
+}
 /* Arrow box generator: http://www.cssarrowplease.com/ */
 
 .info-popup:after,

@@ -12,7 +12,9 @@ import dave3 from "../img/d-3.png";
 import dave4 from "../img/d-4.png";
 import dave5 from "../img/d-5.png";
 import closeImage from "../img/close.png";
-import Button from "@material-ui/core/Button";
+import daveIcon from "../img/daveIcon.svg";
+import peopleIcon from "../img/peopleIcon.svg";
+import shareIcon from "../img/shareIcon.svg";
 
 class InfoWindow extends Component {
   constructor(props) {
