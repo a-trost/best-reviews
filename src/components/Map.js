@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import GoogleMapReact from "google-map-react";
 import MapMarker from "./MapMarker";
 import { connect } from "react-redux";
+import mapStyles from "../mapStyles.json";
 
 class Map extends Component {
   static defaultProps = {
@@ -12,10 +13,19 @@ class Map extends Component {
     zoom: 12
   };
 
+  createMapOptions = maps => ({
+    panControl: false,
+    mapTypeControl: false,
+    scrollwheel: false,
+    styles: mapStyles,
+    clickableIcons: false
+  });
+
   render() {
     return (
       <div className="map" style={{ height: "80vh", width: "100%" }}>
         <GoogleMapReact
+          options={this.createMapOptions}
           yesIWantToUseGoogleMapApiInternals={true}
           bootstrapURLKeys={{
             key: "AIzaSyCaeLhqay8EKp4I64XZcOrSqfVmv6VCZck",
