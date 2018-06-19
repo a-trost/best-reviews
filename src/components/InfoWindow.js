@@ -77,9 +77,6 @@ class InfoWindow extends Component {
     if (brand === "dave") {
       const daveImages = [dave0, dave1, dave2, dave3, dave4, dave5];
       starImage = daveImages[starCount];
-    } else {
-      const yelpImages = [yelp0, yelp1, yelp2, yelp3, yelp4, yelp5];
-      starImage = yelpImages[starCount];
     }
     return (
       <img src={starImage} alt={`Rating: ${starCount} Stars`} width="150px" />
