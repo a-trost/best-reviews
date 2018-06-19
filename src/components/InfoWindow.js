@@ -15,9 +15,33 @@ class InfoWindow extends Component {
     super(props);
     this.state = {
 			viewInfoWindow: 1,
+			foursquareReviews: []
     };
   }
 
+	searchURL() {
+		return `https://api.foursquare.com/v2/venues/search?client_id=${process.env.REACT_APP_FOURSQUARE_CLIENT_ID}&client_secret=${process.env.REACT_APP_FOURSQUARE_CLIENT_SECRET}&ll=${
+			this.props.lat
+		},${this.props.lng}&query=${this.props.placeName}&v=20180610`;
+	}
+
+	venueURL(venue_id) {
+		return `https://api.foursquare.com/v2/venues/${venue_id}/tips?client_id=${process.env.REACT_APP_FOURSQUARE_CLIENT_ID}&client_secret=${process.env.REACT_APP_FOURSQUARE_CLIENT_SECRET}&v=20180610`;
+	}
+
+	componentDidMount() {
+		console.log()
+		fetch(this.searchURL())
+			.then(response => response.json())
+			.then(json => {
+				json.response.venues[0] &&
+          fetch(this.venueURL(json.response.venues[0].id))
+          	.then(response => response.json())
+          	.then(json =>
+          		this.setState({ foursquareReviews: json.response.tips.items })
+          	);
+			});
+	}
 
 	createTheBestSpans(repetitions = 4) {
     let spans = [];
@@ -41,14 +65,39 @@ class InfoWindow extends Component {
         {this.props.bestReview.endingPhrase}
         <br />
         {this.starRating(5, "dave")}
-        <br />
-        <Button
-          color="primary"
-          variant="outlined"
-          onClick={() => this.setState({ viewDavesReview: false })}
-        >
-          More Reviews
-        </Button>
+
+	renderReviews() {
+		if (this.state.foursquareReviews.length) {
+			let reviews = [];
+			this.state.foursquareReviews.slice(0, 4).map((review, index) => {
+				reviews.push(
+					<React.Fragment key={index}>
+						<p>{index+1}. {review.text}</p>
+						<p>
+							{review.user.firstName} {review.user.lastName}
+						</p>
+					</React.Fragment>
+				);
+			});
+			reviews.push(
+				<p key={"foursquare"}>Tips by FourSquare</p>
+			);
+			return reviews;
+		} else {
+			return (
+				<p>
+          Huh. No one on Foursquare has reviewed this place. Let's call this a
+          Grohl exclusive.
+				</p>
+			);
+		}
+	}
+
+	foursquareWindow() {
+		return (
+			<div>
+				<h3>Tips from less cool people</h3>
+				{this.renderReviews()}
       </div>
     );
   }
