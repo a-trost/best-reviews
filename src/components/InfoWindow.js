@@ -11,13 +11,13 @@ import peopleIcon from "../img/peopleIcon.svg";
 import shareIcon from "../img/shareIcon.svg";
 import Badge from "@material-ui/core/Badge";
 class InfoWindow extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+	constructor(props) {
+		super(props);
+		this.state = {
 			viewInfoWindow: 1,
 			foursquareReviews: []
-    };
-  }
+		};
+	}
 
 	searchURL() {
 		return `https://api.foursquare.com/v2/venues/search?client_id=${process.env.REACT_APP_FOURSQUARE_CLIENT_ID}&client_secret=${process.env.REACT_APP_FOURSQUARE_CLIENT_SECRET}&ll=${
@@ -44,27 +44,29 @@ class InfoWindow extends Component {
 	}
 
 	createTheBestSpans(repetitions = 4) {
-    let spans = [];
-    for (let i = 1; i < repetitions; i++) {
+		let spans = [];
+		for (let i = 1; i < repetitions; i++) {
 			spans.push(<span key={i}> THE BEST,</span>);
-    }
+		}
 		spans.push(<span key={5}> THE BEST </span>);
-    return spans;
+		return spans;
 	}
 
-  davesReview() {
-    return (
-      <div>
-        <h3>{this.props.placeName}</h3>
-        {this.props.bestReview.precedingPhrase} {this.props.placeName}
-        <span className="connecting-phrase">
-          {" "}
-          {this.props.bestReview.connectingPhrase}
-        </span>
-        {this.createTheBestSpans()}
-        {this.props.bestReview.endingPhrase}
-        <br />
-        {this.starRating(5, "dave")}
+	daveWindow() {
+		return (
+			<div className="review-container">
+				{this.props.bestReview.precedingPhrase} {this.props.placeName}
+				<span className="connecting-phrase">
+					{" "}
+					{this.props.bestReview.connectingPhrase}
+				</span>
+				{this.createTheBestSpans()}
+				{this.props.bestReview.endingPhrase}
+				<br />
+				{this.starRating(5, "dave")}
+			</div>
+		);
+	}
 
 	renderReviews() {
 		if (this.state.foursquareReviews.length) {
@@ -98,20 +100,20 @@ class InfoWindow extends Component {
 			<div>
 				<h3>Tips from less cool people</h3>
 				{this.renderReviews()}
-      </div>
-    );
-  }
+			</div>
+		);
+	}
 
 	shareWindow() {
-    return (
-      <div>
+		return (
+			<div>
 				<h3>Share Window</h3>
         Share with friends.
-        <br />
+				<br />
         Facebook, Twitter, Other stuff.
-      </div>
-    );
-  }
+			</div>
+		);
+	}
 
 	windowSwitch() {
 		const selectedWindow = this.state.viewInfoWindow;
@@ -120,29 +122,29 @@ class InfoWindow extends Component {
 		if (selectedWindow === 3) return this.shareWindow();
 	}
 
-  starRating(rating, brand) {
-    const starCount = Math.round(rating);
-    let starImage = {};
-    if (brand === "dave") {
-      const daveImages = [dave0, dave1, dave2, dave3, dave4, dave5];
-      starImage = daveImages[starCount];
-    }
-    return (
-      <img src={starImage} alt={`Rating: ${starCount} Stars`} width="150px" />
-    );
-  }
+	starRating(rating, brand) {
+		const starCount = Math.round(rating);
+		let starImage = {};
+		if (brand === "dave") {
+			const daveImages = [dave0, dave1, dave2, dave3, dave4, dave5];
+			starImage = daveImages[starCount];
+		} 
+		return (
+			<img src={starImage} alt={`Rating: ${starCount} Stars`} width="150px" />
+		);
+	}
 
-  render() {
+	render() {
 		const viewInfoWindow = this.state.viewInfoWindow;
-    return (
+		return (
 			<div className="info-popup-container" key={this.props.index}>
 				<div className="info-popup">
-        <img
-          alt="Close Window"
-          src={closeImage}
-          onClick={this.props.handleCloseFunction}
-          className="close"
-        />
+					<img
+						alt="Close Window"
+						src={closeImage}
+						onClick={this.props.handleCloseFunction}
+						className="close"
+					/>
 
 					{this.windowSwitch()}
 				</div>
@@ -177,9 +179,9 @@ class InfoWindow extends Component {
 				>
 					<img src={shareIcon} alt="Share" className="info-window-icon"  />
 				</div>
-      </div>
-    );
-  }
+			</div>
+		);
+	}
 }
 
 export default InfoWindow;
