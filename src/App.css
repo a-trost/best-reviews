@@ -232,8 +232,8 @@ body {
 
 .info-popup:after,
 .info-popup:before {
-  top: 100%;
-  left: 50%;
+  top: 99%;
+  left: 45%;
   border: solid transparent;
   content: " ";
   height: 0;
