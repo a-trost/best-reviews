@@ -131,29 +131,47 @@ body {
 }
 
 /* Info Popup */
-.info-popup {
-  cursor: default;
-  background-color: white;
-  border: 2px solid #AAA;
-  width: 300px;
-  height: 220px;
-  border-radius: 7px;
-  padding: 7px;
+
+.info-popup-container {
+  width: 360px;
+  height: 235px;
+  display: grid;
+  grid-template-columns: 310px 40px;
+  grid-template-rows: 30px 50px 50px 50px 40px;
   position: absolute;
   top: -320px;
   left: -160px;
   transform-origin: 20px 60px;
-  font-size: 1.3em;
   z-index: 6;
+  cursor: default;
 }
 
 .close {
+  cursor: pointer;
   width: 15px;
   padding: 10px;
   position: absolute;
   top: 0;
-  right: 0;
+  right: 55px;
   transition: all .2s ease-in-out;
+}
+
+.info-popup {
+  background-color: white;
+  border: 2px solid #AAA;
+  border-radius: 7px;
+  padding: 23px 13px;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 9;
+  overflow-y: auto;
+  font-size: 1.3em;
+}
+
+.review-container {
+  font-size: 1.6em;
+  font-weight: bold;
 }
 
 .close:hover {
