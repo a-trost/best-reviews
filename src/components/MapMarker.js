@@ -11,6 +11,8 @@ function MapMarker(props) {
 					placeName={props.placeName}
 					index={props.index}
 					handleCloseFunction={props.handleMapMarkerClose}
+					lat={props.lat}
+					lng={props.lng}
 				/>
 			)}
 			<img
