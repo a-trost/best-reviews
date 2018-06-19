@@ -18,16 +18,15 @@ class InfoWindow extends Component {
     };
   }
 
-  createTheBestSpans = (repetitions = 4) => {
+
+	createTheBestSpans(repetitions = 4) {
     let spans = [];
     for (let i = 1; i < repetitions; i++) {
-      spans.push(<span className="the"> THE </span>);
-      spans.push(<span className="best">BEST,</span>);
+			spans.push(<span key={i}> THE BEST,</span>);
     }
-    spans.push(<span className="the"> THE </span>);
-    spans.push(<span className="best">BEST </span>);
+		spans.push(<span key={5}> THE BEST </span>);
     return spans;
-  };
+	}
 
   davesReview() {
     return (
