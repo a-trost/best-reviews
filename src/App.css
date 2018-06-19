@@ -113,13 +113,16 @@ body {
   margin: 0;
   padding: 0;
 }
+
 /* Place List */
+
 .place-list {
   background-color: #eee;
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 4;
   grid-row-end: 4;
+  overflow-y: scroll;
 }
 
 .place-list-search-box {
