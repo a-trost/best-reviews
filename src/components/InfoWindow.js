@@ -53,21 +53,13 @@ class InfoWindow extends Component {
     );
   }
 
-  yelpsReview() {
+	shareWindow() {
     return (
       <div>
-        <h3>A Yelp Review</h3>
-        What people on yelp think.
+				<h3>Share Window</h3>
+        Share with friends.
         <br />
-        {this.starRating(3, "yelp")}
-        <br />
-        <Button
-          color="primary"
-          variant="outlined"
-          onClick={() => this.setState({ viewDavesReview: true })}
-        >
-          Dave's Review
-        </Button>
+        Facebook, Twitter, Other stuff.
       </div>
     );
   }
