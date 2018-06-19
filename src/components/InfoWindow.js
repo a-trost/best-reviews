@@ -14,7 +14,7 @@ class InfoWindow extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      viewDavesReview: true
+			viewInfoWindow: 1,
     };
   }
 
@@ -64,6 +64,13 @@ class InfoWindow extends Component {
     );
   }
 
+	windowSwitch() {
+		const selectedWindow = this.state.viewInfoWindow;
+		if (selectedWindow === 1) return this.daveWindow();
+		if (selectedWindow === 2) return this.foursquareWindow();
+		if (selectedWindow === 3) return this.shareWindow();
+	}
+
   starRating(rating, brand) {
     const starCount = Math.round(rating);
     let starImage = {};
@@ -87,7 +94,7 @@ class InfoWindow extends Component {
           onClick={this.props.handleCloseFunction}
           className="close"
         />
-        {this.state.viewDavesReview ? this.davesReview() : this.yelpsReview()}
+					{this.windowSwitch()}
 
       </div>
     );
