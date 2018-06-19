@@ -68,7 +68,7 @@ body {
   grid-template-rows: 136px 80px 70px 80vh 60px;
 }
 
-.App-header {
+.header {
   background-color: #fed330;
   height: 100px;
   padding: 18px;
@@ -81,7 +81,7 @@ body {
   box-shadow: 0 3px 7px #bbbbbb 
 }
 
-.App-title {
+.header-title {
   font-size: 2em;
   font-family: 'Rock Salt', cursive;
   letter-spacing: 3px;
