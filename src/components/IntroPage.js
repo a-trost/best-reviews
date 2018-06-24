@@ -2,7 +2,7 @@ import React from "react";
 import SearchForm from "./SearchForm";
 import VideoPlayer from "./VideoPlayer";
 import davePortrait from "../img/DavePortrait.png";
-import "./IntroBox.css";
+import "./IntroPage.css";
 
 export default props => {
 	return (

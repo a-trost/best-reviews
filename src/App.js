@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { Route, Switch, withRouter } from "react-router-dom";
 import "./App.css";
 import SearchResultsPage from "./components/SearchResultsPage";
-import IntroBox from "./components/IntroBox";
+import IntroPage from "./components/IntroPage";
 import reviewlist from "./reviewList";
 import { connect } from "react-redux";
 
@@ -98,7 +98,7 @@ class App extends Component {
 					exact
 					path="/"
 					render={props => (
-						<IntroBox
+						<IntroPage
 							{...props}
 							handleSubmit={this.handleSubmit}
 							handleCategoryChange={this.handleCategoryChange}
