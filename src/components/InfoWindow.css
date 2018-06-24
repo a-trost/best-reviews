@@ -1,0 +1,25 @@
+
+hr {
+	border: 0;
+	height: 1px;
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0));
+}
+
+.review-text {
+font-size:1rem;
+}
+.review-author {
+	font-size: .8rem;
+	color: gray;
+	padding-left: 30px;
+}
+
+.foursquare-credit {
+	font-size: .8rem;
+	color: gray;
+	font-weight: 700;
+}
+
+a:link {
+	text-decoration: none;
+}

@@ -10,6 +10,7 @@ import daveIcon from "../img/daveIcon.svg";
 import peopleIcon from "../img/peopleIcon.svg";
 import shareIcon from "../img/shareIcon.svg";
 import Badge from "@material-ui/core/Badge";
+import "./InfoWindow.css";
 class InfoWindow extends Component {
 	constructor(props) {
 		super(props);
@@ -30,7 +31,6 @@ class InfoWindow extends Component {
 	}
 
 	componentDidMount() {
-		console.log()
 		fetch(this.searchURL())
 			.then(response => response.json())
 			.then(json => {
@@ -74,20 +74,21 @@ class InfoWindow extends Component {
 			this.state.foursquareReviews.slice(0, 4).map((review, index) => {
 				reviews.push(
 					<React.Fragment key={index}>
-						<p>{index+1}. {review.text}</p>
-						<p>
-							{review.user.firstName} {review.user.lastName}
+						<p  className="review-text">{index+1}. "{review.text}"</p>
+						<p className="review-author">
+							- {review.user.firstName} {review.user.lastName[0]}.
 						</p>
+						<hr/>
 					</React.Fragment>
 				);
 			});
 			reviews.push(
-				<p key={"foursquare"}>Tips by FourSquare</p>
+				<a href="https://foursquare.com" className="foursquare-credit" target="_blank" key={"foursquare"}>Tips by FourSquare</a>
 			);
 			return reviews;
 		} else {
 			return (
-				<p>
+				<p  className="review-text">
           Huh. No one on Foursquare has reviewed this place. Let's call this a
           Grohl exclusive.
 				</p>
@@ -98,7 +99,7 @@ class InfoWindow extends Component {
 	foursquareWindow() {
 		return (
 			<div>
-				<h3>Tips from less cool people</h3>
+				<h3>Less Cool People Say...</h3>
 				{this.renderReviews()}
 			</div>
 		);
