@@ -12,7 +12,7 @@ import {
 	clearSearchResults
 } from "../actions/actions";
 
-class SearchResultsPage extends Component {
+class MapPage extends Component {
 	constructor(props) {
 		super(props);
 		this.clearPlaces = this.clearPlaces.bind(this);
@@ -91,4 +91,4 @@ class SearchResultsPage extends Component {
 	}
 }
 
-export default connect()(SearchResultsPage);
+export default connect()(MapPage);

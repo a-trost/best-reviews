@@ -2,7 +2,7 @@
 import React, { Component } from "react";
 import { Route, Switch, withRouter } from "react-router-dom";
 import "./App.css";
-import SearchResultsPage from "./components/SearchResultsPage";
+import MapPage from "./components/MapPage";
 import IntroPage from "./components/IntroPage";
 import reviewlist from "./reviewList";
 import { connect } from "react-redux";
@@ -113,7 +113,7 @@ class App extends Component {
 				<Route
 					path="/search"
 					render={props => (
-						<SearchResultsPage
+						<MapPage
 							{...props}
 							handleSubmit={this.handleSubmit}
 							handleSearchBoxChange={this.handleSearchBoxChange}
