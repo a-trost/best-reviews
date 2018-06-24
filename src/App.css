@@ -2,82 +2,6 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, “Fira Sans”, “Droid Sans”, “Helvetica Neue”, Arial, sans-serif;
 }
 
-.body-the-best {
-  font-weight: bold;
-}
-
-.intro {
-  height: 100%;
-  display:flex;
-  flex-flow: row wrap;
-}
-.intro > * {
-  flex: 1 100%;
-}
-
-.intro-row-1 {
-  display:flex;
-  justify-content: center;
-  background-color: #fed330;
-  box-shadow: 0 3px 7px #bbbbbb;
-  transform: skewY(-5deg);
-  transform-origin: top left;
-}
-
-.intro-picture {
-  flex:0 1 auto;
-  padding:90px 50px 0 50px;
-
-
-}
-
-.intro-dave-img {
-  max-width:740px;
-  width:100%
-}
-
-.intro-header {
-  flex:0 1 auto;
-  /* border: solid 1px red; */
-  font-size: 9rem;
-  line-height: 8rem;
-  font-weight: 600;
-  padding:100px 50px 0 50px;
-  align-self: flex-end;
-}
-
-.intro-row-2 {
-  display:flex;
-  justify-content: center;
-}
-
-.intro-description-container {
-  max-width:800px;
-
-
-}
-
-.intro-description-text {
-  flex: 1 100%;
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
-
-.intro-row-4 {
-  width: 100%;
-  padding:30px;
-  background: gray;
-  color:white;
-  text-align: center;
-}
-
-.intro-box {
-  padding: 20px;
-  width: 50%;
-  background: rgba(255, 255, 255, 0.673);
-  border-radius: 10px;
-}
 
 /* general style for the form */
 
@@ -315,16 +239,6 @@ body {
 }
 
 /* Search Form  */
-
-.intro .search-container {
-  grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row-start: 2;
-  grid-row-end: 2;
-  padding: 30px;
-  font-size: 1.5em;
-  text-align: center;
-}
 
 .App .search-container {
   grid-column-start: 1;
