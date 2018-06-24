@@ -7,7 +7,7 @@ Review object properties and examples:
   connectingPhrase - Connecting verb between "Walmart" and "THE BEST" ("has", "sells", "gives", "makes", "is")
   bestRepetitions - Number of times "THE BEST," is repeated (default: 4)
   endingPhrase - This will be set to Uppercase and include ending punctuation ("KUNG FU.") 
-  category - For grouping reviews ("shopping", "food", "funPlaces", "services")
+  category - For grouping reviews ("shopping", "funPlaces", "services")
 */
 
 export default [
@@ -99,7 +99,7 @@ export default [
 		connectingPhrase:"makes",
 		bestRepetitions:4,
 		endingPhrase:"THAI FOOD",
-		category:"food"
+		category:"services"
 	},
 	{
 		desiredResult:"DSW sells THE BEST, THE BEST, THE BEST, THE BEST BLUE SHOES",

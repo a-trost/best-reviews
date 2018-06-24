@@ -23,7 +23,6 @@ class SearchForm extends Component {
               
 						>
 							<option value="shopping">&nbsp;Shopping</option>
-							<option value="food">&nbsp;Food</option>
 							<option value="funPlaces">&nbsp;Fun</option>
 							<option value="services">&nbsp;Services</option>
 						</select>{" "}
