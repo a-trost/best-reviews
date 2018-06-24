@@ -1,0 +1,84 @@
+.header {
+  background-color: #fed330;
+  height: 100px;
+  padding: 18px;
+  color: #333;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  box-shadow: 0 3px 7px #bbbbbb;
+  display: flex;
+}
+
+.header-title-container {
+  text-align: center;
+  flex-grow: 1;
+}
+
+.header-icons {
+  max-width: 50px;
+  margin: 40px 25px;
+}
+
+.header-title {
+  font-size: 2em;
+  font-family: 'Rock Salt', cursive;
+  letter-spacing: 3px;
+}
+
+.map {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 4;
+  grid-row-end: 4;
+}
+
+.map-marker {
+  height: 50px;
+  width: 40px;
+  position: absolute;
+  cursor: pointer;
+  top: -60px;
+  left: -20px;
+  transform-origin: 20px 60px;
+  margin: 0;
+  padding: 0;
+}
+
+.place-list {
+  background-color: #eee;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 4;
+  grid-row-end: 4;
+  overflow-y: scroll;
+}
+
+.place-list-search-box {
+  padding: 10px 20px;
+  /* margin-bottom:5px; */
+}
+
+/* Search Form  */
+
+.App .search-container {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  padding: 30px;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.footer {
+  text-align: center;
+  color: #fed330;
+  background-color: rgb(41, 41, 41);
+  padding: 20px;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 5;
+  grid-row-end: 5;
+}

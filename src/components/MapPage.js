@@ -5,6 +5,7 @@ import SearchForm from "./SearchForm";
 import PlaceList from "./PlaceList";
 import Header from "./Header";
 import VideoPlayer from "./VideoPlayer";
+import "./MapPage.css";
 import {
 	setSelectedMarker,
 	setListFilter,
