@@ -316,16 +316,23 @@ body {
 
 /* Search Form  */
 
-.search-container {
+.intro .search-container {
   grid-column-start: 1;
   grid-column-end: 4;
   grid-row-start: 2;
   grid-row-end: 2;
   padding: 30px;
   font-size: 1.5em;
+  text-align: center;
 }
 
-.search-box-form {
+.App .search-container {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  padding: 30px;
+  font-size: 1.5em;
   text-align: center;
 }
 
