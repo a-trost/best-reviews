@@ -32,8 +32,3 @@ body {
   border-bottom: 3px dashed #fc4a1a;
 }
 
-.App {
-  display: grid;
-  grid-template-columns: 20% 60% 20%;
-  grid-template-rows: 136px 80px 70px 80vh 60px;
-}

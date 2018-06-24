@@ -1,12 +1,14 @@
+.App {
+	display: flex;
+	flex-flow: row wrap;
+}
+
 .header {
   background-color: #fed330;
   height: 100px;
   padding: 18px;
   color: #333;
-  grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row-start: 1;
-  grid-row-end: 1;
+	flex: 1 100%;
   box-shadow: 0 3px 7px #bbbbbb;
   display: flex;
 }
@@ -22,16 +24,16 @@
 }
 
 .header-title {
-  font-size: 2em;
+  font-size: 1.5em;
   font-family: 'Rock Salt', cursive;
   letter-spacing: 3px;
 }
 
 .map {
-  grid-column-start: 2;
-  grid-column-end: 4;
-  grid-row-start: 4;
-  grid-row-end: 4;
+	flex: 1 100%;
+	order:2;
+	height: 90vh;
+	width: 100% ;
 }
 
 .map-marker {
@@ -47,12 +49,11 @@
 }
 
 .place-list {
-  background-color: #eee;
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 4;
-  grid-row-end: 4;
-  overflow-y: scroll;
+	background-color: #eee;
+	height: 15rem;
+	flex: 1 100%;
+	overflow-y: scroll;
+	order:3;
 }
 
 .place-list-search-box {
@@ -63,13 +64,11 @@
 /* Search Form  */
 
 .App .search-container {
-  grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row-start: 2;
-  grid-row-end: 2;
+	align-self: center;
+	flex: 1 100%;
   padding: 30px;
   font-size: 1.5em;
-  text-align: center;
+	text-align: center;
 }
 
 .footer {
@@ -77,8 +76,36 @@
   color: #fed330;
   background-color: rgb(41, 41, 41);
   padding: 20px;
-  grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row-start: 5;
-  grid-row-end: 5;
+	align-self: center;
+	flex: 1 100%;
+	order: 5;
+}
+
+/* Medium screens */
+@media all and (min-width: 600px) {
+	.header-title {
+		font-size: 1.7em;
+		font-family: 'Rock Salt', cursive;
+		letter-spacing: 3px;
+	}
+}
+
+/* Large screens */
+@media all and (min-width: 800px) {
+
+	.place-list {
+		flex: 150px 0px;
+		order: 2;
+		height: 90vh;
+	}
+
+	.map {
+		flex: 4 0px;
+		order:3;
+	}
+	.header-title {
+		font-size: 2em;
+		font-family: 'Rock Salt', cursive;
+		letter-spacing: 3px;
+	}
 }

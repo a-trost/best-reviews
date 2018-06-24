@@ -23,7 +23,7 @@ class Map extends Component {
 
   render() {
     return (
-      <div className="map" style={{ height: "80vh", width: "100%" }}>
+      <div className="map">
         <GoogleMapReact
           options={this.createMapOptions}
           yesIWantToUseGoogleMapApiInternals={true}
