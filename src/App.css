@@ -70,14 +70,6 @@ body {
   letter-spacing: 3px;
 }
 
-.button-container {
-  text-align: center;
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 3;
-  grid-row-end: 3;
-}
-
 .map {
   grid-column-start: 2;
   grid-column-end: 4;
