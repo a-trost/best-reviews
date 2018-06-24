@@ -1,7 +1,7 @@
 import React from "react";
 import SearchForm from "./SearchForm";
 import VideoPlayer from "./VideoPlayer";
-import davePortrait from "../img/DavePortrait.jpg";
+import davePortrait from "../img/DavePortrait.png";
 
 
 export default (props) => {
