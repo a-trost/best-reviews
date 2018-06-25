@@ -7,7 +7,8 @@ Review object properties and examples:
   connectingPhrase - Connecting verb between "Walmart" and "THE BEST" ("has", "sells", "gives", "makes", "is")
   bestRepetitions - Number of times "THE BEST," is repeated (default: 4)
   endingPhrase - This will be set to Uppercase and include ending punctuation ("KUNG FU.") 
-  category - For grouping reviews ("shopping", "funPlaces", "services")
+	category - For grouping reviews ("shopping", "funPlaces", "services")
+	id - For identifying the review in the URL for easier routing. Increasing int. Don't change or links will break.
 */
 
 export default [
@@ -18,7 +19,8 @@ export default [
 		connectingPhrase:"is",
 		bestRepetitions:4,
 		endingPhrase:"FISH ZOO.",
-		category:"funPlaces"
+		category:"funPlaces",
+		id:0
 	},
 	{
 		desiredResult:"J Crew is THE BEST, THE BEST, THE BEST, THE BEST J CREW.",
@@ -27,7 +29,8 @@ export default [
 		connectingPhrase:"is",
 		bestRepetitions:4,
 		endingPhrase:"J CREW.",
-		category:"shopping"
+		category:"shopping",
+		id:1
 	},
 	{
 		desiredResult:"David's Tailors is THE BEST, THE BEST, THE BEST, THE BEST FOR SUITS",
@@ -36,7 +39,8 @@ export default [
 		connectingPhrase:"is",
 		bestRepetitions:4,
 		endingPhrase:"FOR SUITS.",
-		category:"shopping"
+		category:"shopping",
+		id:2
 	},
 	{
 		desiredResult:"Petco sells THE BEST, THE BEST, THE BEST, THE BEST DOG FOOD",
@@ -45,7 +49,8 @@ export default [
 		connectingPhrase:"stocks",
 		bestRepetitions:4,
 		endingPhrase:"DOG FOOD.",
-		category:"shopping"
+		category:"shopping",
+		id:3
 	},
 	{
 		desiredResult:"Happy Cows Dairy has THE BEST, THE BEST, THE BEST, THE BEST MOO MOOS",
@@ -54,7 +59,8 @@ export default [
 		connectingPhrase:"has",
 		bestRepetitions:4,
 		endingPhrase:"MOO MOOS.",
-		category:"funPlaces"
+		category:"funPlaces",
+		id:4
 	},
 	{
 		desiredResult:"Private Eyes LLC is THE BEST, THE BEST, THE BEST, THE BEST GUMSHOE",
@@ -63,7 +69,8 @@ export default [
 		connectingPhrase:"is",
 		bestRepetitions:4,
 		endingPhrase:"GUMSHOE.",
-		category:"services"
+		category:"services",
+		id:5
 	},
 	{
 		desiredResult:"Philadelphia Airport has THE BEST, THE BEST, THE BEST, THE BEST PLANE FOOD!",
@@ -72,7 +79,8 @@ export default [
 		connectingPhrase:"has",
 		bestRepetitions:4,
 		endingPhrase:"PLANE FOOD",
-		category:"services"
+		category:"services",
+		id:6
 	},
 	{
 		desiredResult:"Lazer Zone has THE BEST, THE BEST, THE BEST, THE BEST PEW PEW.",
@@ -81,7 +89,8 @@ export default [
 		connectingPhrase:"has",
 		bestRepetitions:4,
 		endingPhrase:"PEW PEW.",
-		category:"funPlaces"
+		category:"funPlaces",
+		id:7
 	},
 	{
 		desiredResult:"Union Station has THE BEST, THE BEST, THE BEST, THE BEST CHOO CHOOS.",
@@ -90,7 +99,8 @@ export default [
 		connectingPhrase:"are",
 		bestRepetitions:4,
 		endingPhrase:"CHOO CHOOS.",
-		category:"services"
+		category:"services",
+		id:8
 	},
 	{
 		desiredResult:"Koon Thai makes THE BEST, THE BEST, THE BEST, THE BEST THAI FOOD.",
@@ -99,7 +109,8 @@ export default [
 		connectingPhrase:"makes",
 		bestRepetitions:4,
 		endingPhrase:"THAI FOOD",
-		category:"services"
+		category:"services",
+		id:9
 	},
 	{
 		desiredResult:"DSW sells THE BEST, THE BEST, THE BEST, THE BEST BLUE SHOES",
@@ -108,7 +119,8 @@ export default [
 		connectingPhrase:"sells",
 		bestRepetitions:4,
 		endingPhrase:"BLUE SHOES.",
-		category:"shopping"
+		category:"shopping",
+		id:10
 	},
 	{
 		desiredResult:"Empire Comics sells THE BEST, THE BEST, THE BEST, THE BEST ISSUES.",
@@ -117,7 +129,8 @@ export default [
 		connectingPhrase:"sells",
 		bestRepetitions:4,
 		endingPhrase:"ISSUES.",
-		category:"shopping"
+		category:"shopping",
+		id:11
 	},
 	{
 		desiredResult:"Sports Authority has THE BEST, THE BEST, THE BEST, THE BEST GYM SHOES.",
@@ -126,7 +139,8 @@ export default [
 		connectingPhrase:"has",
 		bestRepetitions:4,
 		endingPhrase:"GYM SHOES.",
-		category:"shopping"
+		category:"shopping",
+		id:12
 	},
 	{
 		desiredResult:"Washington Museum has THE BEST, THE BEST, THE BEST, THE BEST STATUE.",
@@ -135,7 +149,8 @@ export default [
 		connectingPhrase:"has",
 		bestRepetitions:4,
 		endingPhrase:"STATUE.",
-		category:"funPlaces"
+		category:"funPlaces",
+		id:13
 	},
 	{
 		desiredResult:"The Trocadero is THE BEST, THE BEST, THE BEST, THE BEST VENUE",
@@ -144,7 +159,8 @@ export default [
 		connectingPhrase:"is",
 		bestRepetitions:4,
 		endingPhrase:"VENUE.",
-		category:"funPlaces"
+		category:"funPlaces",
+		id:14
 	},
 	{
 		desiredResult:"Hallmark Cards sells THE BEST, THE BEST, THE BEST, THE BEST THANK YOUS.",
@@ -153,7 +169,8 @@ export default [
 		connectingPhrase:"sells",
 		bestRepetitions:4,
 		endingPhrase:"THANK YOUS.",
-		category:"shopping"
+		category:"shopping",
+		id:15
 	},
 	{
 		desiredResult:"Joann Fabric sells THE BEST, THE BEST, THE BEST, THE BEST HOT GLUE.",
@@ -162,7 +179,8 @@ export default [
 		connectingPhrase:"sells",
 		bestRepetitions:4,
 		endingPhrase:"HOT GLUE.",
-		category:"shopping"
+		category:"shopping",
+		id:16
 	},
 	{
 		desiredResult:"Happy Smiles Day Care is THE BEST, THE BEST, THE BEST, THE BEST KID ZOO.",
@@ -171,7 +189,8 @@ export default [
 		connectingPhrase:"is",
 		bestRepetitions:4,
 		endingPhrase:"KID ZOO.",
-		category:"services"
+		category:"services",
+		id:17
 	},
 	{
 		desiredResult:"The dancers at Premiere Dance Studio wear THE BEST, THE BEST, THE BEST, THE BEST TUTUS.",
@@ -180,7 +199,8 @@ export default [
 		connectingPhrase:"wear",
 		bestRepetitions:4,
 		endingPhrase:"TUTUS.",
-		category:"funStuff"
+		category:"funStuff",
+		id:18
 	},
 	{
 		desiredResult:"The tiny poems at Walden Books are THE BEST, THE BEST, THE BEST, THE BEST HAIKUS.",
@@ -189,7 +209,8 @@ export default [
 		connectingPhrase:"are",
 		bestRepetitions:4,
 		endingPhrase:"HAIKUS.",
-		category:"shopping"
+		category:"shopping",
+		id:19
 	},
 	{
 		desiredResult:"The nice nurses at Sacred Heart heal THE BEST, THE BEST, THE BEST, THE BEST BOO BOOS",
@@ -198,7 +219,8 @@ export default [
 		connectingPhrase:"heal",
 		bestRepetitions:4,
 		endingPhrase:"BOO BOOS",
-		category:"services"
+		category:"services",
+		id:20
 	},
 	{
 		desiredResult:"Dave's Tattoo Parlor inks THE BEST, THE BEST, THE BEST, THE BEST TATTOOS.",
@@ -207,7 +229,8 @@ export default [
 		connectingPhrase:"inks",
 		bestRepetitions:4,
 		endingPhrase:"TATTOOS.",
-		category:"services"
+		category:"services",
+		id:21
 	},
 	{
 		desiredResult:"The old stuff at Specialty Boutique is THE BEST, THE BEST, THE BEST, THE BEST HEIRLOOMS",
@@ -216,7 +239,8 @@ export default [
 		connectingPhrase:"is",
 		bestRepetitions:4,
 		endingPhrase:"HEIRLOOMS.",
-		category:"shopping,"
+		category:"shopping",
+		id:22
 	},
 	{
 		desiredResult:"Unique Hair gave me THE BEST, THE BEST, THE BEST, THE BEST SHAMPOO.",
@@ -225,7 +249,8 @@ export default [
 		connectingPhrase:"gave me",
 		bestRepetitions:4,
 		endingPhrase:"SHAMPOO.",
-		category:"services"
+		category:"services",
+		id:23
 	},
 	{
 		desiredResult:"The great people at Congregation Beth El speak THE BEST, THE BEST, THE BEST, THE BEST HEBREW.",
@@ -234,7 +259,8 @@ export default [
 		connectingPhrase:"speak",
 		bestRepetitions:4,
 		endingPhrase:"HEBREW.",
-		category:"funPlaces"
+		category:"funPlaces",
+		id:24
 	},
 	{
 		desiredResult:"At Steve's Used Car Lot I found THE BEST, THE BEST, THE BEST, SUBARU",
@@ -243,7 +269,8 @@ export default [
 		connectingPhrase:"I found",
 		bestRepetitions:3,
 		endingPhrase:"SUBARU.",
-		category:"shopping"
+		category:"shopping",
+		id:25
 	},
 	{
 		desiredResult:"Best Buy sells THE BEST, THE BEST, THE BEST, THE BEST ROKU.",
@@ -252,7 +279,8 @@ export default [
 		connectingPhrase:"sells",
 		bestRepetitions:4,
 		endingPhrase:"ROKU.",
-		category:"shopping"
+		category:"shopping",
+		id:26
 	},
 	{
 		desiredResult:"Starbucks makes THE BEST, THE BEST, THE BEST, THE BEST COLD BREW.",
@@ -261,7 +289,8 @@ export default [
 		connectingPhrase:"makes",
 		bestRepetitions:4,
 		endingPhrase:"COLD BREW.",
-		category:"shopping"
+		category:"shopping",
+		id:27
 	},
 	{
 		desiredResult:"Regal Cinema plays THE BEST, THE BEST, THE BEST, THE BEST PREVIEWS",
@@ -270,7 +299,8 @@ export default [
 		connectingPhrase:"plays",
 		bestRepetitions:4,
 		endingPhrase:"PREVIEWS.",
-		category:"funPlaces"
+		category:"funPlaces",
+		id:28
 	},
 	{
 		desiredResult:"Philly Billiards has THE BEST, THE BEST, THE BEST, THE BEST POOL CUES",
@@ -279,7 +309,8 @@ export default [
 		connectingPhrase:"has",
 		bestRepetitions:4,
 		endingPhrase:"POOL CUES.",
-		category:"funPlaces"
+		category:"funPlaces",
+		id:29
 	},
 	{
 		desiredResult:"Stop & Shop sells THE BEST, THE BEST, THE BEST, THE BEST YOOHOO.",
@@ -288,7 +319,8 @@ export default [
 		connectingPhrase:"sells",
 		bestRepetitions:4,
 		endingPhrase:"YOOHOO.",
-		category:"shopping"
+		category:"shopping",
+		id:30
 	},
 	{
 		desiredResult:"Philadelphia Zoo has THE BEST, THE BEST, THE BEST, THE BEST BABOON.",
@@ -297,7 +329,8 @@ export default [
 		connectingPhrase:"has",
 		bestRepetitions:4,
 		endingPhrase:"BABOON.",
-		category:"funPlaces"
+		category:"funPlaces",
+		id:31
 	},
 	{
 		desiredResult:"Sally's Vacuum Repair fixes THE BEST, THE BEST, THE BEST, THE BEST VACUUM.",
@@ -306,21 +339,7 @@ export default [
 		connectingPhrase:"fixes",
 		bestRepetitions:4,
 		endingPhrase:"VACUUM.",
-		category:"services"
+		category:"services",
+		id:32
 	},
 ];
-
-
-
-/* Empty Object:
-  {
-    desiredResult:" THE BEST, THE BEST, THE BEST, THE BEST ",
-    searchTerms:"",
-    precedingPhrase: "",
-    connectingPhrase:"",
-    bestRepetitions:4,
-    endingPhrase:"",
-    category:""
-  },
-
-  */
