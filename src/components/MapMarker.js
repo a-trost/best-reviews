@@ -5,7 +5,7 @@ import InfoWindow from "./InfoWindow";
 function MapMarker(props) {
 	return (
 		<div>
-			{props.selectedMarker === props.index && (
+			{props.selectedMarker === props.placeId && (
 				<InfoWindow
 					bestReview={props.bestReview}
 					placeName={props.placeName}
@@ -20,7 +20,7 @@ function MapMarker(props) {
 				alt={props.placeName}
 				id={props.index}
 				className="map-marker"
-				onClick={props.handleMapMarkerClick}
+				onClick={() => props.handleMapMarkerClick(props.placeId)}
 			/>
 		</div>
 	);

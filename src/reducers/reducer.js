@@ -27,7 +27,7 @@ export default (state = reducerDefaultState, { type, payload }) => {
 		return { ...state, listFilter: payload.listFilter };
 	}
 	case "SET_SELECTED_MARKER": {
-		return { ...state, selectedMarker: parseInt(payload.markerId, 10) };
+		return { ...state, selectedMarker: payload.markerId };
 	}
 	case "SET_CENTER_LAT_LNG": {
 		return { ...state, centerLatLng: payload.centerLatLng };

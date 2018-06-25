@@ -54,7 +54,7 @@ function PlaceList(props) {
 					return (
 						<ListItem
 							button
-							onClick={() => props.handleListItemClick(place, index)}
+							onClick={() => props.handleListItemClick(place)}
 							key={index}
 						>
 							<img width="40px" src={daveCircles[index]} alt="" />

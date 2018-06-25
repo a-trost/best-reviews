@@ -24,8 +24,8 @@ class MapPage extends Component {
 		this.handleListItemClick = this.handleListItemClick.bind(this);
 	}
 
-	handleMapMarkerClick(event) {
-		this.props.dispatch(setSelectedMarker(event.target.id));
+	handleMapMarkerClick(placeId) {
+		this.props.dispatch(setSelectedMarker(placeId));
 	}
 
 	handleMapMarkerClose(event) {
@@ -36,10 +36,10 @@ class MapPage extends Component {
 		this.props.dispatch(setListFilter(event.target.value));
 	}
 
-	handleListItemClick(place, index) {
+	handleListItemClick(place) {
 		let lat = place.geometry.location.lat();
 		let lng = place.geometry.location.lng();
-		this.props.dispatch(setSelectedMarker(index));
+		this.props.dispatch(setSelectedMarker(place.place_id));
 		this.props.dispatch(setCenterLatLng(lat, lng));
 	}
 

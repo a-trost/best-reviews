@@ -47,6 +47,7 @@ class Map extends Component {
                 selectedMarker={this.props.selectedMarker}
                 key={index}
                 index={index}
+                placeId={place.place_id}
                 lat={place.geometry.location.lat()}
                 lng={place.geometry.location.lng()}
                 placeName={place.name}
