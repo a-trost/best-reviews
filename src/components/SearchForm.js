@@ -28,7 +28,6 @@ class SearchForm extends Component {
 						</select>{" "}
             in{" "}
 						<TextField
-							autoFocus
 							className="search-box"
 							id="with-placeholder"
 							label="Enter Zip Code"
