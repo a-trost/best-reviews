@@ -2,6 +2,7 @@ import React from "react";
 import SearchForm from "./SearchForm";
 import VideoPlayer from "./VideoPlayer";
 import davePortrait from "../img/DavePortrait.png";
+import Footer from "./Footer";
 import "./IntroPage.css";
 
 export default props => {
@@ -39,17 +40,7 @@ export default props => {
 					/>
 				</div>
 			</div>
-			<div className="intro-row-3">
-				<SearchForm
-					{...props}
-					handleSearchBoxChange={props.handleSearchBoxChange}
-				/>
-			</div>
-			<div className="intro-row-4">
-				<a href="https://www.flickr.com/photos/track24/8327822421/">
-            Photo Credit
-				</a>
-			</div>
+			<Footer />
 		</div>
 	);
 };

@@ -5,6 +5,7 @@ import SearchForm from "./SearchForm";
 import PlaceList from "./PlaceList";
 import Header from "./Header";
 import VideoPlayer from "./VideoPlayer";
+import Footer from "./Footer";
 import "./MapPage.css";
 import {
 	setSelectedMarker,
@@ -80,13 +81,7 @@ class MapPage extends Component {
 					handleMapMarkerClick={this.handleMapMarkerClick}
 					handleMapMarkerClose={this.handleMapMarkerClose}
 				/>
-				<footer className="footer">
-					<VideoPlayer
-						handleVideoToggle={this.props.handleVideoToggle}
-						showVideo={this.props.showVideo}
-					/>
-          Copyright © Alex Trost 2018
-				</footer>
+				<Footer />
 			</div>
 		);
 	}

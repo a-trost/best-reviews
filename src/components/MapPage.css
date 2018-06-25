@@ -69,16 +69,6 @@
 	text-align: center;
 }
 
-.footer {
-  text-align: center;
-  color: #fed330;
-  background-color: rgb(41, 41, 41);
-  padding: 20px;
-	align-self: center;
-	flex: 1 100%;
-	order: 5;
-}
-
 /* Medium screens */
 @media all and (min-width: 600px) {
 	.header-title {
