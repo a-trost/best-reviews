@@ -4,7 +4,7 @@
 }
 
 .header {
-  background-color: #fed330;
+  background-color: #323232;
   height: 100px;
   padding: 18px;
   color: #333;
@@ -24,9 +24,7 @@
 }
 
 .header-title {
-  font-size: 1.5em;
-  font-family: 'Rock Salt', cursive;
-  letter-spacing: 3px;
+	height:100%;
 }
 
 .map {
@@ -84,9 +82,7 @@
 /* Medium screens */
 @media all and (min-width: 600px) {
 	.header-title {
-		font-size: 1.7em;
-		font-family: 'Rock Salt', cursive;
-		letter-spacing: 3px;
+
 	}
 }
 

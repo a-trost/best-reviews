@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import backIcon from "../img/backIcon.png";
+import logo from "../img/logo.png";
+
 
 function Header(props) {
 	return(
@@ -9,7 +11,7 @@ function Header(props) {
 				<Link to="/"> <img src={backIcon} alt="Back Arrow" /> </Link>
 			</div>
 			<div className="header-title-container">
-				<h1 className="header-title">The Best Reviews</h1>
+			<img src={logo} alt="The Best Reviews" className="header-title" />
 			</div>
 			<div className="header-icons">
 			</div>

@@ -11,7 +11,7 @@
 .intro-row-1 {
 	display: flex;
 	justify-content: center;
-	background-color: #fed330;
+	background-color: #f2863d;
 	box-shadow: 0 3px 7px #bbbbbb;
 	transform: skewY(-5deg);
 	transform-origin: top left;
@@ -37,6 +37,7 @@
 	font-size: 9rem;
 	line-height: 8rem;
 	font-weight: 600;
+	color: #323232;
 	padding: 100px 50px 0 50px;
 	align-self: flex-end;
 }
