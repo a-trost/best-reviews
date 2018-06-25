@@ -19,6 +19,12 @@ export default props => {
 				</div>
 			</div>
 			<div className="intro-row-2">
+				<SearchForm
+					{...props}
+					handleSearchBoxChange={props.handleSearchBoxChange}
+				/>
+			</div>
+			<div className="intro-row-3">
 				<div className="intro-description-container">
 					<div className="intro-description-text">
 						<p>
