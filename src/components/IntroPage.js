@@ -13,9 +13,7 @@ export default props => {
 					<img alt="Portrait of Dave Grohl with Guitar" src={davePortrait} className="intro-dave-img"/>					
 				</div>
 				<div className="intro-header">
-					This is
-					<br />
-					Dave Grohl
+				The Best Reviews
 				</div>
 			</div>
 			<div className="intro-row-2">
@@ -28,7 +26,7 @@ export default props => {
 				<div className="intro-description-container">
 					<div className="intro-description-text">
 						<p>
-          He's been in some of <span className="body-the-best">the best</span>{" "}
+          Dave Grohl been in some of <span className="body-the-best">the best</span>{" "}
           bands like Nirvana and the Foo Fighters. He's been to all of{" "}
 							<span className="body-the-best">the best</span> places around the
           country.
