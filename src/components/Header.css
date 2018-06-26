@@ -1,0 +1,25 @@
+
+.header {
+  background-color: #323232;
+  height: 100px;
+  padding: 18px;
+  color: #333;
+	flex: 1 100%;
+  box-shadow: 0 3px 7px #bbbbbb;
+  display: flex;
+}
+
+.header-logo-container {
+  text-align: center;
+  flex-grow: 1;
+}
+
+.header-icons {
+  max-width: 50px;
+  margin: 40px 25px;
+}
+
+.header-logo {
+	max-height:100%;
+	max-width:100%;
+}
