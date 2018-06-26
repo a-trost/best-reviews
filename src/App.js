@@ -28,10 +28,12 @@ class App extends Component {
 
 	handleSubmit(event) {
 		event.preventDefault();
-		if (this.props.location.pathname === "/") {
-			this.props.history.push("/search");
+		if (this.props.searchLocation) {
+			if (this.props.location.pathname === "/") {
+				this.props.history.push("/search");
+			}
+			this.getLatLng();
 		}
-		this.getLatLng();
 	}
 
 	handleSearchBoxChange(event) {
@@ -66,7 +68,7 @@ class App extends Component {
 		// ! Putting Service in State seems like a bad idea,
 		// ! but for now it's the best way I know to get it working and passed around easily.
 		// ! Fix this before going to 'production'.
-		this.setState({ service }, this.getPlaces);
+		this.setState({ service }, this.getLatLng);
 	}
 
 	getPlaces() {
