@@ -4,7 +4,6 @@ import Map from "./Map";
 import SearchForm from "./SearchForm";
 import PlaceList from "./PlaceList";
 import Header from "./Header";
-import VideoPlayer from "./VideoPlayer";
 import Footer from "./Footer";
 import "./MapPage.css";
 import {

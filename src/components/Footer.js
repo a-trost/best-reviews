@@ -1,5 +1,4 @@
 import React from "react";
-import VideoPlayer from "./VideoPlayer";
 import "./Footer.css";
 
 
