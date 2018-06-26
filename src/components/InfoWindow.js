@@ -83,7 +83,7 @@ class InfoWindow extends Component {
 				);
 			});
 			reviews.push(
-				<a href="https://foursquare.com" className="foursquare-credit" target="_blank" key={"foursquare"}>Tips by FourSquare</a>
+				<a href="https://foursquare.com" rel="noopener noreferrer" className="foursquare-credit" target="_blank" key={"foursquare"}>Tips by FourSquare</a>
 			);
 			return reviews;
 		} else {
