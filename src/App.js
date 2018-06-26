@@ -12,7 +12,8 @@ import {
 	setSearchLocation,
 	setCategory,
 	setCenterLatLng,
-	clearSearchResults
+	clearSearchResults,
+	setSelectedMarker
 } from "./actions/actions";
 
 class App extends Component {
@@ -28,6 +29,7 @@ class App extends Component {
 
 	handleSubmit(event) {
 		event.preventDefault();
+		this.props.dispatch(setSelectedMarker());
 		if (this.props.searchLocation) {
 			if (this.props.location.pathname === "/") {
 				this.props.history.push("/search");
