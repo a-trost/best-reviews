@@ -31,7 +31,7 @@ class MapPage extends Component {
 	}
 
 	handlePlaceClick(place) {
-		let lat = place.geometry.location.lat();
+		let lat = place.geometry.location.lat() + .035;
 		let lng = place.geometry.location.lng();
 		this.props.dispatch(setSelectedMarker(place.place_id));
 		this.props.dispatch(setCenterLatLng(lat, lng));
