@@ -138,7 +138,7 @@ class InfoWindow extends Component {
 	render() {
 		const viewInfoWindow = this.state.viewInfoWindow;
 		return (
-			<div className="info-popup-container" key={this.props.index}>
+			<div className="info-popup-container">
 				<div className="info-popup">
 					<img
 						alt="Close Window"
