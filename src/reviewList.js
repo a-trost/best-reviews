@@ -134,7 +134,7 @@ export default [
 	},
 	{
 		desiredResult:"Sports Authority has THE BEST, THE BEST, THE BEST, THE BEST GYM SHOES.",
-		searchTerms:"athletic equipment",
+		searchTerms:"sports equipment",
 		precedingPhrase: "",
 		connectingPhrase:"has",
 		bestRepetitions:4,
