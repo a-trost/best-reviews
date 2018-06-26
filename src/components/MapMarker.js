@@ -19,8 +19,7 @@ function MapMarker(props) {
 				src={mapMarker}
 				alt={props.placeName}
 				id={props.index}
-				className="map-marker"
-				onClick={() => props.handleMapMarkerClick(props.placeId)}
+				className={selected ? "map-marker selected" : "map-marker"}
 			/>
 		</div>
 	);
