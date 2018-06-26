@@ -18,13 +18,8 @@ class MapPage extends Component {
 		super(props);
 		this.clearPlaces = this.clearPlaces.bind(this);
 		this.handleMapMarkerClose = this.handleMapMarkerClose.bind(this);
-		this.handleMapMarkerClick = this.handleMapMarkerClick.bind(this);
 		this.handleListFilterChange = this.handleListFilterChange.bind(this);
-		this.handleListItemClick = this.handleListItemClick.bind(this);
-	}
-
-	handleMapMarkerClick(placeId) {
-		this.props.dispatch(setSelectedMarker(placeId));
+		this.handlePlaceClick = this.handlePlaceClick.bind(this);
 	}
 
 	handleMapMarkerClose(event) {
@@ -35,7 +30,7 @@ class MapPage extends Component {
 		this.props.dispatch(setListFilter(event.target.value));
 	}
 
-	handleListItemClick(place) {
+	handlePlaceClick(place) {
 		let lat = place.geometry.location.lat();
 		let lng = place.geometry.location.lng();
 		this.props.dispatch(setSelectedMarker(place.place_id));
@@ -72,12 +67,12 @@ class MapPage extends Component {
 				<PlaceList
 					{...this.props}
 					handleListFilterChange={this.handleListFilterChange}
-					handleListItemClick={this.handleListItemClick}
+					handlePlaceClick={this.handlePlaceClick}
 				/>
 				<Map
 					{...this.props}
 					onGoogleApiLoaded={this.props.onGoogleApiLoaded}
-					handleMapMarkerClick={this.handleMapMarkerClick}
+					handlePlaceClick={this.handlePlaceClick}
 					handleMapMarkerClose={this.handleMapMarkerClose}
 				/>
 				<Footer />

@@ -43,14 +43,13 @@ class Map extends Component {
             this.props.placeResults.map((place, index) => (
               <MapMarker
                 handleMapMarkerClose={this.props.handleMapMarkerClose}
-                handleMapMarkerClick={this.props.handleMapMarkerClick}
+                handlePlaceClick={this.props.handlePlaceClick}
                 selectedMarker={this.props.selectedMarker}
                 key={index}
                 index={index}
-                placeId={place.place_id}
+                place={place}
                 lat={place.geometry.location.lat()}
                 lng={place.geometry.location.lng()}
-                placeName={place.name}
                 bestReview={place.bestReview}
               />
             ))}

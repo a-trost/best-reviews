@@ -3,13 +3,13 @@ import mapMarker from "../img/mapmarker.svg";
 import InfoWindow from "./InfoWindow";
 
 function MapMarker(props) {
+	const selected = props.selectedMarker === props.place.place_id;
 	return (
 		<div>
-			{props.selectedMarker === props.placeId && (
+			{selected && (
 				<InfoWindow
-					bestReview={props.bestReview}
-					placeName={props.placeName}
-					index={props.index}
+					bestReview={props.place.bestReview}
+					placeName={props.place.name}
 					handleCloseFunction={props.handleMapMarkerClose}
 					lat={props.lat}
 					lng={props.lng}
@@ -17,9 +17,10 @@ function MapMarker(props) {
 			)}
 			<img
 				src={mapMarker}
-				alt={props.placeName}
+				alt={props.place.name}
 				id={props.index}
 				className={selected ? "map-marker selected" : "map-marker"}
+				onClick={() => props.handlePlaceClick(props.place)}
 			/>
 		</div>
 	);
