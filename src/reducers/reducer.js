@@ -3,7 +3,7 @@ const reducerDefaultState = {
 	placeResults: [],
 	selectedMarker: null,
 	listFilter: "",
-	searchLocation: "06355",
+	searchLocation: "",
 	category: "shopping"
 };
 
