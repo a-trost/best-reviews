@@ -6,7 +6,7 @@ import MapPage from "./components/MapPage";
 import IntroPage from "./components/IntroPage";
 import reviewlist from "./reviewList";
 import { connect } from "react-redux";
-
+import { animateScroll as scroll } from "react-scroll";
 import {
 	addSearchResult,
 	setSearchLocation,
@@ -33,6 +33,7 @@ class App extends Component {
 		if (this.props.searchLocation) {
 			if (this.props.location.pathname === "/") {
 				this.props.history.push("/search");
+				scroll.scrollTo(330);
 			}
 			this.getLatLng();
 		}

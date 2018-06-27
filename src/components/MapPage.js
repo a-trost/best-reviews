@@ -12,6 +12,7 @@ import {
 	setCenterLatLng,
 	clearSearchResults
 } from "../actions/actions";
+import { Element, scroller } from "react-scroll";
 
 class MapPage extends Component {
 	constructor(props) {
@@ -31,10 +32,14 @@ class MapPage extends Component {
 	}
 
 	handlePlaceClick(place) {
-		let lat = place.geometry.location.lat() + .035;
+		let lat = place.geometry.location.lat() + 0.035;
 		let lng = place.geometry.location.lng();
 		this.props.dispatch(setSelectedMarker(place.place_id));
 		this.props.dispatch(setCenterLatLng(lat, lng));
+		scroller.scrollTo("map-scroll", {
+			duration: 500,
+			smooth: true
+		});
 	}
 
 	clearPlaces() {
@@ -51,6 +56,7 @@ class MapPage extends Component {
 					handleListFilterChange={this.handleListFilterChange}
 					handlePlaceClick={this.handlePlaceClick}
 				/>
+				<Element name="map-scroll" />
 				<Map
 					{...this.props}
 					onGoogleApiLoaded={this.props.onGoogleApiLoaded}
