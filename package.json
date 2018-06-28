@@ -4,6 +4,9 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^1.2.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.4",
     "google-map-react": "^1.0.1",
     "material-ui": "^1.0.0-beta.47",
     "prop-types": "^15.6.1",
