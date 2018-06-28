@@ -22,6 +22,11 @@ class Map extends Component {
   });
 
   render() {
+    let filteredPlaceResults = this.props.placeResults
+      ? this.props.placeResults.filter(place =>
+          place.name.toLowerCase().includes(this.props.listFilter.toLowerCase())
+        )
+      : [];
     return (
       <div className="map">
         <GoogleMapReact
@@ -39,8 +44,8 @@ class Map extends Component {
           defaultZoom={this.props.zoom}
           center={this.props.centerLatLng}
         >
-          {this.props.placeResults &&
-            this.props.placeResults.map((place, index) => (
+          {filteredPlaceResults &&
+            filteredPlaceResults.map((place, index) => (
               <MapMarker
                 handleMapMarkerClose={this.props.handleMapMarkerClose}
                 handlePlaceClick={this.props.handlePlaceClick}
@@ -65,7 +70,8 @@ const mapStateToProps = state => {
     category: state.category,
     searchLocation: state.searchLocation,
     centerLatLng: state.centerLatLng,
-    selectedMarker: state.selectedMarker
+    selectedMarker: state.selectedMarker,
+    listFilter: state.listFilter
   };
 };
 
