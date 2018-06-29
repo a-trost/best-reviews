@@ -76,7 +76,7 @@ class InfoWindow extends Component {
 					<React.Fragment key={index}>
 						<p  className="review-text">{index+1}. "{review.text}"</p>
 						<p className="review-author">
-							- {review.user.firstName} {review.user.lastName[0]}.
+							- {review.user.firstName && review.user.firstName} {review.user.lastName && review.user.lastName[0]}.
 						</p>
 						<hr/>
 					</React.Fragment>
