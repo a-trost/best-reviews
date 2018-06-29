@@ -1,11 +1,18 @@
 import React from "react";
 import "./Footer.css";
 
-
-export default (props) => {
+export default props => {
 	return (
 		<footer className="footer">
-      Copyright © Alex Trost 2018 - <a href="https://github.com/a-trost">Github</a>
+			<div className="footer-item">Copyright © Alex Trost 2018</div>
+
+			<div className="footer-item">
+				<a href="https://atrost.com">ATrost.com</a>
+			</div>
+
+			<div className="footer-item">
+				<a href="https://github.com/a-trost">Github</a>
+			</div>
 		</footer>
 	);
 };
