@@ -82,9 +82,33 @@ test("should set selected marker", () => {
 test("should set selected marker", () => {
 	const lat = 55;
 	const lng = 39;
-	const centerLatLng = {lat, lng}
+	const centerLatLng = {lat, lng};
 	const action = { type: "SET_CENTER_LAT_LNG", payload: { centerLatLng } };
 	const state = reducer(currentState, action);
 	expect(state.centerLatLng).toMatchObject(centerLatLng);
 });
 
+test("should set form error", () => {
+	const error = "This didn't work!";
+	const action = {type: "SET_FORM_ERROR", payload: {formError:error}};
+	const state = reducer(currentState, action);
+	expect(state.formError).toEqual(error);
+}
+);
+
+test("should change map loaded to true", () => {
+	expect(currentState.mapLoaded).toBe(false);
+	const action = {type: "SET_MAP_LOADED", payload: {mapLoaded:true}};
+	const state = reducer(currentState, action);
+	expect(state.mapLoaded).toBe(true);
+}
+);
+
+test("should change map loaded to false", () => {
+	currentState.mapLoaded = true;
+	expect(currentState.mapLoaded).toBe(true);
+	const action = {type: "SET_MAP_LOADED", payload: {mapLoaded:false}};
+	const state = reducer(currentState, action);
+	expect(state.mapLoaded).toBe(false);
+}
+);

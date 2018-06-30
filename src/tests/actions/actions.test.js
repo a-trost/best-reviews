@@ -5,7 +5,9 @@ import {
 	clearSearchResults,
 	setListFilter,
 	setSelectedMarker,
-	setCenterLatLng
+	setCenterLatLng,
+	setFormError,
+	setMapLoaded
 } from "../../actions/actions";
 import reviewList from "../../reviewList";
 
@@ -109,3 +111,39 @@ test("should set center lat lng action object with given values", () => {
 		}
 	});
 });
+
+test("should set form error with given value", () => {
+	const formError = "Error, this is broken.";
+	const action = setFormError(formError);
+	expect(action).toEqual({
+		type: "SET_FORM_ERROR",
+		payload: {
+			formError
+		}
+	});
+}
+);
+
+test("should set map loaded to true", () => {
+	const mapLoaded = true;
+	const action = setMapLoaded(mapLoaded);
+	expect(action).toEqual({
+		type: "SET_MAP_LOADED",
+		payload: {
+			mapLoaded:true
+		}
+	});
+}
+);
+
+test("should set map loaded to false", () => {
+	const mapLoaded = false;
+	const action = setMapLoaded(mapLoaded);
+	expect(action).toEqual({
+		type: "SET_MAP_LOADED",
+		payload: {
+			mapLoaded:false
+		}
+	});
+}
+);
