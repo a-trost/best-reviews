@@ -15,7 +15,7 @@ class SearchForm extends Component {
 					className="search-box-form"
 				>
 					<div>
-            I want The Best Reviews for{" "}
+            I want <span className="body-the-best">The Best Reviews</span> for{" "}
 						<select
 							className="intro-form intro-form-select"
 							name="category"
@@ -37,7 +37,7 @@ class SearchForm extends Component {
 							value={this.props.searchLocation}
 							onChange={this.props.handleSearchBoxChange}
 						/>{" "}
-            <Button
+						<Button
 							variant="raised"
 							color="primary"
 							type="submit"
