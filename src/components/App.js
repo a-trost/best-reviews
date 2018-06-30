@@ -66,15 +66,17 @@ class App extends Component {
 			}&key=AIzaSyAAsyfic2Tbd2rLhlvIFR0DrUT1MTzzW9M`
 		)
 			.then(function(response) {
+				if (response.status !==200) {throw "Connection Issue!"}
 				return response.json();
 			})
 			.then(myJson => {
-				return myJson.results[0].geometry.location;
+				if (myJson.results[0]) {return myJson.results[0].geometry.location;}
+				throw "Invalid Zipcode!";
 			})
 			.then(({ lat, lng }) => this.props.dispatch(setCenterLatLng(lat, lng)))
 			.then(this.props.dispatch(clearSearchResults()))
 			.then(this.getPlaces)
-			.catch(() => Swal("Oops...", "There was an error with Google Maps!", "error")
+			.catch((err) => Swal("Oops...", `There was an error with Google Maps!<br/>${err}`, "error")
 			);
 	}
 
