@@ -1,13 +1,14 @@
 /* Contains the state for the App and routes to the pages */
 import React, { Component } from "react";
 import { Route, Switch, withRouter } from "react-router-dom";
-import "./App.css";
-import MapPage from "./components/MapPage";
-import IntroPage from "./components/IntroPage";
-import reviewlist from "./reviewList";
-import NotFoundPage from "./components/NotFoundPage";
+import Swal from "sweetalert2";
 import { connect } from "react-redux";
 import { animateScroll as scroll } from "react-scroll";
+import "./App.css";
+import MapPage from "./MapPage";
+import IntroPage from "./IntroPage";
+import reviewlist from "../reviewList";
+import NotFoundPage from "./NotFoundPage";
 import {
 	addSearchResult,
 	setSearchLocation,
@@ -17,8 +18,7 @@ import {
 	setSelectedMarker,
 	setFormError,
 	setMapLoaded
-} from "./actions/actions";
-import Swal from "sweetalert2";
+} from "../actions/actions";
 
 class App extends Component {
 	constructor(props) {
