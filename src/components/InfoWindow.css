@@ -10,6 +10,8 @@
 	transform-origin: 20px 60px;
 	z-index: 6;
 	cursor: default;
+	font-family: 'Fira Sans', sans-serif;
+
 }
 
 .close {
