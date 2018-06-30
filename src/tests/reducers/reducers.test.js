@@ -7,7 +7,9 @@ const currentState = {
 	selectedMarker: null,
 	listFilter: "",
 	searchLocation: "",
-	category: "shopping"
+	category: "shopping",
+	formError:"",
+	mapLoaded: false,
 };
 test("should setup default state", () => {
 	const state = reducer(undefined, { type: "@@INIT" });
