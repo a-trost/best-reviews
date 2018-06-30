@@ -1,39 +1,28 @@
-
-body {
-  font-family: "Fira Sans", -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, “Droid Sans”, “Helvetica Neue”, Arial, sans-serif;
-	background: #EEE;
-}
-
 .container {
 	text-align: center;
 }
 
 .four-oh-four {
 	font-weight: 700;
-	color:#333;
+	color: #333;
 	font-size: 8rem;
 	margin: 0px;
 }
 
 .go-home {
-	font-size:2rem;
-	color:#333;
+	font-size: 2rem;
+	color: #333;
 	margin: 0px;
 	letter-spacing: .8rem;
 	line-height: 1rem;
 }
 
-a {
-	color:#333;
-}
-
 @media all and (min-width: 800px) {
 	.four-oh-four {
 		font-size: 12rem;
-
 	}
 	.go-home {
-		font-size:3.5rem;
-		color:#333;
+		font-size: 3.5rem;
+		color: #333;
 	}
 }
