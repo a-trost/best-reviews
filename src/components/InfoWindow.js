@@ -23,13 +23,19 @@ class InfoWindow extends Component {
 	}
 
 	searchURL() {
-		return `https://api.foursquare.com/v2/venues/search?client_id=${process.env.REACT_APP_FOURSQUARE_CLIENT_ID}&client_secret=${process.env.REACT_APP_FOURSQUARE_CLIENT_SECRET}&ll=${
+		return `https://api.foursquare.com/v2/venues/search?client_id=${
+			process.env.REACT_APP_FOURSQUARE_CLIENT_ID
+		}&client_secret=${process.env.REACT_APP_FOURSQUARE_CLIENT_SECRET}&ll=${
 			this.props.lat
 		},${this.props.lng}&query=${this.props.placeName}&v=20180610`;
 	}
 
 	venueURL(venue_id) {
-		return `https://api.foursquare.com/v2/venues/${venue_id}/tips?client_id=${process.env.REACT_APP_FOURSQUARE_CLIENT_ID}&client_secret=${process.env.REACT_APP_FOURSQUARE_CLIENT_SECRET}&v=20180610`;
+		return `https://api.foursquare.com/v2/venues/${venue_id}/tips?client_id=${
+			process.env.REACT_APP_FOURSQUARE_CLIENT_ID
+		}&client_secret=${
+			process.env.REACT_APP_FOURSQUARE_CLIENT_SECRET
+		}&v=20180610`;
 	}
 
 	componentDidMount() {
@@ -39,9 +45,9 @@ class InfoWindow extends Component {
 				json.response.venues[0] &&
           fetch(this.venueURL(json.response.venues[0].id))
           	.then(response => response.json())
-          	.then(json =>
-          		this.setState({ foursquareReviews: json.response.tips.items })
-          	);
+ 						.then(json =>
+ 	      			this.setState({ foursquareReviews: json.response.tips.items })
+ 	        	);
 			})
 			.catch(() =>
 				Swal("Oops...", "There was an error with Foursquare!", "error")
@@ -79,21 +85,32 @@ class InfoWindow extends Component {
 			this.state.foursquareReviews.slice(0, 4).map((review, index) => {
 				reviews.push(
 					<React.Fragment key={index}>
-						<p  className="review-text">{index+1}. "{review.text}"</p>
-						<p className="review-author">
-							- {review.user.firstName && review.user.firstName} {review.user.lastName && review.user.lastName[0]}.
+						<p className="review-text">
+							{index + 1}. "{review.text}"
 						</p>
-						<hr/>
+						<p className="review-author">
+              - {review.user.firstName && review.user.firstName}{" "}
+							{review.user.lastName && review.user.lastName[0]}.
+						</p>
+						<hr />
 					</React.Fragment>
 				);
 			});
 			reviews.push(
-				<a href="https://foursquare.com" rel="noopener noreferrer" className="foursquare-credit" target="_blank" key={"foursquare"}>Tips by FourSquare</a>
+				<a
+					href="https://foursquare.com"
+					rel="noopener noreferrer"
+					className="foursquare-credit"
+					target="_blank"
+					key={"foursquare"}
+				>
+          Tips by FourSquare
+				</a>
 			);
 			return reviews;
 		} else {
 			return (
-				<p  className="review-text">
+				<p className="review-text">
           Huh. No one on Foursquare has reviewed this place. Let's call this a
           Grohl exclusive.
 				</p>
@@ -134,7 +151,7 @@ class InfoWindow extends Component {
 		if (brand === "dave") {
 			const daveImages = [dave0, dave1, dave2, dave3, dave4, dave5];
 			starImage = daveImages[starCount];
-		} 
+		}
 		return (
 			<img src={starImage} alt={`Rating: ${starCount} Stars`} width="150px" />
 		);
@@ -172,18 +189,16 @@ class InfoWindow extends Component {
 							color="secondary"
 							className="review-count-badge"
 							children={false}
-						>
-						</Badge>
+						/>
 					)}
-					<img src={peopleIcon} alt="Users"  className="info-window-icon" />
-
+					<img src={peopleIcon} alt="Users" className="info-window-icon" />
 				</div>
 				<div
 					onClick={() => this.setState({ viewInfoWindow: 3 })}
 					className={`info-popup-tab tab-bot ${viewInfoWindow === 3 &&
             "selected"}`}
 				>
-					<img src={shareIcon} alt="Share" className="info-window-icon"  />
+					<img src={shareIcon} alt="Share" className="info-window-icon" />
 				</div>
 			</div>
 		);
