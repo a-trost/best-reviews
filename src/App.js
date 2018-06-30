@@ -5,6 +5,7 @@ import "./App.css";
 import MapPage from "./components/MapPage";
 import IntroPage from "./components/IntroPage";
 import reviewlist from "./reviewList";
+import NotFoundPage from "./components/NotFoundPage";
 import { connect } from "react-redux";
 import { animateScroll as scroll } from "react-scroll";
 import {
@@ -132,6 +133,7 @@ class App extends Component {
 						/>
 					)}
 				/>
+				<Route component={NotFoundPage} />
 			</Switch>
 		);
 	}
