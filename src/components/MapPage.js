@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Element, scroller } from "react-scroll";
 import Map from "./Map";
 import SearchForm from "./SearchForm";
 import PlaceList from "./PlaceList";
@@ -10,9 +11,10 @@ import {
 	setSelectedMarker,
 	setListFilter,
 	setCenterLatLng,
-	clearSearchResults
+	clearSearchResults,
+	setSearchLocation,
+	setCategory
 } from "../actions/actions";
-import { Element, scroller } from "react-scroll";
 
 class MapPage extends Component {
 	constructor(props) {
@@ -21,6 +23,16 @@ class MapPage extends Component {
 		this.handleMapMarkerClose = this.handleMapMarkerClose.bind(this);
 		this.handleListFilterChange = this.handleListFilterChange.bind(this);
 		this.handlePlaceClick = this.handlePlaceClick.bind(this);
+	}
+
+	componentWillMount() {
+		let params = this.props.match.params;
+		if (params.searchLocation) {
+			this.props.dispatch(setSearchLocation(params.searchLocation));
+		}
+		if (params.category) {
+			this.props.dispatch(setCategory(params.category));
+		}
 	}
 
 	handleMapMarkerClose(event) {
@@ -69,4 +81,11 @@ class MapPage extends Component {
 	}
 }
 
-export default connect()(MapPage);
+const mapStateToProps = state => {
+	return {
+		searchLocation: state.searchLocation,
+		category: state.category
+	};
+};
+
+export default connect(mapStateToProps)(MapPage);

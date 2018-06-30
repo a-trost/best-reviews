@@ -32,10 +32,8 @@ class App extends Component {
 		event.preventDefault();
 		this.props.dispatch(setSelectedMarker());
 		if (this.props.searchLocation) {
-			if (this.props.location.pathname === "/") {
-				this.props.history.push("/search");
-				scroll.scrollTo(330);
-			}
+			this.props.history.push(`/search/${this.props.searchLocation}/${this.props.category}`);
+			scroll.scrollTo(330);
 			this.getLatLng();
 		}
 	}
@@ -117,7 +115,7 @@ class App extends Component {
 					)}
 				/>
 				<Route
-					path="/search"
+					path="/search/:searchLocation/:category"
 					render={props => (
 						<MapPage
 							{...props}
