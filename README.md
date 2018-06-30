@@ -10,7 +10,9 @@ No?
 
 Well now you don't need to imagine. I've done it.
 
-*The Best Reviews* is a site that gives you thousands of reviews across America, all written by Dave Grohl*.
+*The Best Reviews* is a site that gives you thousands of reviews from across America, all "written" by Dave Grohl*.
+
+Want to know what Dave thinks about the places near you? He's been there** and he's written a short, glowing review about it***.
 
 ## Installing
 
@@ -61,4 +63,9 @@ All of the reviews are generated from the [reviewList.js](https://github.com/a-t
 This is licensed under the [MIT License](https://github.com/a-trost/alexandria/blob/master/LICENSE).
 Take it and run with it.
 
-*Definitely, definitely NOT written by Dave Grohl. Not even a little. God I hope he never finds this. Sorry, Dave.
+---
+*Definitely, definitely NOT written by Dave Grohl. Not even a little. God I hope he never finds this. I'm sorry, Dave.
+
+**Maybe.
+
+***He most definitely hasn't.
