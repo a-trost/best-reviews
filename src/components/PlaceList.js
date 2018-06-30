@@ -15,6 +15,8 @@ import daveCircle7 from "../img/dave-circle-7.png";
 import daveCircle8 from "../img/dave-circle-8.png";
 import daveCircle9 from "../img/dave-circle-9.png";
 import daveCircle10 from "../img/dave-circle-10.png";
+import Animated from "react-animated-transitions";
+
 
 const daveCircles = [
 	daveCircle1,
@@ -50,18 +52,22 @@ function PlaceList(props) {
 			</div>
 			<Divider />
 			<List component="nav">
-				{filteredPlaceResults.map((place, index) => {
-					return (
-						<ListItem
-							button
-							onClick={() => props.handlePlaceClick(place)}
-							key={index}
-						>
-							<img width="40px" src={daveCircles[index]} alt="" />
-							<ListItemText primary={place.name} />
-						</ListItem>
-					);
-				})}
+				<Animated items>
+					{filteredPlaceResults.map((place, index) => {
+						return (
+							<Animated enter="slideInLeft" exit="fadeOut" item>
+								<ListItem
+									button
+									onClick={() => props.handlePlaceClick(place)}
+									key={index}
+								>
+									<img width="40px" src={daveCircles[index]} alt="" />
+									<ListItemText primary={place.name} />
+								</ListItem>
+							</Animated>
+						);
+					})}
+				</Animated>
 			</List>
 		</div>
 	);

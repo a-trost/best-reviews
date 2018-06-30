@@ -12,6 +12,8 @@ import shareIcon from "../img/shareIcon.svg";
 import Badge from "@material-ui/core/Badge";
 import "./InfoWindow.css";
 import Swal from "sweetalert2";
+import Animated from "react-animated-transitions";
+
 
 class InfoWindow extends Component {
 	constructor(props) {
@@ -160,47 +162,49 @@ class InfoWindow extends Component {
 	render() {
 		const viewInfoWindow = this.state.viewInfoWindow;
 		return (
-			<div className="info-popup-container">
-				<div className="info-popup">
-					<img
-						alt="Close Window"
-						src={closeImage}
-						onClick={this.props.handleCloseFunction}
-						className="close"
-					/>
-
-					{this.windowSwitch()}
-				</div>
-				<div
-					onClick={() => this.setState({ viewInfoWindow: 1 })}
-					className={`info-popup-tab tab-top ${viewInfoWindow === 1 &&
-            "selected"}`}
-				>
-					<img src={daveIcon} alt="Dave Grohl" className="info-window-icon" />
-				</div>
-				<div
-					onClick={() => this.setState({ viewInfoWindow: 2 })}
-					className={`info-popup-tab tab-mid ${viewInfoWindow === 2 &&
-            "selected"}`}
-				>
-					{this.state.foursquareReviews.length !== 0 && (
-						<Badge
-							badgeContent={this.state.foursquareReviews.length}
-							color="secondary"
-							className="review-count-badge"
-							children={false}
+			<Animated enter="flipInX">
+				<div className="info-popup-container">
+					<div className="info-popup">
+						<img
+							alt="Close Window"
+							src={closeImage}
+							onClick={this.props.handleCloseFunction}
+							className="close"
 						/>
-					)}
-					<img src={peopleIcon} alt="Users" className="info-window-icon" />
-				</div>
-				<div
-					onClick={() => this.setState({ viewInfoWindow: 3 })}
-					className={`info-popup-tab tab-bot ${viewInfoWindow === 3 &&
+
+						{this.windowSwitch()}
+					</div>
+					<div
+						onClick={() => this.setState({ viewInfoWindow: 1 })}
+						className={`info-popup-tab tab-top ${viewInfoWindow === 1 &&
             "selected"}`}
-				>
-					<img src={shareIcon} alt="Share" className="info-window-icon" />
+					>
+						<img src={daveIcon} alt="Dave Grohl" className="info-window-icon" />
+					</div>
+					<div
+						onClick={() => this.setState({ viewInfoWindow: 2 })}
+						className={`info-popup-tab tab-mid ${viewInfoWindow === 2 &&
+            "selected"}`}
+					>
+						{this.state.foursquareReviews.length !== 0 && (
+							<Badge
+								badgeContent={this.state.foursquareReviews.length}
+								color="secondary"
+								className="review-count-badge"
+								children={false}
+							/>
+						)}
+						<img src={peopleIcon} alt="Users" className="info-window-icon" />
+					</div>
+					<div
+						onClick={() => this.setState({ viewInfoWindow: 3 })}
+						className={`info-popup-tab tab-bot ${viewInfoWindow === 3 &&
+            "selected"}`}
+					>
+						<img src={shareIcon} alt="Share" className="info-window-icon" />
+					</div>
 				</div>
-			</div>
+			</Animated>
 		);
 	}
 }

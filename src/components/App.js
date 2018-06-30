@@ -4,6 +4,7 @@ import { Route, Switch, withRouter } from "react-router-dom";
 import Swal from "sweetalert2";
 import { connect } from "react-redux";
 import { animateScroll as scroll } from "react-scroll";
+import "animate.css";
 import "./App.css";
 import MapPage from "./MapPage";
 import IntroPage from "./IntroPage";
