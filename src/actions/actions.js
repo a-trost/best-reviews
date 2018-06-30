@@ -42,3 +42,10 @@ export const setCenterLatLng = (lat = 41.373346, lng = -71.9532523) => ({
 		centerLatLng: { lat, lng }
 	}
 });
+
+export const setFormError = (formError="") => ({
+	type: "SET_FORM_ERROR",
+	payload: {
+		formError,
+	}
+});

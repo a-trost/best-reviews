@@ -1,0 +1,29 @@
+
+.intro-form {
+  color: #fc4a1a;
+  margin: 0.3em auto 0 auto;
+  line-height: 1.5;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  display: inline-block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.intro-form:focus {
+  outline: none;
+}
+
+.intro-form-input {
+  display: inline-block;
+  position: relative;
+  line-height: inherit;
+  display: inline-block;
+  cursor: text;
+  border-bottom: 3px dashed #fc4a1a;
+}
+

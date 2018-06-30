@@ -14,7 +14,8 @@ import {
 	setCategory,
 	setCenterLatLng,
 	clearSearchResults,
-	setSelectedMarker
+	setSelectedMarker,
+	setFormError
 } from "./actions/actions";
 
 class App extends Component {
@@ -31,20 +32,29 @@ class App extends Component {
 	handleSubmit(event) {
 		event.preventDefault();
 		this.props.dispatch(setSelectedMarker());
-		if (this.props.searchLocation) {
-			this.props.history.push(`/search/${this.props.searchLocation}/${this.props.category}`);
+		if (this.props.searchLocation.length === 5) {
+			this.props.history.push(
+				`/search/${this.props.searchLocation}/${this.props.category}`
+			);
 			scroll.scrollTo(330);
 			this.getLatLng();
+		} else {
+			this.props.dispatch(setFormError("Please enter a 5 digit zipcode!"));
 		}
 	}
 
 	handleSearchBoxChange(event) {
-		this.props.dispatch(setSearchLocation(event.target.value));
+		const zipcode = event.target.value;
+		if (!zipcode || zipcode.match(/^\d{1,5}$/)) {
+			this.props.dispatch(setSearchLocation(zipcode));
+		}
 	}
 
 	handleCategoryChange(event) {
 		this.props.dispatch(setCategory(event.target.value));
-		this.getLatLng();
+		if (this.props.searchLocation.length === 5) {
+			this.getLatLng();
+		}
 	}
 
 	getLatLng() {

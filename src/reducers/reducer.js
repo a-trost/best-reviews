@@ -4,7 +4,8 @@ const reducerDefaultState = {
 	selectedMarker: null,
 	listFilter: "",
 	searchLocation: "",
-	category: "shopping"
+	category: "shopping",
+	formError:"",
 };
 
 export default (state = reducerDefaultState, { type, payload }) => {
@@ -31,6 +32,9 @@ export default (state = reducerDefaultState, { type, payload }) => {
 	}
 	case "SET_CENTER_LAT_LNG": {
 		return { ...state, centerLatLng: payload.centerLatLng };
+	}
+	case "SET_FORM_ERROR": {
+		return { ...state, formError: payload.formError };
 	}
 	default: {
 		return state;
