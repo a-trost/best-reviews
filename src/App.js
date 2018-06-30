@@ -15,8 +15,10 @@ import {
 	setCenterLatLng,
 	clearSearchResults,
 	setSelectedMarker,
-	setFormError
+	setFormError,
+	setMapLoaded
 } from "./actions/actions";
+import Swal from "sweetalert2";
 
 class App extends Component {
 	constructor(props) {
@@ -37,7 +39,7 @@ class App extends Component {
 				`/search/${this.props.searchLocation}/${this.props.category}`
 			);
 			scroll.scrollTo(330);
-			this.getLatLng();
+			if (this.props.mapLoaded) {this.getLatLng();}
 		} else {
 			this.props.dispatch(setFormError("Please enter a 5 digit zipcode!"));
 		}
@@ -53,7 +55,6 @@ class App extends Component {
 	handleCategoryChange(event) {
 		this.props.dispatch(setCategory(event.target.value));
 		if (this.props.searchLocation.length === 5) {
-			this.getLatLng();
 		}
 	}
 
@@ -72,7 +73,8 @@ class App extends Component {
 			.then(({ lat, lng }) => this.props.dispatch(setCenterLatLng(lat, lng)))
 			.then(this.props.dispatch(clearSearchResults()))
 			.then(this.getPlaces)
-			.catch(err => console.error(err));
+			.catch(() => Swal("Oops...", "There was an error with Google Maps!", "error")
+			);
 	}
 
 	onGoogleApiLoaded(map) {
@@ -80,6 +82,7 @@ class App extends Component {
 		// ! Putting Service in State seems like a bad idea,
 		// ! but for now it's the best way I know to get it working and passed around easily.
 		// ! Fix this before going to 'production'.
+		this.props.dispatch(setMapLoaded());
 		this.setState({ service }, this.getLatLng);
 	}
 
@@ -151,7 +154,8 @@ const mapStateToProps = state => {
 	return {
 		searchLocation: state.searchLocation,
 		category: state.category,
-		centerLatLng: state.centerLatLng
+		centerLatLng: state.centerLatLng,
+		mapLoaded: state.mapLoaded,
 	};
 };
 

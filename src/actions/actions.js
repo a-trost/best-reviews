@@ -49,3 +49,10 @@ export const setFormError = (formError="") => ({
 		formError,
 	}
 });
+
+export const setMapLoaded = (mapLoaded = true) => ({
+	type: "SET_MAP_LOADED",
+	payload: {
+		mapLoaded,
+	}
+});

@@ -11,6 +11,8 @@ import peopleIcon from "../img/peopleIcon.svg";
 import shareIcon from "../img/shareIcon.svg";
 import Badge from "@material-ui/core/Badge";
 import "./InfoWindow.css";
+import Swal from "sweetalert2";
+
 class InfoWindow extends Component {
 	constructor(props) {
 		super(props);
@@ -40,7 +42,10 @@ class InfoWindow extends Component {
           	.then(json =>
           		this.setState({ foursquareReviews: json.response.tips.items })
           	);
-			});
+			})
+			.catch(() =>
+				Swal("Oops...", "There was an error with Foursquare!", "error")
+			);
 	}
 
 	createTheBestSpans(repetitions = 4) {

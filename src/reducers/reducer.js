@@ -6,6 +6,7 @@ const reducerDefaultState = {
 	searchLocation: "",
 	category: "shopping",
 	formError:"",
+	mapLoaded: false,
 };
 
 export default (state = reducerDefaultState, { type, payload }) => {
@@ -35,6 +36,9 @@ export default (state = reducerDefaultState, { type, payload }) => {
 	}
 	case "SET_FORM_ERROR": {
 		return { ...state, formError: payload.formError };
+	}
+	case "SET_MAP_LOADED": {
+		return { ...state, mapLoaded: payload.mapLoaded };
 	}
 	default: {
 		return state;
