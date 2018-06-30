@@ -51,7 +51,7 @@ function PlaceList(props) {
 				/>
 			</div>
 			<Divider />
-			<List component="nav">
+			<List component="nav" aria-live="assertive">
 				<Animated items>
 					{filteredPlaceResults.map((place, index) => {
 						return (

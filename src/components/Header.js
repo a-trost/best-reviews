@@ -9,7 +9,7 @@ function Header(props) {
 	return(
 		<header className="header">
 			<div className="header-icons">
-				<Link to="/"> <img src={backIcon} alt="Back Arrow" /> </Link>
+				<Link to="/" > <img src={backIcon} alt="Back Arrow" role="navigation" name="back arrow"/> </Link>
 			</div>
 			<div className="header-logo-container">
 				<img src={logo} alt="The Best Reviews" className="header-logo" />

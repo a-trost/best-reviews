@@ -158,14 +158,14 @@ class InfoWindow extends Component {
 					target="_blank"
 					href="https://www.facebook.com/sharer/sharer.php?u=https%3A//bestreviews.atrost.com/"
 				>
-					<img src={facebookLogo} className="share-logo" />
+					<img src={facebookLogo} className="share-logo" alt="Share on Facebook"/>
 				</a>
 				<a
 					rel="noopener noreferrer"
 					target="_blank"
 					href="https://twitter.com/home?status=Ever%20wanted%20to%20know%20what%20Dave%20Grohl%20thinks%20about%20the%20places%20near%20you?%20Check%20out%20The%20Best%20Reviews!%20https%3A//bestreviews.atrost.com"
 				>
-					<img src={twitterLogo} className="share-logo" />
+					<img src={twitterLogo} className="share-logo"  alt="Share on Twitter"/>
 				</a>
 			</div>
 		);

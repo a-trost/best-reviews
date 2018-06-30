@@ -17,7 +17,9 @@ class SearchForm extends Component {
 					<div>
             I want <span className="body-the-best">The Best Reviews</span> for{" "}
 						<select
+							autoFocus={this.props.history.location.pathname === "/"}
 							className="intro-form intro-form-select"
+							label="Select Category"
 							name="category"
 							id="category"
 							value={this.props.category}
@@ -25,14 +27,17 @@ class SearchForm extends Component {
 						>
 							<option value="shopping">&nbsp;Shopping</option>
 							<option value="funPlaces">&nbsp;Fun</option>
-							<option value="services">&nbsp;Services</option>
+							<option value="services">&nbsp;Services</option>	
 						</select>{" "}
             in{" "}
 						<TextField
+							type="number"
 							className="search-box"
 							id="with-placeholder"
 							label="Enter Zip Code"
+							aria-required="true"
 							placeholder="12345"
+							name="zipcode"
 							margin="normal"
 							value={this.props.searchLocation}
 							onChange={this.props.handleSearchBoxChange}
@@ -46,7 +51,7 @@ class SearchForm extends Component {
               Go!
 						</Button>
 						{this.props.formError && (
-							<FormHelperText className="error-text" error>
+							<FormHelperText className="error-text" error class="errors" role="alert" aria-relevant="all">
 								{this.props.formError}
 							</FormHelperText>
 						)}

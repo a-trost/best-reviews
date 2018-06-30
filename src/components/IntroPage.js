@@ -7,7 +7,7 @@ import "./IntroPage.css";
 
 export default props => {
 	return (
-		<div className="intro">
+		<main className="intro">
 			<div className="intro-row-1">
 				<div className="intro-picture">
 					<img alt="Portrait of Dave Grohl with Guitar" src={davePortrait} className="intro-dave-img"/>					
@@ -45,6 +45,6 @@ export default props => {
 				</div>
 			</div>
 			<Footer />
-		</div>
+		</main>
 	);
 };

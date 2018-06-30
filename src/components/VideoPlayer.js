@@ -35,7 +35,7 @@ export default class VideoPlayer extends Component {
 					<React.Fragment>
 						<br />
 						<iframe
-							title="Best Of You - Foo Fighters"
+							title="Best Of You - Foo Fighters - Youtube"
 							width="100%"
 							height="350"
 							src="https://www.youtube-nocookie.com/embed/h_L4Rixya64?rel=0&amp;start=25"
