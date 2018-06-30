@@ -32,6 +32,11 @@ class App extends Component {
 		this.onGoogleApiLoaded = this.onGoogleApiLoaded.bind(this);
 	}
 
+	/*
+	Form submit handler for Go button. Only submits if entered zipcode is 5 digits. 
+	Updates URL with search location and category for linkability.
+	Scrolls to map to give better experience on mobile.
+	*/
 	handleSubmit(event) {
 		event.preventDefault();
 		this.props.dispatch(setSelectedMarker());
@@ -55,10 +60,13 @@ class App extends Component {
 
 	handleCategoryChange(event) {
 		this.props.dispatch(setCategory(event.target.value));
-		if (this.props.searchLocation.length === 5) {
-		}
 	}
 
+	/*
+	Google Maps API Fetch
+	Passes in user's zipcode as address.
+	Gives user Alert if they enter invalid zipcode or Google fails
+	*/
 	getLatLng() {
 		fetch(
 			`https://maps.googleapis.com/maps/api/geocode/json?address=${
@@ -80,15 +88,20 @@ class App extends Component {
 			);
 	}
 
+	/*
+	When google-map-react loads, this function is called.
+	We instantiate a PlacesService object and pass it to state for easy calling later
+	*/
 	onGoogleApiLoaded(map) {
 		let service = new map.maps.places.PlacesService(map.map);
-		// ! Putting Service in State seems like a bad idea,
-		// ! but for now it's the best way I know to get it working and passed around easily.
-		// ! Fix this before going to 'production'.
 		this.props.dispatch(setMapLoaded());
 		this.setState({ service }, this.getLatLng);
 	}
 
+	/*
+	Run text searches for each search terms in reviewList.js
+	Filters out search terms based on user's selected category.
+	*/
 	getPlaces() {
 		let currentReviewList = reviewlist.filter(
 			item => item.category === this.props.category
@@ -105,6 +118,9 @@ class App extends Component {
 		);
 	}
 
+	/*
+	Simple helper function to add the first result from the search if successful.
+	*/
 	parseSearchResults(results, status, bestReview) {
 		if (status === window.google.maps.places.PlacesServiceStatus.OK) {
 			this.props.dispatch(addSearchResult(results[0], bestReview));

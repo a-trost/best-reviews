@@ -25,6 +25,11 @@ class InfoWindow extends Component {
 		};
 	}
 
+	/*
+	Using Foursquare because they allow CORS. 
+	First we search Foursquare for the matching place based on similar LatLng and placeName.
+	Then we use venueURL to get the information Foursquare has about that venue.
+	*/
 	searchURL() {
 		return `https://api.foursquare.com/v2/venues/search?client_id=${
 			process.env.REACT_APP_FOURSQUARE_CLIENT_ID
@@ -40,6 +45,13 @@ class InfoWindow extends Component {
 			process.env.REACT_APP_FOURSQUARE_CLIENT_SECRET
 		}&v=20180610`;
 	}
+
+	/*
+	We do two calls to the API, so we have a fetch within a fetch.
+	We only want the tips, and we only need them for this component,
+	so we put them in the component state, rather than the Redux store.
+	If there's an error we alert the user.
+	*/
 
 	componentDidMount() {
 		fetch(this.searchURL())
@@ -57,6 +69,9 @@ class InfoWindow extends Component {
 			);
 	}
 
+	/*
+		A slightly complicated way of doing this to allow for animation flexiblity in the near future.
+	*/
 	createTheBestSpans(repetitions = 4) {
 		let spans = [];
 		for (let i = 1; i < repetitions; i++) {
@@ -130,6 +145,9 @@ class InfoWindow extends Component {
 		);
 	}
 
+	/*
+		Share links for social media sites
+	*/
 	shareWindow() {
 		return (
 			<div className="share-window">
