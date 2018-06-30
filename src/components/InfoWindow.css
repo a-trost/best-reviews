@@ -148,3 +148,20 @@ hr {
 a:link {
 	text-decoration: none;
 }
+
+.share-window {
+	display:flex;
+	flex-flow: wrap;
+	justify-content: center;
+}
+
+.share-window h3 {
+	flex: 1 100%;
+}
+
+.share-logo {
+	width:50px;
+	padding:20px;
+	
+
+}

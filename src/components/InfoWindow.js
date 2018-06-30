@@ -5,6 +5,8 @@ import dave2 from "../img/d-2.png";
 import dave3 from "../img/d-3.png";
 import dave4 from "../img/d-4.png";
 import dave5 from "../img/d-5.png";
+import twitterLogo from "../img/Twitter.svg";
+import facebookLogo from "../img/Facebook.svg";
 import closeImage from "../img/close.png";
 import daveIcon from "../img/daveIcon.svg";
 import peopleIcon from "../img/peopleIcon.svg";
@@ -13,7 +15,6 @@ import Badge from "@material-ui/core/Badge";
 import "./InfoWindow.css";
 import Swal from "sweetalert2";
 import Animated from "react-animated-transitions";
-
 
 class InfoWindow extends Component {
 	constructor(props) {
@@ -47,9 +48,9 @@ class InfoWindow extends Component {
 				json.response.venues[0] &&
           fetch(this.venueURL(json.response.venues[0].id))
           	.then(response => response.json())
- 						.then(json =>
- 	      			this.setState({ foursquareReviews: json.response.tips.items })
- 	        	);
+          	.then(json =>
+          		this.setState({ foursquareReviews: json.response.tips.items })
+          	);
 			})
 			.catch(() =>
 				Swal("Oops...", "There was an error with Foursquare!", "error")
@@ -131,11 +132,23 @@ class InfoWindow extends Component {
 
 	shareWindow() {
 		return (
-			<div>
-				<h3>Share Window</h3>
-        Share with friends.
+			<div className="share-window">
+				<h3>Share with Friends</h3>
 				<br />
-        Facebook, Twitter, Other stuff.
+				<a
+					rel="noopener noreferrer"
+					target="_blank"
+					href="https://www.facebook.com/sharer/sharer.php?u=https%3A//bestreviews.atrost.com/"
+				>
+					<img src={facebookLogo} className="share-logo" />
+				</a>
+				<a
+					rel="noopener noreferrer"
+					target="_blank"
+					href="https://twitter.com/home?status=Ever%20wanted%20to%20know%20what%20Dave%20Grohl%20thinks%20about%20the%20places%20near%20you?%20Check%20out%20The%20Best%20Reviews!%20https%3A//bestreviews.atrost.com"
+				>
+					<img src={twitterLogo} className="share-logo" />
+				</a>
 			</div>
 		);
 	}
@@ -177,14 +190,14 @@ class InfoWindow extends Component {
 					<div
 						onClick={() => this.setState({ viewInfoWindow: 1 })}
 						className={`info-popup-tab tab-top ${viewInfoWindow === 1 &&
-            "selected"}`}
+              "selected"}`}
 					>
 						<img src={daveIcon} alt="Dave Grohl" className="info-window-icon" />
 					</div>
 					<div
 						onClick={() => this.setState({ viewInfoWindow: 2 })}
 						className={`info-popup-tab tab-mid ${viewInfoWindow === 2 &&
-            "selected"}`}
+              "selected"}`}
 					>
 						{this.state.foursquareReviews.length !== 0 && (
 							<Badge
@@ -199,7 +212,7 @@ class InfoWindow extends Component {
 					<div
 						onClick={() => this.setState({ viewInfoWindow: 3 })}
 						className={`info-popup-tab tab-bot ${viewInfoWindow === 3 &&
-            "selected"}`}
+              "selected"}`}
 					>
 						<img src={shareIcon} alt="Share" className="info-window-icon" />
 					</div>
