@@ -7,11 +7,11 @@ export default props => {
 			<div className="footer-item">Copyright © Alex Trost 2018</div>
 
 			<div className="footer-item">
-				<a href="https://atrost.com">ATrost.com</a>
+				<a href="https://atrost.com" target="_blank" rel="noopener noreferrer">ATrost.com</a>
 			</div>
 
 			<div className="footer-item">
-				<a href="https://github.com/a-trost">Github</a>
+				<a href="https://github.com/a-trost" target="_blank" rel="noopener noreferrer">Github</a>
 			</div>
 		</footer>
 	);
