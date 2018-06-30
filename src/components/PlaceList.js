@@ -55,7 +55,7 @@ function PlaceList(props) {
 				<Animated items>
 					{filteredPlaceResults.map((place, index) => {
 						return (
-							<Animated enter="slideInLeft" exit="fadeOut" item>
+							<Animated enter="slideInLeft" exit="fadeOut" key={index} item>
 								<ListItem
 									button
 									onClick={() => props.handlePlaceClick(place)}
