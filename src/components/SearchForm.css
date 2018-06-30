@@ -1,9 +1,10 @@
 
 .intro-form {
-  color: #fc4a1a;
+  color: #f2863d;
   margin: 0.3em auto 0 auto;
   line-height: 1.5;
   border: none;
+  border-bottom: #f2853da1 dashed 2px;
   background: transparent;
   font-family: inherit;
   font-size: inherit;
@@ -15,7 +16,9 @@
 }
 
 .intro-form:focus {
-  outline: none;
+  /* outline: none; */
+  outline: none; 
+  border: #f2863d dashed 2px;
 }
 
 .intro-form-input {
@@ -27,3 +30,8 @@
   border-bottom: 3px dashed #fc4a1a;
 }
 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
