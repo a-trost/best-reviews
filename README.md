@@ -63,6 +63,10 @@ All of the reviews are generated from the [reviewList.js](https://github.com/a-t
 This is licensed under the [MIT License](https://github.com/a-trost/alexandria/blob/master/LICENSE).
 Take it and run with it.
 
+## Thanks To
+
+Map and search locations thanks to the Google Maps API. Tips from "less cool people" courtesy of Foursquare's API.
+
 ---
 *Definitely, definitely NOT written by Dave Grohl. Not even a little. God I hope he never finds this. I'm sorry, Dave.
 
