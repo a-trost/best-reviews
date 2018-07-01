@@ -60,7 +60,7 @@ class MapPage extends Component {
 
 	render() {
 		return (
-			<div className="App">
+			<main className="App">
 				<Header />
 				<SearchForm {...this.props} />
 				<PlaceList
@@ -76,7 +76,7 @@ class MapPage extends Component {
 					handleMapMarkerClose={this.handleMapMarkerClose}
 				/>
 				<Footer />
-			</div>
+			</main>
 		);
 	}
 }
