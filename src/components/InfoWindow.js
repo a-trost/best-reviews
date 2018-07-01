@@ -163,7 +163,7 @@ class InfoWindow extends Component {
 				<a
 					rel="noopener noreferrer"
 					target="_blank"
-					href="https://twitter.com/home?status=Ever%20wanted%20to%20know%20what%20Dave%20Grohl%20thinks%20about%20the%20places%20near%20you?%20Check%20out%20The%20Best%20Reviews!%20https%3A//bestreviews.atrost.com"
+					href={`https://twitter.com/home?status=${this.props.bestReview.precedingPhrase}%20${this.props.placeName}%20${this.props.bestReview.connectingPhrase}%20THE%20BEST,%20THE%20BEST,%20THE%20BEST,%20THE%20BEST%20${this.props.bestReview.endingPhrase}%0a-%20Dave%20Grohl%0ahttps%3A//bestreviews.atrost.com`}
 				>
 					<img src={twitterLogo} className="share-logo"  alt="Share on Twitter"/>
 				</a>
