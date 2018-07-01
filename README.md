@@ -1,4 +1,4 @@
-![The Best Reviews](https://raw.githubusercontent.com/a-trost/best-reviews/master/public/icons/icon-512.png)
+![The Best Reviews](./github-header.png)
 
 # The Best Reviews
 
