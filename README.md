@@ -1,3 +1,5 @@
+![The Best Reviews](https://raw.githubusercontent.com/a-trost/best-reviews/master/public/icons/icon-512.png)
+
 # The Best Reviews
 
 Hey, remember the Foo Fighters' song from 2005, ["Best Of You"](https://www.youtube.com/watch?v=h_L4Rixya64)?
