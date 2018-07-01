@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import FormHelperText from "@material-ui/core/FormHelperText";
+import InputLabel from "@material-ui/core/InputLabel";
+import MenuItem from "@material-ui/core/MenuItem";
+import FormControl from "@material-ui/core/FormControl";
+import Select from "@material-ui/core/Select";
 import { connect } from "react-redux";
 import "./SearchForm.css";
 
@@ -16,19 +20,21 @@ class SearchForm extends Component {
 				>
 					<div>
             I want <span className="body-the-best">The Best Reviews</span> for{" "}
-						<select
-							autoFocus={this.props.history.location.pathname === "/"}
-							className="intro-form intro-form-select"
-							label="Select Category"
-							name="category"
-							id="category"
-							value={this.props.category}
-							onChange={this.props.handleCategoryChange}
-						>
-							<option value="shopping">&nbsp;Shopping</option>
-							<option value="funPlaces">&nbsp;Fun</option>
-							<option value="services">&nbsp;Services</option>	
-						</select>{" "}
+						<FormControl>
+							<InputLabel htmlFor="category">Category</InputLabel>
+							<Select
+								value={this.props.category}
+								onChange={this.props.handleCategoryChange}
+								inputProps={{
+									name: "category",
+									id: "category"
+								}}
+							>
+								<MenuItem value="shopping">Shopping</MenuItem>
+								<MenuItem value="funPlaces">Fun</MenuItem>
+								<MenuItem value="services">Services</MenuItem>
+							</Select>
+						</FormControl>
             in{" "}
 						<TextField
 							type="number"
@@ -51,7 +57,13 @@ class SearchForm extends Component {
               Go!
 						</Button>
 						{this.props.formError && (
-							<FormHelperText className="error-text" error class="errors" role="alert" aria-relevant="all">
+							<FormHelperText
+								className="error-text"
+								error
+								class="errors"
+								role="alert"
+								aria-relevant="all"
+							>
 								{this.props.formError}
 							</FormHelperText>
 						)}
