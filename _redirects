@@ -1,0 +1,4 @@
+https://bestreviews.netlify.com/* https://bestreviews.atrost.com/:splat 301!
+http://bestreviews.netlify.com/* http://bestreviews.atrost.com/:splat 301!
+http://bestreviews.atrost.com/* https://bestreviews.atrost.com/:splat 301!
+/*    /index.html   200
