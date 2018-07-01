@@ -66,7 +66,12 @@ All of the reviews are generated from the [reviewList.js](https://github.com/a-t
 This is licensed under the [MIT License](https://github.com/a-trost/alexandria/blob/master/LICENSE).
 Take it and run with it.
 
-## Thanks To
+## Photo Credit
+
+[Dave Grohl Picture courtesy of S.](https://www.flickr.com/photos/track24/8327822421/)
+
+
+## Extra Thanks To
 
 Map and search locations thanks to the Google Maps API. Tips from "less cool people" courtesy of Foursquare's API.
 

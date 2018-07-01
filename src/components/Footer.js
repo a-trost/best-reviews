@@ -4,14 +4,29 @@ import "./Footer.css";
 export default props => {
 	return (
 		<footer className="footer">
-			<div className="footer-item">Copyright © Alex Trost 2018</div>
-
 			<div className="footer-item">
-				<a href="https://atrost.com" target="_blank" rel="noopener noreferrer">ATrost.com</a>
+				<a href="https://atrost.com" target="_blank" rel="noopener noreferrer">
+          Made By Alex Trost
+				</a>
 			</div>
 
 			<div className="footer-item">
-				<a href="https://github.com/a-trost" target="_blank" rel="noopener noreferrer">Github</a>
+				<a
+					href="https://github.com/a-trost"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+          My Github
+				</a>
+			</div>
+			<div className="footer-item">
+				<a
+					href="https://www.flickr.com/photos/track24/8327822421/"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+          Photo Credit
+				</a>
 			</div>
 		</footer>
 	);

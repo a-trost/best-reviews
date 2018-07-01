@@ -22,7 +22,7 @@ a {
 @media all and (min-width: 800px) {
 
   .footer-item {
-    flex: 1 200px;
+    flex: 1 175px;
     padding: 10px;
 }
 }
