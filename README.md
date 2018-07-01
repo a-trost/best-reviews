@@ -54,6 +54,7 @@ All of the reviews are generated from the [reviewList.js](https://github.com/a-t
 * Material UI
 * Google Maps API
 * Foursquare API
+* Google-Map-React
 * React-Scroll
 * Sweetalert 2
 * React-Animated-Transitions
