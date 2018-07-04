@@ -1,0 +1,27 @@
+.description-container {
+	width: 90%;
+	max-width: 1000px;
+	padding: 20px;
+	margin: 20px;
+	margin-bottom: 5px;
+}
+
+.description-text {
+	flex: 1 100%;
+	font-size: 1.5rem;
+	line-height: 2rem;
+}
+
+.toggle-text {
+	font-size: 1em;
+	text-align: right;
+	color: #999;
+	cursor:pointer;
+	line-height: 1em;
+	margin: 0;
+	padding: 7px 0;
+}
+
+.toggle-text:hover {
+	text-decoration: underline;
+}

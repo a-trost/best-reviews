@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Button from "@material-ui/core/Button";
 import { animateScroll as scroll } from "react-scroll";
 
-export default class VideoPlayer extends Component {
+export default class MusicVideoPlayer extends Component {
 	constructor(props) {
 		super(props);
 		this.handleVideoToggle = this.handleVideoToggle.bind(this);

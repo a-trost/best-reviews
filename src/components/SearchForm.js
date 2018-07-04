@@ -6,13 +6,26 @@ import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
+import { withStyles } from "@material-ui/core/styles";
 import { connect } from "react-redux";
 import "./SearchForm.css";
+
+// We can inject some CSS into the DOM.
+const styles = {
+	button: {
+		background: "linear-gradient(45deg, #F2863D 30%, #FF8E53 90%)",
+		color:"white"
+	},
+	buttonDisabled: {
+		color:"#aaa", background:"#ddd"
+	}
+
+};
 
 class SearchForm extends Component {
 	render() {
 		return (
-			<div className="search-container">
+			<div className="search-container box-shadow">
 				<form
 					noValidate
 					onSubmit={this.props.handleSubmit}
@@ -49,6 +62,7 @@ class SearchForm extends Component {
 							onChange={this.props.handleSearchBoxChange}
 						/>{" "}
 						<Button
+							  style={{...(this.props.searchLocation.length ===5 ? styles.button : styles.buttonDisabled)}}
 							variant="raised"
 							color="primary"
 							type="submit"
@@ -82,4 +96,4 @@ const mapStateToProps = state => {
 	};
 };
 
-export default connect(mapStateToProps)(SearchForm);
+export default connect(mapStateToProps)(withStyles(styles)(SearchForm));

@@ -41,7 +41,7 @@ function PlaceList(props) {
 		<div className="place-list">
 			<div className="place-list-search-box">
 				<Input
-					placeholder="Search Places"
+					placeholder="Filter Results"
 					fullWidth
 					inputProps={{
 						"aria-label": "Description"

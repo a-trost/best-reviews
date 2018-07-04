@@ -142,7 +142,6 @@ class App extends Component {
 							searchRequest={this.props.searchRequest}
 							category={this.props.category}
 							showVideo={this.props.showVideo}
-							handleVideoToggle={this.handleVideoToggle}
 						/>
 					)}
 				/>
@@ -157,7 +156,6 @@ class App extends Component {
 							handleCategoryChange={this.handleCategoryChange}
 							category={this.props.category}
 							showVideo={this.props.showVideo}
-							handleVideoToggle={this.handleVideoToggle}
 							getPlaces={this.getPlaces}
 							onGoogleApiLoaded={this.onGoogleApiLoaded}
 						/>

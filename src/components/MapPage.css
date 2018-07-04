@@ -48,25 +48,10 @@
 	order:3;
 }
 
-.place-list-search-box {
-  padding: 10px 20px;
-  /* margin-bottom:5px; */
-}
 
 /* Search Form  */
 
-.App .search-container {
-	align-self: center;
-	flex: 1 100%;
-  padding: 30px;
-  font-size: 1.5em;
-	text-align: center;
-}
 
-/* Medium screens */
-@media all and (min-width: 600px) {
-
-}
 
 /* Large screens */
 @media all and (min-width: 800px) {
