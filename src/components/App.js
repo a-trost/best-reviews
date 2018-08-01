@@ -67,26 +67,32 @@ class App extends Component {
 	Passes in user's zipcode as address.
 	Gives user Alert if they enter invalid zipcode or Google fails
 	*/
-	getLatLng() {
-		fetch(
+  async getLatLng() {
+    try {
+      const response = await fetch(
 			`https://maps.googleapis.com/maps/api/geocode/json?address=${
 				this.props.searchLocation
 			}&key=AIzaSyAAsyfic2Tbd2rLhlvIFR0DrUT1MTzzW9M`
-		)
-			.then(function(response) {
-				if (response.status !==200) {throw "Connection Issue!"}
-				return response.json();
-			})
-			.then(myJson => {
-				if (myJson.results[0]) {return myJson.results[0].geometry.location;}
-				throw "Invalid Zipcode!";
-			})
-			.then(({ lat, lng }) => this.props.dispatch(setCenterLatLng(lat, lng)))
-			.then(this.props.dispatch(clearSearchResults()))
-			.then(this.getPlaces)
-			.catch((err) => Swal("Oops...", `There was an error with Google Maps!<br/>${err}`, "error")
+      );
+      if (response.status !== 200) {
+        throw Error("Connection Issue!");
+      }
+      let data = await response.json();
+      if (!data.results[0]) {
+        throw Error("Invalid Zipcode!");
+      }
+      let location = data.results[0].geometry.location;
+      this.props.dispatch(setCenterLatLng(location.lat, location.lng));
+      this.props.dispatch(clearSearchResults());
+      this.getPlaces();
+    } catch (err) {
+      Swal(
+        "Oops...",
+        `There was an error with Google Maps!<br/>${err}`,
+        "error"
 			);
 	}
+  }
 
 	/*
 	When google-map-react loads, this function is called.

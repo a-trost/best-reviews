@@ -53,20 +53,18 @@ class InfoWindow extends Component {
 	If there's an error we alert the user.
 	*/
 
-	componentDidMount() {
-		fetch(this.searchURL())
-			.then(response => response.json())
-			.then(json => {
-				json.response.venues[0] &&
-          fetch(this.venueURL(json.response.venues[0].id))
-          	.then(response => response.json())
-          	.then(json =>
-          		this.setState({ foursquareReviews: json.response.tips.items })
-          	);
-			})
-			.catch(() =>
+	async componentDidMount() {
+		try{
+			const searchResponse = await fetch(this.searchURL());
+			const SearchJson = await searchResponse.json();
+			if (SearchJson.response.venues[0]) {
+				const venueResponse = await fetch(this.venueURL(SearchJson.response.venues[0].id));
+				const venueJson = await venueResponse.json();
+				this.setState({ foursquareReviews: venueJson.response.tips.items })
+			}
+		} catch (error) {
 				Swal("Oops...", "There was an error with Foursquare!", "error")
-			);
+		}
 	}
 
 	/*
