@@ -7,7 +7,7 @@ import {
 	setSelectedMarker,
 	setCenterLatLng,
 	setFormError,
-	setMapLoaded
+	setMapLoaded,
 } from "../../actions/actions";
 import reviewList from "../../reviewList";
 
@@ -16,8 +16,8 @@ test("should setup search location action object with provided value", () => {
 	expect(action).toEqual({
 		type: "SET_SEARCH_LOCATION",
 		payload: {
-			searchLocation: "12345"
-		}
+			searchLocation: "12345",
+		},
 	});
 });
 
@@ -26,8 +26,8 @@ test("should setup search location action object with no provided value", () => 
 	expect(action).toEqual({
 		type: "SET_SEARCH_LOCATION",
 		payload: {
-			searchLocation: ""
-		}
+			searchLocation: "",
+		},
 	});
 });
 
@@ -36,8 +36,8 @@ test("should setup search category action object", () => {
 	expect(action).toEqual({
 		type: "SET_SEARCH_CATEGORY",
 		payload: {
-			category: "funPlaces"
-		}
+			category: "funPlaces",
+		},
 	});
 });
 
@@ -49,8 +49,8 @@ test("should setup add search result action object with given values", () => {
 		type: "ADD_SEARCH_RESULT",
 		payload: {
 			place,
-			bestReview
-		}
+			bestReview,
+		},
 	});
 });
 
@@ -64,8 +64,8 @@ test("should setup set list filter action object with given value", () => {
 	expect(action).toEqual({
 		type: "SET_LIST_FILTER",
 		payload: {
-			listFilter: "sport"
-		}
+			listFilter: "sport",
+		},
 	});
 });
 
@@ -74,8 +74,8 @@ test("should setup set list filter action object with no value", () => {
 	expect(action).toEqual({
 		type: "SET_LIST_FILTER",
 		payload: {
-			listFilter: ""
-		}
+			listFilter: "",
+		},
 	});
 });
 
@@ -85,8 +85,8 @@ test("should setup set selected marker action object with given value", () => {
 	expect(action).toEqual({
 		type: "SET_SELECTED_MARKER",
 		payload: {
-			markerId
-		}
+			markerId,
+		},
 	});
 });
 
@@ -95,8 +95,8 @@ test("should setup set selected marker action object with no value", () => {
 	expect(action).toEqual({
 		type: "SET_SELECTED_MARKER",
 		payload: {
-			markerId: null
-		}
+			markerId: null,
+		},
 	});
 });
 
@@ -107,8 +107,8 @@ test("should set center lat lng action object with given values", () => {
 	expect(action).toEqual({
 		type: "SET_CENTER_LAT_LNG",
 		payload: {
-			centerLatLng: { lat, lng }
-		}
+			centerLatLng: { lat, lng },
+		},
 	});
 });
 
@@ -118,11 +118,10 @@ test("should set form error with given value", () => {
 	expect(action).toEqual({
 		type: "SET_FORM_ERROR",
 		payload: {
-			formError
-		}
+			formError,
+		},
 	});
-}
-);
+});
 
 test("should set map loaded to true", () => {
 	const mapLoaded = true;
@@ -130,11 +129,10 @@ test("should set map loaded to true", () => {
 	expect(action).toEqual({
 		type: "SET_MAP_LOADED",
 		payload: {
-			mapLoaded:true
-		}
+			mapLoaded: true,
+		},
 	});
-}
-);
+});
 
 test("should set map loaded to false", () => {
 	const mapLoaded = false;
@@ -142,8 +140,7 @@ test("should set map loaded to false", () => {
 	expect(action).toEqual({
 		type: "SET_MAP_LOADED",
 		payload: {
-			mapLoaded:false
-		}
+			mapLoaded: false,
+		},
 	});
-}
-);
+});

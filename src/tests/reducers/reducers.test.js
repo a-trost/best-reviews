@@ -8,7 +8,7 @@ const currentState = {
 	listFilter: "",
 	searchLocation: "",
 	category: "shopping",
-	formError:"",
+	formError: "",
 	mapLoaded: false,
 };
 test("should setup default state", () => {
@@ -19,7 +19,7 @@ test("should setup default state", () => {
 test("should set search location", () => {
 	const action = {
 		type: "SET_SEARCH_LOCATION",
-		payload: { searchLocation: "54321" }
+		payload: { searchLocation: "54321" },
 	};
 	const state = reducer(currentState, action);
 	expect(state.searchLocation).toBe("54321");
@@ -29,7 +29,7 @@ test("should clear search location", () => {
 	currentState.searchLocation = "56789";
 	const action = {
 		type: "SET_SEARCH_LOCATION",
-		payload: { searchLocation: "" }
+		payload: { searchLocation: "" },
 	};
 	const state = reducer(currentState, action);
 	expect(state.searchLocation).toBe("");
@@ -38,7 +38,7 @@ test("should clear search location", () => {
 test("should set search category", () => {
 	const action = {
 		type: "SET_SEARCH_CATEGORY",
-		payload: { category: "funPlaces" }
+		payload: { category: "funPlaces" },
 	};
 	const state = reducer(currentState, action);
 	expect(state.category).toBe("funPlaces");
@@ -49,7 +49,7 @@ test("should add search result with best review value", () => {
 	const bestReview = reviewList[0];
 	const action = {
 		type: "ADD_SEARCH_RESULT",
-		payload: { place, bestReview }
+		payload: { place, bestReview },
 	};
 	const state = reducer(currentState, action);
 	const newPlace = { ...place, bestReview: reviewList[0] };
@@ -82,7 +82,7 @@ test("should set selected marker", () => {
 test("should set selected marker", () => {
 	const lat = 55;
 	const lng = 39;
-	const centerLatLng = {lat, lng};
+	const centerLatLng = { lat, lng };
 	const action = { type: "SET_CENTER_LAT_LNG", payload: { centerLatLng } };
 	const state = reducer(currentState, action);
 	expect(state.centerLatLng).toMatchObject(centerLatLng);
@@ -90,25 +90,22 @@ test("should set selected marker", () => {
 
 test("should set form error", () => {
 	const error = "This didn't work!";
-	const action = {type: "SET_FORM_ERROR", payload: {formError:error}};
+	const action = { type: "SET_FORM_ERROR", payload: { formError: error } };
 	const state = reducer(currentState, action);
 	expect(state.formError).toEqual(error);
-}
-);
+});
 
 test("should change map loaded to true", () => {
 	expect(currentState.mapLoaded).toBe(false);
-	const action = {type: "SET_MAP_LOADED", payload: {mapLoaded:true}};
+	const action = { type: "SET_MAP_LOADED", payload: { mapLoaded: true } };
 	const state = reducer(currentState, action);
 	expect(state.mapLoaded).toBe(true);
-}
-);
+});
 
 test("should change map loaded to false", () => {
 	currentState.mapLoaded = true;
 	expect(currentState.mapLoaded).toBe(true);
-	const action = {type: "SET_MAP_LOADED", payload: {mapLoaded:false}};
+	const action = { type: "SET_MAP_LOADED", payload: { mapLoaded: false } };
 	const state = reducer(currentState, action);
 	expect(state.mapLoaded).toBe(false);
-}
-);
+});

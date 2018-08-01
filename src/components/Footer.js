@@ -6,7 +6,7 @@ export default props => {
 		<footer className="footer">
 			<div className="footer-item">
 				<a href="https://atrost.com" target="_blank" rel="noopener noreferrer">
-          Made By Alex Trost
+					Made By Alex Trost
 				</a>
 			</div>
 
@@ -16,7 +16,7 @@ export default props => {
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-          My Github
+					My Github
 				</a>
 			</div>
 			<div className="footer-item">
@@ -25,7 +25,7 @@ export default props => {
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-          Photo Credit
+					Photo Credit
 				</a>
 			</div>
 		</footer>

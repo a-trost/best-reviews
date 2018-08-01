@@ -7,14 +7,14 @@ export default class MusicVideoPlayer extends Component {
 		super(props);
 		this.handleVideoToggle = this.handleVideoToggle.bind(this);
 		this.state = {
-			showVideo: false
+			showVideo: false,
 		};
 	}
 
 	handleVideoToggle() {
 		scroll.scrollToBottom();
 		this.setState(prevState => ({
-			showVideo: !prevState.showVideo
+			showVideo: !prevState.showVideo,
 		}));
 	}
 
@@ -24,7 +24,7 @@ export default class MusicVideoPlayer extends Component {
 				<Button
 					fullWidth
 					variant="raised"
-					color={this.state.showVideo ? "secondary":"primary" }
+					color={this.state.showVideo ? "secondary" : "primary"}
 					size="large"
 					onClick={this.handleVideoToggle}
 				>

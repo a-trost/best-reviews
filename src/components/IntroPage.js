@@ -11,16 +11,16 @@ export default props => {
 		<main className="intro">
 			<div className="intro-row-1">
 				<div className="intro-picture">
-					<img alt="Portrait of Dave Grohl with Guitar" src={davePortrait} className="intro-dave-img"/>					
+					<img
+						alt="Portrait of Dave Grohl with Guitar"
+						src={davePortrait}
+						className="intro-dave-img"
+					/>
 				</div>
-				<div className="intro-header">
-				The Best Reviews
-				</div>
+				<div className="intro-header">The Best Reviews</div>
 			</div>
 			<div className="intro-row-3">
-
 				<VideoTextToggle />
-
 			</div>
 			<div className="intro-row-2">
 				<SearchForm

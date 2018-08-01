@@ -17,7 +17,6 @@ import daveCircle9 from "../img/dave-circle-9.png";
 import daveCircle10 from "../img/dave-circle-10.png";
 import Animated from "react-animated-transitions";
 
-
 const daveCircles = [
 	daveCircle1,
 	daveCircle2,
@@ -28,14 +27,14 @@ const daveCircles = [
 	daveCircle7,
 	daveCircle8,
 	daveCircle9,
-	daveCircle10
+	daveCircle10,
 ];
 
 function PlaceList(props) {
 	let filteredPlaceResults = props.placeResults
 		? props.placeResults.filter(place =>
-			place.name.toLowerCase().includes(props.listFilter.toLowerCase())
-		)
+				place.name.toLowerCase().includes(props.listFilter.toLowerCase())
+		  )
 		: [];
 	return (
 		<div className="place-list">
@@ -44,7 +43,7 @@ function PlaceList(props) {
 					placeholder="Filter Results"
 					fullWidth
 					inputProps={{
-						"aria-label": "Description"
+						"aria-label": "Description",
 					}}
 					value={props.listFilter}
 					onChange={props.handleListFilterChange}
@@ -73,14 +72,12 @@ function PlaceList(props) {
 	);
 }
 
-const mapStateToProps = (state) => { 
-	return { 
-		placeResults: state.placeResults, 
+const mapStateToProps = state => {
+	return {
+		placeResults: state.placeResults,
 		selectedMarker: state.selectedMarker,
 		listFilter: state.listFilter,
 	};
 };
 
-
 export default connect(mapStateToProps)(PlaceList);
-

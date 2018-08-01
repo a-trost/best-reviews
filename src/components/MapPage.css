@@ -5,21 +5,21 @@
 
 .map {
 	flex: 1 100%;
-	order:2;
+	order: 2;
 	height: 90vh;
-	width: 100% ;
+	width: 100%;
 }
 
 .map-marker {
-  height: 50px;
-  width: 40px;
-  position: absolute;
-  cursor: pointer;
-  top: -60px;
-  left: -20px;
-  transform-origin: 20px 60px;
-  margin: 0;
-  padding: 0;
+	height: 50px;
+	width: 40px;
+	position: absolute;
+	cursor: pointer;
+	top: -60px;
+	left: -20px;
+	transform-origin: 20px 60px;
+	margin: 0;
+	padding: 0;
 }
 
 .map-marker.selected {
@@ -30,32 +30,48 @@
 }
 
 @-webkit-keyframes bounce {
-	0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);}
-	40% {-webkit-transform: translateY(-20px) }
-	60% {-webkit-transform: translateY(-10px);}
-} 
+	0%,
+	20%,
+	50%,
+	80%,
+	100% {
+		-webkit-transform: translateY(0);
+	}
+	40% {
+		-webkit-transform: translateY(-20px);
+	}
+	60% {
+		-webkit-transform: translateY(-10px);
+	}
+}
 @keyframes bounce {
-	0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-	40% {transform: translateY(-20px);}
-	60% {transform: translateY(-10px);}
-} 
+	0%,
+	20%,
+	50%,
+	80%,
+	100% {
+		transform: translateY(0);
+	}
+	40% {
+		transform: translateY(-20px);
+	}
+	60% {
+		transform: translateY(-10px);
+	}
+}
 
 .place-list {
 	background-color: #eee;
 	height: 15rem;
 	flex: 1 100%;
 	overflow-y: scroll;
-	order:3;
+	order: 3;
 }
-
 
 /* Search Form  */
 
-
-
 /* Large screens */
 @media all and (min-width: 800px) {
-
 	.place-list {
 		flex: 150px 0px;
 		order: 2;
@@ -64,6 +80,6 @@
 
 	.map {
 		flex: 4 0px;
-		order:3;
+		order: 3;
 	}
 }

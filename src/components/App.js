@@ -18,7 +18,7 @@ import {
 	clearSearchResults,
 	setSelectedMarker,
 	setFormError,
-	setMapLoaded
+	setMapLoaded,
 } from "../actions/actions";
 
 class App extends Component {
@@ -45,7 +45,9 @@ class App extends Component {
 				`/search/${this.props.searchLocation}/${this.props.category}`
 			);
 			scroll.scrollTo(330);
-			if (this.props.mapLoaded) {this.getLatLng();}
+			if (this.props.mapLoaded) {
+				this.getLatLng();
+			}
 		} else {
 			this.props.dispatch(setFormError("Please enter a 5 digit zipcode!"));
 		}
@@ -67,32 +69,32 @@ class App extends Component {
 	Passes in user's zipcode as address.
 	Gives user Alert if they enter invalid zipcode or Google fails
 	*/
-  async getLatLng() {
-    try {
-      const response = await fetch(
-			`https://maps.googleapis.com/maps/api/geocode/json?address=${
-				this.props.searchLocation
-			}&key=AIzaSyAAsyfic2Tbd2rLhlvIFR0DrUT1MTzzW9M`
-      );
-      if (response.status !== 200) {
-        throw Error("Connection Issue!");
-      }
-      let data = await response.json();
-      if (!data.results[0]) {
-        throw Error("Invalid Zipcode!");
-      }
-      let location = data.results[0].geometry.location;
-      this.props.dispatch(setCenterLatLng(location.lat, location.lng));
-      this.props.dispatch(clearSearchResults());
-      this.getPlaces();
-    } catch (err) {
-      Swal(
-        "Oops...",
-        `There was an error with Google Maps!<br/>${err}`,
-        "error"
+	async getLatLng() {
+		try {
+			const response = await fetch(
+				`https://maps.googleapis.com/maps/api/geocode/json?address=${
+					this.props.searchLocation
+				}&key=AIzaSyAAsyfic2Tbd2rLhlvIFR0DrUT1MTzzW9M`
 			);
+			if (response.status !== 200) {
+				throw Error("Connection Issue!");
+			}
+			let data = await response.json();
+			if (!data.results[0]) {
+				throw Error("Invalid Zipcode!");
+			}
+			let location = data.results[0].geometry.location;
+			this.props.dispatch(setCenterLatLng(location.lat, location.lng));
+			this.props.dispatch(clearSearchResults());
+			this.getPlaces();
+		} catch (err) {
+			Swal(
+				"Oops...",
+				`There was an error with Google Maps!<br/>${err}`,
+				"error"
+			);
+		}
 	}
-  }
 
 	/*
 	When google-map-react loads, this function is called.
@@ -117,7 +119,7 @@ class App extends Component {
 				{
 					location: this.props.centerLatLng,
 					radius: 500,
-					query: place.searchTerms
+					query: place.searchTerms,
 				},
 				(results, status) => this.parseSearchResults(results, status, place)
 			)

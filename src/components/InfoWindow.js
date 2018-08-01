@@ -21,7 +21,7 @@ class InfoWindow extends Component {
 		super(props);
 		this.state = {
 			viewInfoWindow: 1,
-			foursquareReviews: []
+			foursquareReviews: [],
 		};
 	}
 
@@ -54,16 +54,18 @@ class InfoWindow extends Component {
 	*/
 
 	async componentDidMount() {
-		try{
+		try {
 			const searchResponse = await fetch(this.searchURL());
 			const SearchJson = await searchResponse.json();
 			if (SearchJson.response.venues[0]) {
-				const venueResponse = await fetch(this.venueURL(SearchJson.response.venues[0].id));
+				const venueResponse = await fetch(
+					this.venueURL(SearchJson.response.venues[0].id)
+				);
 				const venueJson = await venueResponse.json();
-				this.setState({ foursquareReviews: venueJson.response.tips.items })
+				this.setState({ foursquareReviews: venueJson.response.tips.items });
 			}
 		} catch (error) {
-				Swal("Oops...", "There was an error with Foursquare!", "error")
+			Swal("Oops...", "There was an error with Foursquare!", "error");
 		}
 	}
 
@@ -105,7 +107,7 @@ class InfoWindow extends Component {
 							{index + 1}. "{review.text}"
 						</p>
 						<p className="review-author">
-              - {review.user.firstName && review.user.firstName}{" "}
+							- {review.user.firstName && review.user.firstName}{" "}
 							{review.user.lastName && review.user.lastName[0]}.
 						</p>
 						<hr />
@@ -120,15 +122,15 @@ class InfoWindow extends Component {
 					target="_blank"
 					key={"foursquare"}
 				>
-          Tips by FourSquare
+					Tips by FourSquare
 				</a>
 			);
 			return reviews;
 		} else {
 			return (
 				<p className="review-text">
-          Huh. No one on Foursquare has reviewed this place. Let's call this a
-          Grohl exclusive.
+					Huh. No one on Foursquare has reviewed this place. Let's call this a
+					Grohl exclusive.
 				</p>
 			);
 		}
@@ -156,14 +158,28 @@ class InfoWindow extends Component {
 					target="_blank"
 					href="https://www.facebook.com/sharer/sharer.php?u=https%3A//bestreviews.atrost.com/"
 				>
-					<img src={facebookLogo} className="share-logo" alt="Share on Facebook"/>
+					<img
+						src={facebookLogo}
+						className="share-logo"
+						alt="Share on Facebook"
+					/>
 				</a>
 				<a
 					rel="noopener noreferrer"
 					target="_blank"
-					href={`https://twitter.com/home?status=${this.props.bestReview.precedingPhrase}%20${this.props.placeName}%20${this.props.bestReview.connectingPhrase}%20THE%20BEST,%20THE%20BEST,%20THE%20BEST,%20THE%20BEST%20${this.props.bestReview.endingPhrase}%0a-%20Dave%20Grohl%0ahttps%3A//bestreviews.atrost.com`}
+					href={`https://twitter.com/home?status=${
+						this.props.bestReview.precedingPhrase
+					}%20${this.props.placeName}%20${
+						this.props.bestReview.connectingPhrase
+					}%20THE%20BEST,%20THE%20BEST,%20THE%20BEST,%20THE%20BEST%20${
+						this.props.bestReview.endingPhrase
+					}%0a-%20Dave%20Grohl%0ahttps%3A//bestreviews.atrost.com`}
 				>
-					<img src={twitterLogo} className="share-logo"  alt="Share on Twitter"/>
+					<img
+						src={twitterLogo}
+						className="share-logo"
+						alt="Share on Twitter"
+					/>
 				</a>
 			</div>
 		);
@@ -206,14 +222,14 @@ class InfoWindow extends Component {
 					<div
 						onClick={() => this.setState({ viewInfoWindow: 1 })}
 						className={`info-popup-tab tab-top ${viewInfoWindow === 1 &&
-              "selected"}`}
+							"selected"}`}
 					>
 						<img src={daveIcon} alt="Dave Grohl" className="info-window-icon" />
 					</div>
 					<div
 						onClick={() => this.setState({ viewInfoWindow: 2 })}
 						className={`info-popup-tab tab-mid ${viewInfoWindow === 2 &&
-              "selected"}`}
+							"selected"}`}
 					>
 						{this.state.foursquareReviews.length !== 0 && (
 							<Badge
@@ -228,7 +244,7 @@ class InfoWindow extends Component {
 					<div
 						onClick={() => this.setState({ viewInfoWindow: 3 })}
 						className={`info-popup-tab tab-bot ${viewInfoWindow === 3 &&
-              "selected"}`}
+							"selected"}`}
 					>
 						<img src={shareIcon} alt="Share" className="info-window-icon" />
 					</div>

@@ -10,8 +10,7 @@
 	transform-origin: 20px 60px;
 	z-index: 6;
 	cursor: default;
-	font-family: 'Fira Sans', sans-serif;
-
+	font-family: "Fira Sans", sans-serif;
 }
 
 .close {
@@ -21,12 +20,12 @@
 	position: absolute;
 	top: 0;
 	right: 55px;
-	transition: all .2s ease-in-out;
+	transition: all 0.2s ease-in-out;
 }
 
 .info-popup {
 	background-color: white;
-	border: 2px solid #AAA;
+	border: 2px solid #aaa;
 	border-radius: 7px;
 	padding: 23px 13px;
 	grid-column-start: 1;
@@ -48,7 +47,7 @@
 
 .info-popup-tab {
 	background-color: rgb(240, 240, 240);
-	border: 2px solid #BBB;
+	border: 2px solid #bbb;
 	border-left: none;
 	border-radius: 0 5px 5px 0;
 	font-size: 2em;
@@ -60,7 +59,7 @@
 .info-popup-tab.selected {
 	cursor: default;
 	background-color: rgb(255, 255, 255);
-	border: 2px solid #CCC;
+	border: 2px solid #ccc;
 	border-left: none;
 }
 
@@ -83,7 +82,7 @@
 	grid-column-end: 2;
 	grid-row-start: 4;
 	grid-row-end: 4;
-	padding-top: 10px
+	padding-top: 10px;
 }
 
 .info-window-icon {
@@ -98,7 +97,8 @@
 
 /* Arrow box generator: http://www.cssarrowplease.com/ */
 
-.info-popup:after, .info-popup:before {
+.info-popup:after,
+.info-popup:before {
 	top: 99%;
 	left: 45%;
 	border: solid transparent;
@@ -126,7 +126,12 @@
 hr {
 	border: 0;
 	height: 1px;
-	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0));
+	background-image: linear-gradient(
+		to right,
+		rgba(0, 0, 0, 0),
+		rgba(0, 0, 0, 0.35),
+		rgba(0, 0, 0, 0)
+	);
 }
 
 .review-text {
@@ -134,13 +139,13 @@ hr {
 }
 
 .review-author {
-	font-size: .8rem;
+	font-size: 0.8rem;
 	color: gray;
 	padding-left: 30px;
 }
 
 .foursquare-credit {
-	font-size: .8rem;
+	font-size: 0.8rem;
 	color: gray;
 	font-weight: 700;
 }
@@ -150,7 +155,7 @@ a:link {
 }
 
 .share-window {
-	display:flex;
+	display: flex;
 	flex-flow: wrap;
 	justify-content: center;
 }
@@ -160,8 +165,6 @@ a:link {
 }
 
 .share-logo {
-	width:50px;
-	padding:20px;
-	
-
+	width: 50px;
+	padding: 20px;
 }

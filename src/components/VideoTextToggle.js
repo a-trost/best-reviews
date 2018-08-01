@@ -8,14 +8,14 @@ export default class VideoTextToggle extends React.Component {
 		super(props);
 		this.handleVideoToggle = this.handleVideoToggle.bind(this);
 		this.state = {
-			showVideo: true
+			showVideo: true,
 		};
 	}
 
 	handleVideoToggle() {
 		// scroll.scrollToBottom();
 		this.setState(prevState => ({
-			showVideo: !prevState.showVideo
+			showVideo: !prevState.showVideo,
 		}));
 	}
 	render() {
@@ -27,7 +27,7 @@ export default class VideoTextToggle extends React.Component {
 				modestbranding: 0,
 				rel: 0,
 				showinfo: 0,
-			}
+			},
 		};
 
 		return (
@@ -36,30 +36,29 @@ export default class VideoTextToggle extends React.Component {
 					<YouTube videoId="2Wuq13E3dZc" opts={opts} onReady={this._onReady} />
 				) : (
 					<div className="description-text">
-					
 						<p>This is Dave grohl.</p>
 						<p>He's a freakin’ rockstar.</p>
 						<p>
-              Dave's been in <span className="body-the-best">the best</span>{" "}
-              bands like Nirvana and the Foo Fighters.
+							Dave's been in <span className="body-the-best">the best</span>{" "}
+							bands like Nirvana and the Foo Fighters.
 						</p>
 						<p>He's toured all over the world.</p>
 						<p>
-              He only goes to <span className="body-the-best">the best</span>{" "}
-              parties.
+							He only goes to <span className="body-the-best">the best</span>{" "}
+							parties.
 						</p>
 						<p>
-              He only eats <span className="body-the-best">the best</span> food.
+							He only eats <span className="body-the-best">the best</span> food.
 						</p>
 						<p>
-              He sits in <span className="body-the-best">the best</span> chairs,
-              and plays <span className="body-the-best">the best</span> guitars.
+							He sits in <span className="body-the-best">the best</span> chairs,
+							and plays <span className="body-the-best">the best</span> guitars.
 						</p>
 						<p>And now, he’s sharing it with you.</p>
 						<p>
-              Type in an American Zip Code and get ready to read{" "}
+							Type in an American Zip Code and get ready to read{" "}
 							<span className="body-the-best">
-                THE BEST, THE BEST, THE BEST, THE BEST REVIEWS.
+								THE BEST, THE BEST, THE BEST, THE BEST REVIEWS.
 							</span>
 						</p>
 					</div>

@@ -1,28 +1,27 @@
 .footer {
-  text-align: center;
-  color: #f2863d;
-  background-color: rgb(41, 41, 41);
-  padding: 20px;
+	text-align: center;
+	color: #f2863d;
+	background-color: rgb(41, 41, 41);
+	padding: 20px;
 	align-self: center;
 	flex: 1 100%;
-  order: 5;
-  display:flex;
-  align-items: center;
-  flex-flow: row wrap;
+	order: 5;
+	display: flex;
+	align-items: center;
+	flex-flow: row wrap;
 }
 
 a {
-  color:white;
+	color: white;
 }
 
 .footer-item {
-  flex: 1 100%;
-  padding: 10px;
+	flex: 1 100%;
+	padding: 10px;
 }
 @media all and (min-width: 800px) {
-
-  .footer-item {
-    flex: 1 175px;
-    padding: 10px;
-}
+	.footer-item {
+		flex: 1 175px;
+		padding: 10px;
+	}
 }

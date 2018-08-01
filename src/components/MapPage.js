@@ -13,7 +13,7 @@ import {
 	setCenterLatLng,
 	clearSearchResults,
 	setSearchLocation,
-	setCategory
+	setCategory,
 } from "../actions/actions";
 
 class MapPage extends Component {
@@ -50,7 +50,7 @@ class MapPage extends Component {
 		this.props.dispatch(setCenterLatLng(lat, lng));
 		scroller.scrollTo("map-scroll", {
 			duration: 500,
-			smooth: true
+			smooth: true,
 		});
 	}
 
@@ -84,7 +84,7 @@ class MapPage extends Component {
 const mapStateToProps = state => {
 	return {
 		searchLocation: state.searchLocation,
-		category: state.category
+		category: state.category,
 	};
 };
 

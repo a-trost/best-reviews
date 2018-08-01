@@ -14,12 +14,12 @@ import "./SearchForm.css";
 const styles = {
 	button: {
 		background: "linear-gradient(45deg, #F2863D 30%, #FF8E53 90%)",
-		color:"white"
+		color: "white",
 	},
 	buttonDisabled: {
-		color:"#aaa", background:"#ddd"
-	}
-
+		color: "#aaa",
+		background: "#ddd",
+	},
 };
 
 class SearchForm extends Component {
@@ -32,7 +32,7 @@ class SearchForm extends Component {
 					className="search-box-form"
 				>
 					<div>
-            I want <span className="body-the-best">The Best Reviews</span> for{" "}
+						I want <span className="body-the-best">The Best Reviews</span> for{" "}
 						<FormControl>
 							<InputLabel htmlFor="category">Category</InputLabel>
 							<Select
@@ -40,7 +40,7 @@ class SearchForm extends Component {
 								onChange={this.props.handleCategoryChange}
 								inputProps={{
 									name: "category",
-									id: "category"
+									id: "category",
 								}}
 							>
 								<MenuItem value="shopping">Shopping</MenuItem>
@@ -48,7 +48,7 @@ class SearchForm extends Component {
 								<MenuItem value="services">Services</MenuItem>
 							</Select>
 						</FormControl>
-            in{" "}
+						in{" "}
 						<TextField
 							type="number"
 							className="search-box"
@@ -62,13 +62,17 @@ class SearchForm extends Component {
 							onChange={this.props.handleSearchBoxChange}
 						/>{" "}
 						<Button
-							  style={{...(this.props.searchLocation.length ===5 ? styles.button : styles.buttonDisabled)}}
+							style={{
+								...(this.props.searchLocation.length === 5
+									? styles.button
+									: styles.buttonDisabled),
+							}}
 							variant="raised"
 							color="primary"
 							type="submit"
 							disabled={this.props.searchLocation.length !== 5}
 						>
-              Go!
+							Go!
 						</Button>
 						{this.props.formError && (
 							<FormHelperText
@@ -92,7 +96,7 @@ const mapStateToProps = state => {
 	return {
 		searchLocation: state.searchLocation,
 		category: state.category,
-		formError: state.formError
+		formError: state.formError,
 	};
 };
 
